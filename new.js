@@ -1,5 +1,5 @@
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-var access_token = "eOyJNbVO3glLV1V6CEGXdRq9yn17tXRZYHMlB8rD70EgFOzvYr4TD8YB5H2AGc0Q";
+var access_token = "3L69vMUB9YCCB2kXXyNAZFuNbfO7GSkuDxeoDjXGZsM4wDToyQIZc9nJcYyDoGD1";
 var obj = {};
 for (var i = 0; i < 60; i++) {
     obj.principalInvestigator = "J. Carberry";
@@ -25,7 +25,7 @@ for (var i = 0; i < 60; i++) {
     obj.keywords = ["string"];
     obj.description = "Dopamine -hydrobromide 100-200ms cooling from 100K ";
     obj.userTargetLocation = "C-SPEC";
-    obj.classification = "string";
+    obj.classification = "AV=medium,CO=low";
     obj.license = "ESS";
     obj.ownerGroup = "cspec" + i;
     obj.accessGroups = [
