@@ -1,5 +1,12 @@
+/**
+ * @file Loads jobs into catamel
+ * @author Gareth Murphy
+ * @version 0.1
+ */
+
+let token_provider = require('AccessToken.js');
 let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-let access_token = "w771l8ocQEsrJeBNfQSDKzFi1Xi9P38pL0dCrLipej1PKJPIZKnRSfWGlVi0sAR8";
+let access_token = token_provider.access_token;
 
 class Job {
     emailJobInitiator: string;
@@ -12,10 +19,6 @@ class Job {
     createdAt: Date;
     updatedAt: Date;
 }
-
-let job = new Job();
-
-console.log(job);
 
 let my_new_job = new Job();
 for (let i = 0; i < 60; i++) {

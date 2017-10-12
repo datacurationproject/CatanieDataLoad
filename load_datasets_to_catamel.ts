@@ -1,7 +1,35 @@
-const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-const access_token = "3L69vMUB9YCCB2kXXyNAZFuNbfO7GSkuDxeoDjXGZsM4wDToyQIZc9nJcYyDoGD1";
-const obj = {};
+/**
+ * @file Loads jobs into catamel
+ * @author Gareth Murphy
+ * @version 0.1
+ */
+
+
+let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const access_token = "o4XQ5IFTy5J4J4AADh40yRkpUAuIv2fxVLSn8ONsl5s24ynchbtrRruPg5hdNsFH";
+
+class Dataset {
+    "pid": any;
+    "owner": any;
+    "orcidOfOwner": any;
+    "contactEmail": any;
+    "sourceFolder": any;
+    "size": any;
+    "creationTime": any;
+    "type": any;
+    "validationStatus": any;
+    "keywords": any;
+    "description": any;
+    "userTargetLocation": any;
+    "classification": any;
+    "license": any;
+    "ownerGroup": any;
+    "accessGroups": any;
+}
+
+
 for (let i = 0; i < 60; i++) {
+    let obj = new Dataset();
     obj.principalInvestigator = "J. Carberry";
     obj.endTime = "2015-05-15T09:34:26.550Z";
     obj.creationLocation = "strong";
