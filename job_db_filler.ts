@@ -11,29 +11,28 @@ class Job {
     datasetList: string;
     createdAt: Date;
     updatedAt: Date;
-
 }
 
 let job = new Job();
 
 console.log(job);
 
-let obj = new Job();
+let my_new_job = new Job();
 for (let i = 0; i < 60; i++) {
     let date = new Date("2015-03-25T12:00:00Z");
     let date2 = date;
     date2.setDate(date.getDate() + i);
-    obj.emailJobInitiator = "testemail@testdomain.com";
-    obj.type = "retrieve";
-    obj.creationTime = date2;
-    obj.executionTime = date2;
-    obj.jobParams = 0;
-    obj.jobStatusMessage = 0;
-    obj.datasetList = 0;
-    obj.createdAt = date2;
-    obj.updatedAt = date2;
+    my_new_job.emailJobInitiator = "testemail@testdomain.com";
+    my_new_job.type = "retrieve";
+    my_new_job.creationTime = date2;
+    my_new_job.executionTime = date2;
+    my_new_job.jobParams = 0;
+    my_new_job.jobStatusMessage = 0;
+    my_new_job.datasetList = 0;
+    my_new_job.createdAt = date2;
+    my_new_job.updatedAt = date2;
 
-    console.log(JSON.stringify(obj));
+    console.log(JSON.stringify(my_new_job));
 
 
     // construct an HTTP request
@@ -42,7 +41,7 @@ for (let i = 0; i < 60; i++) {
     xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
     // send the collected data as JSON
-    xhr.send(JSON.stringify(obj));
+    xhr.send(JSON.stringify(my_new_job));
 
     xhr.onloadend = function () {
         // done
