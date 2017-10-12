@@ -4,11 +4,16 @@
  * @version 0.1
  */
 
-
+let token_provider = require('./AccessToken.ts');
 let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-const access_token = "o4XQ5IFTy5J4J4AADh40yRkpUAuIv2fxVLSn8ONsl5s24ynchbtrRruPg5hdNsFH";
+let access_token = token_provider.access_token;
 
 class Dataset {
+    "principalInvestigator": any;
+    "endTime": any;
+    "creationLocation": any;
+    "dataFormat": any;
+    "scientificMetadata": any;
     "pid": any;
     "owner": any;
     "orcidOfOwner": any;
@@ -25,8 +30,27 @@ class Dataset {
     "license": any;
     "ownerGroup": any;
     "accessGroups": any;
+    "datasetId": any;
+    "packagedSize": any;
+    "sampleId": any;
+    "proposalId": any;
 }
 
+
+function send_to_catamel(obj) {
+// construct an HTTP request
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://localhost:3000/api/v2/RawDatasets?access_token=" + access_token, true);
+    xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+
+    // send the collected data as JSON
+    xhr.send(JSON.stringify(obj));
+
+    xhr.onloadend = function () {
+        // done
+    };
+    return xhr;
+}
 
 for (let i = 0; i < 60; i++) {
     let obj = new Dataset();
@@ -64,19 +88,7 @@ for (let i = 0; i < 60; i++) {
     obj.proposalId = 123 + i;
 
     console.log(JSON.stringify(obj));
-
-
-    // construct an HTTP request
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://localhost:3000/api/v2/RawDatasets?access_token=" + access_token, true);
-    xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-
-    // send the collected data as JSON
-    xhr.send(JSON.stringify(obj));
-
-    xhr.onloadend = function () {
-        // done
-    };
+    const xhr = send_to_catamel(obj);
     console.log('****');
 
 }

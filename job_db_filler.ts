@@ -4,7 +4,7 @@
  * @version 0.1
  */
 
-let token_provider = require('AccessToken.js');
+let token_provider = require('./AccessToken.ts');
 let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 let access_token = token_provider.access_token;
 
