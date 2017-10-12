@@ -1,7 +1,7 @@
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-var access_token = "3L69vMUB9YCCB2kXXyNAZFuNbfO7GSkuDxeoDjXGZsM4wDToyQIZc9nJcYyDoGD1";
-var obj = {};
-for (var i = 0; i < 60; i++) {
+const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const access_token = "3L69vMUB9YCCB2kXXyNAZFuNbfO7GSkuDxeoDjXGZsM4wDToyQIZc9nJcYyDoGD1";
+const obj = {};
+for (let i = 0; i < 60; i++) {
     obj.principalInvestigator = "J. Carberry";
     obj.endTime = "2015-05-15T09:34:26.550Z";
     obj.creationLocation = "strong";
@@ -39,7 +39,7 @@ for (var i = 0; i < 60; i++) {
 
 
     // construct an HTTP request
-    var xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest();
     xhr.open("POST", "http://localhost:3000/api/v2/RawDatasets?access_token=" + access_token, true);
     xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 

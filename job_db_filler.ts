@@ -1,6 +1,24 @@
 let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 let access_token = "w771l8ocQEsrJeBNfQSDKzFi1Xi9P38pL0dCrLipej1PKJPIZKnRSfWGlVi0sAR8";
-let obj = {};
+
+class Job {
+    emailJobInitiator: string;
+    type: string;
+    creationTime: Date;
+    executionTime = Date;
+    jobParams: string;
+    jobStatusMessage: string;
+    datasetList: string;
+    createdAt: Date;
+    updatedAt: Date;
+
+}
+
+let job = new Job();
+
+console.log(job);
+
+let obj = new Job();
 for (let i = 0; i < 60; i++) {
     let date = new Date("2015-03-25T12:00:00Z");
     let date2 = date;
