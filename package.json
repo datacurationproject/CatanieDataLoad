@@ -1,13 +1,13 @@
 {
-  "name": "test",
+  "name": "CatanieDataLoad",
   "version": "1.0.0",
   "description": "",
   "main": "new.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Gareth Murphy",
+  "license": "GPL-3.0",
   "dependencies": {
     "require": "^2.4.20",
     "xmlhttprequest": "^1.8.0"
