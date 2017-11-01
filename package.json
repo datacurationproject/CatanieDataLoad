@@ -15,5 +15,9 @@
   "devDependencies": {
     "@types/node": "^8.0.34",
     "babel-cli": "^6.26.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:datacurationproject/CatanieDataLoad.git"
   }
 }
