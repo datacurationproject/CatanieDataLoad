@@ -49,5 +49,16 @@ class DatasetLifecycle {
 }
 
 
-export {DatasetLifecycle};
-export {Dataset};
+class Job {
+    emailJobInitiator: string;
+    type: string;
+    creationTime: Date;
+    executionTime: Date;
+    jobParams: string;
+    jobStatusMessage: string;
+    datasetList: string;
+    createdAt: Date;
+    updatedAt: Date;
+}
+
+export {Dataset, DatasetLifecycle, Job};
