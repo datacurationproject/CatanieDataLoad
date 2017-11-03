@@ -8,4 +8,3 @@ services:
       - ./:/home/node/app
     expose:
       - "8081"
-    command: "npm start"
