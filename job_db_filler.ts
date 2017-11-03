@@ -28,7 +28,7 @@ for (let i = 0; i < 120; i++) {
     let date2 = date;
     date2.setDate(date.getDate() + i);
     my_new_job.emailJobInitiator = 'test'+String(i)+'@te.dk';
-    my_new_job.type = 'retrieve';
+    my_new_job.type = 'archive';
     my_new_job.creationTime = date2;
     my_new_job.executionTime = date2;
     //my_new_job.id = String(10 + i);
