@@ -9,6 +9,7 @@
   "author": "Gareth Murphy",
   "license": "GPL-3.0",
   "dependencies": {
+    "codacy-coverage": "^2.0.3",
     "require": "^2.4.20",
     "xmlhttprequest": "^1.8.0"
   },
