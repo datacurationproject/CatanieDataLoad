@@ -1,5 +1,7 @@
 # CatanieDataLoad
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e9c631a50f8c4018925d0aaedbb38d30)](https://www.codacy.com/app/garethcmurphy/CatanieDataLoad?utm_source=github.com&utm_medium=referral&utm_content=datacurationproject/CatanieDataLoad&utm_campaign=badger)
+
 One Paragraph of project description goes here
 
 ## Getting Started
