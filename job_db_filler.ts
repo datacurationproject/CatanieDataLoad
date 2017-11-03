@@ -41,7 +41,7 @@ for (let i = 0; i < 120; i++) {
 
     let catamel_interface = new CatamelInterface();
     const xhdr = catamel_interface.send_to_catamel(obj, 'RawDatasets');
-    //console.log('****');
+    console.log(xhdr);
 
 }
 

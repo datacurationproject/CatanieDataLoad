@@ -11,7 +11,7 @@ class CatamelInterface{
         const token = new AccessT();
         const access_token = token.access_token;
 
-        const url = 'http://localhost:3000/api/v2/' + api_descriptor + '?access_token=' + access_token
+        const url = 'http://localhost:3000/api/v2/' + api_descriptor + '?access_token=' + access_token;
         xhr.open('POST', url, true);
         xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
@@ -30,8 +30,8 @@ class CatamelInterface{
             console.log('xhr.status=', xhr.status);
             console.log('response=', xhr.responseText);
 
-            var data = $.parseJSON(xhr.responseText);
-            var uploadResult = data['message']
+            let data = $.parseJSON(xhr.responseText);
+            let uploadResult = data['message'];
             console.log('uploadResult=', uploadResult);
 
             if (uploadResult == 'failure') {
