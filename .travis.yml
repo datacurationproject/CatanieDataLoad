@@ -2,3 +2,5 @@ language: node_js
 node_js:
   - "iojs"
   - "8"
+env:
+  - CODACY_PROJECT_TOKEN ="16ba6c62937f40fe98063cd0f2361b57"
