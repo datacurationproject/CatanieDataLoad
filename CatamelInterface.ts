@@ -30,7 +30,7 @@ class CatamelInterface{
             console.log('xhr.status=', xhr.status);
             console.log('response=', xhr.responseText);
 
-            let data = $.parseJSON(xhr.responseText);
+            let data = JSON.parse(xhr.responseText);
             let uploadResult = data['message'];
             console.log('uploadResult=', uploadResult);
 

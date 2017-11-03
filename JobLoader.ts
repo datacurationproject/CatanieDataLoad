@@ -30,7 +30,7 @@ class JobLoader {
             //console.log(JSON.stringify(my_new_job));
 
             let catamel_interface = new CatamelInterface();
-            const xhdr = catamel_interface.send_to_catamel(obj, 'RawDatasets');
+            const xhdr = catamel_interface.send_to_catamel(my_new_job, 'RawDatasets');
             console.log(xhdr);
 
         }
