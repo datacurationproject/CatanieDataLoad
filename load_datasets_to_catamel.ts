@@ -4,9 +4,12 @@
  * @version 0.1
  */
 
-let token_provider = require('./AccessToken.ts');
-let XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
-let access_token = token_provider.access_token;
+
+import { CatamelInterface} from './CatamelInterface';
+
+
+let catamel_interface = new CatamelInterface();
+
 
 class Dataset {
     'principalInvestigator': any;
@@ -58,21 +61,7 @@ class DatasetLifecycle {
     'updatedAt': any;
 }
 
-function send_to_catamel(obj, api_descriptor) {
-// construct an HTTP request
-    const xhr = new XMLHttpRequest();
 
-    xhr.open('POST', 'http://localhost:3000/api/v2/' + api_descriptor + '?access_token=' + access_token, true);
-    xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-
-    // send the collected data as JSON
-    xhr.send(JSON.stringify(obj));
-
-    xhr.onloadend = function () {
-        // done
-    };
-    return xhr;
-}
 
 for (let i = 0; i < 60; i++) {
     let obj = new Dataset();
@@ -113,28 +102,29 @@ for (let i = 0; i < 60; i++) {
     obj.proposalId = 123 + i;
 
 
-    dataset_lifecycle.id = 'string';
+    dataset_lifecycle.id = obj.datasetId;
     dataset_lifecycle.isOnDisk = true;
     dataset_lifecycle.isOnTape = true;
     dataset_lifecycle.archiveStatusMessage = 'string';
     dataset_lifecycle.retrieveStatusMessage = 'string';
     dataset_lifecycle.lastUpdateMessage = 'string';
     dataset_lifecycle.archiveReturnMessage = 'string';
-    dataset_lifecycle.dateOfLastMessage = '2017-11-03T12=02=39.978Z';
-    dataset_lifecycle.dateOfDiskPurging = '2017-11-03T12=02=39.978Z';
-    dataset_lifecycle.archiveRetentionTime = '2017-11-03T12=02=39.978Z';
+    dataset_lifecycle.dateOfLastMessage = date;
+    dataset_lifecycle.dateOfDiskPurging = date;
+    dataset_lifecycle.archiveRetentionTime = date;
     dataset_lifecycle.isExported = true;
     dataset_lifecycle.exportedTo = 'string';
-    dataset_lifecycle.dateOfPublishing = '2017-11-03T12=02=39.978Z';
-    dataset_lifecycle.datasetId = dataset_id;
-    dataset_lifecycle.rawDatasetId = 'string';
-    dataset_lifecycle.derivedDatasetId = 'string';
-    dataset_lifecycle.createdAt = '2017-11-03T12=02=39.978Z';
-    dataset_lifecycle.updatedAt = '2017-11-03T12=02=39.978Z'
+    dataset_lifecycle.dateOfPublishing = date;
+    dataset_lifecycle.datasetId = '<PID>/' + obj.pid;
+    dataset_lifecycle.rawDatasetId = dataset_lifecycle.datasetId;
+    dataset_lifecycle.derivedDatasetId = dataset_lifecycle.datasetId;
+    dataset_lifecycle.createdAt = date;
+    dataset_lifecycle.updatedAt = date;
 
     console.log(JSON.stringify(obj));
-    const xhr = send_to_catamel(obj, 'RawDatasets');
-    const xhr2 = send_to_catamel(dataset_lifecycle, 'DatasetLifecycles');
+    console.log(JSON.stringify(dataset_lifecycle));
+    const xhr = catamel_interface.send_to_catamel(obj, 'RawDatasets');
+    const xhr2 = catamel_interface.send_to_catamel(dataset_lifecycle, 'DatasetLifecycles');
     console.log('****');
 
 }
