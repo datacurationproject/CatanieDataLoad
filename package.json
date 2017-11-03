@@ -4,12 +4,16 @@
   "description": "",
   "main": "new.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "author": "Gareth Murphy",
   "license": "GPL-3.0",
   "dependencies": {
+    "chai": "^4.1.2",
     "codacy-coverage": "^2.0.3",
+    "express": "^4.16.2",
+    "mocha": "^4.0.1",
+    "request": "^2.83.0",
     "require": "^2.4.20",
     "xmlhttprequest": "^1.8.0"
   },
