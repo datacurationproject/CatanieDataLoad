@@ -2,16 +2,25 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e9c631a50f8c4018925d0aaedbb38d30)](https://www.codacy.com/app/garethcmurphy/CatanieDataLoad?utm_source=github.com&utm_medium=referral&utm_content=datacurationproject/CatanieDataLoad&utm_campaign=badger)
 
-One Paragraph of project description goes here
+[![Build Status](https://travis-ci.org/datacurationproject/CatanieDataLoad.svg?branch=master)](https://travis-ci.org/datacurationproject/CatanieDataLoad)
+
+
+
+This repository contains classes to load synthetic metadata to the scicat data catalogue, for testing and benchmarking purposes.
+
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+You can just use Docker
 
 ### Prerequisites
 
+Docker
+
 Node
+
 Typescript
+
 Catanie
 
 
@@ -36,7 +45,14 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+Tests use mocha
+
+You can try running 
+```
+npm test
+```
+
+Tests should run automatically on travis-ci.org
 
 ### Break down into end to end tests
 
@@ -80,7 +96,7 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the GPL-3 License - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
 
