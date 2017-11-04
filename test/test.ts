@@ -16,3 +16,17 @@ describe('my test', () => {
     // your test
   });
 });
+
+
+import { AccessT} from "../AccessToken";
+import { expect} from 'chai'
+
+describe('Access Token', () => {
+    it('checks token is string', () => {
+        let access = new AccessT();
+        let token = access.access_token;
+        expect(token).to.be.a('string');
+    });
+
+
+});
