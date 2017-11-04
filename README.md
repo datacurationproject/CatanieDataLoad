@@ -5,6 +5,7 @@
 [![Build Status](https://travis-ci.org/datacurationproject/CatanieDataLoad.svg?branch=master)](https://travis-ci.org/datacurationproject/CatanieDataLoad)
 
 
+[![Coverage Status](https://coveralls.io/repos/github/datacurationproject/CatanieDataLoad/badge.svg?branch=master)](https://coveralls.io/github/datacurationproject/CatanieDataLoad?branch=master)
 
 This repository contains classes to load synthetic metadata to the scicat data catalogue, for testing and benchmarking purposes.
 
