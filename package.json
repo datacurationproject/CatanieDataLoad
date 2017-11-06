@@ -19,6 +19,7 @@
     "istanbul": "^0.4.5",
     "request": "^2.83.0",
     "require": "^2.4.20",
+    "ts-node": "^3.3.0",
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {

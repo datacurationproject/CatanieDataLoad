@@ -1,4 +1,12 @@
 // Reference mocha-typescript's global definitions:
+import {slow, suite, test, timeout} from "mocha-typescript";
+import 'mocha';
+import {AccessT} from "../src/AccessToken";
+import {CatamelInterface} from "../src/CatamelInterface";
+import {DatasetLoader} from "../src/DatasetLoader"
+import {JobLoader} from "../src/JobLoader"
+import {expect} from 'chai'
+
 /// <reference path="../node_modules/mocha-typescript/globals.d.ts" />
 
 @suite(timeout(3000), slow(1000))
@@ -9,20 +17,12 @@ class Hello {
 }
 
 
-import 'mocha';
-
 describe('my test', () => {
     it('does something', () => {
         // your test
     });
 });
 
-
-import {AccessT} from "../src/AccessToken";
-import {CatamelInterface} from "../src/CatamelInterface";
-import {DatasetLoader} from "../src/DatasetLoader"
-import {JobLoader} from "../src/JobLoader"
-import {expect} from 'chai'
 
 describe('Access Token', () => {
     it('checks token is string', () => {
