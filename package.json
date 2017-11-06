@@ -9,7 +9,7 @@
     "watch": "mocha-typescript-watch",
     "prepare": "tsc",
     "cover": "istanbul cover _mocha",
-"coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
+    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
   "author": "Gareth Murphy",
   "license": "GPL-3.0",
