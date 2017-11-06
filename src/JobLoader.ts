@@ -9,12 +9,25 @@ import {Job} from './CatamelClasses';
 
 
 class JobLoader {
+    get number_of_jobs_to_load(): any {
+        return this._number_of_jobs_to_load;
+    }
+
+    set number_of_jobs_to_load(value: any) {
+        this._number_of_jobs_to_load = value;
+    }
+    date : any;
+    private _number_of_jobs_to_load: any;
+    constructor() {
+        this.date = new Date('2015-03-25T12:00:00Z');
+        this._number_of_jobs_to_load = 20;
+    }
 
     load_jobs() {
 
         let my_new_job = new Job();
-        for (let i = 0; i < 120; i++) {
-            let date = new Date('2015-03-25T12:00:00Z');
+        for (let i = 0; i < this._number_of_jobs_to_load; i++) {
+            let date = this.date;
             let date2 = date;
             date2.setDate(date.getDate() + i);
             my_new_job.emailJobInitiator = 'test' + String(i) + '@te.dk';
@@ -30,7 +43,7 @@ class JobLoader {
             //console.log(JSON.stringify(my_new_job));
 
             let catamel_interface = new CatamelInterface();
-            const xhdr = catamel_interface.send_to_catamel(my_new_job, 'RawDatasets');
+            const xhdr = catamel_interface.send_to_catamel(my_new_job, 'Jobs');
             console.log(xhdr);
 
         }
@@ -45,4 +58,4 @@ let job_loader = new JobLoader();
 job_loader.load_jobs();
 
 
-export { JobLoader};
+export {JobLoader};

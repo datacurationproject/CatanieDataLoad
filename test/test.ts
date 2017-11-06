@@ -17,18 +17,13 @@ class Hello {
 }
 
 
-describe('my test', () => {
-    it('does something', () => {
-        // your test
-    });
-});
-
 
 describe('Access Token', () => {
     it('checks token is string', () => {
         let access = new AccessT();
         let token = access.access_token;
         expect(token).to.be.a('string');
+        expect(token).to.have.lengthOf(64);
     });
 });
 
