@@ -9,22 +9,22 @@ This repository contains classes to load synthetic metadata to the scicat data c
 
 ## Getting Started
 
-You can just use Docker
+The easiest way to build is to use Docker, which will install the node modules.
+```
+docker build . -t dataloader
+```
 
 ### Prerequisites
 
-Docker
+Docker (17.09.0-ce)
 
-Node
+Node (tested in v7,8,9)
 
-Typescript
+Typescript (v2.6)
 
-Catanie
+SciCat
 
 
-```
-Give examples
-```
 
 ### Installing
 
@@ -34,12 +34,13 @@ Install packages
 npm install
 ```
 
-
 ```
-node ./load_data_to_catamel.js
+node ./src/DatasetLoader.js
+```
+```
+ts-node ./src/DatasetLoader.ts
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
