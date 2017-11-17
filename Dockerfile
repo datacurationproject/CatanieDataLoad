@@ -6,5 +6,6 @@ WORKDIR /home/node/app
 COPY package.json /home/node/app
 
 
-RUN npm install
-RUN npm test
+RUN npm install -g yarn
+RUN yarn install
+RUN yarn test
