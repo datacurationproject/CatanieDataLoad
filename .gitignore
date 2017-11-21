@@ -111,3 +111,4 @@ typings/
 
 *.js
 *.js.map
+yarn.lock
