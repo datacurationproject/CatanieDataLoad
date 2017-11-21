@@ -13,15 +13,17 @@ let catamel_interface = new CatamelInterface();
 
 
 class DatasetLoader {
+    date: any;
+    dataset_number : number = 60;
 
     load_dataset() {
-        for (let i = 0; i < 60; i++) {
+        for (let i = 0; i < this.dataset_number; i++) {
             let obj = new Dataset();
             let dataset_lifecycle = new DatasetLifecycle();
-            let date = '2015-05-15T09:34:26.550Z';
+            this.date = '2015-05-15T09:34:26.550Z';
             let dataset_id = 200 + i;
             obj.principalInvestigator = 'J. Carberry';
-            obj.endTime = '2015-05-15T09:34:26.550Z';
+            obj.endTime = this.date;
             obj.creationLocation = 'strong';
             obj.dataFormat = 'nexus-hdf5';
             obj.scientificMetadata = {
@@ -34,13 +36,13 @@ class DatasetLoader {
             obj.owner = 'J. Carberry';
             obj.orcidOfOwner = 'orcid.org/0000-0002-1825-0097';
             obj.contactEmail = 'j.carberry@orcid.org';
-            obj.sourceFolder = '/nfs/disk' + i;
+            obj.sourceFolder = '/SLS/disk' + i;
             obj.size = 10 + i;
             obj.packagedSize = 5 + i;
             obj.creationTime = '2015-05-15T09:34:26.550Z';
             obj.type = 'experiment';
             obj.validationStatus = 'validated';
-            obj.keywords = ['string'];
+            obj.keywords = ['lifecycle keywords'];
             obj.description = 'Dopamine -hydrobromide 100-200ms cooling from 100K ';
             obj.userTargetLocation = 'C-SPEC';
             obj.classification = 'AV=medium,CO=low';
@@ -57,21 +59,21 @@ class DatasetLoader {
             dataset_lifecycle.id = obj.datasetId;
             dataset_lifecycle.isOnDisk = true;
             dataset_lifecycle.isOnTape = true;
-            dataset_lifecycle.archiveStatusMessage = 'string';
-            dataset_lifecycle.retrieveStatusMessage = 'string';
+            dataset_lifecycle.archiveStatusMessage = 'archiveStatus';
+            dataset_lifecycle.retrieveStatusMessage = 'retrieveStatus';
             dataset_lifecycle.lastUpdateMessage = 'string';
-            dataset_lifecycle.archiveReturnMessage = 'string';
-            dataset_lifecycle.dateOfLastMessage = date;
-            dataset_lifecycle.dateOfDiskPurging = date;
-            dataset_lifecycle.archiveRetentionTime = date;
+            dataset_lifecycle.archiveReturnMessage = 'archiveStatus';
+            dataset_lifecycle.dateOfLastMessage = this.date;
+            dataset_lifecycle.dateOfDiskPurging = this.date;
+            dataset_lifecycle.archiveRetentionTime = this.date;
             dataset_lifecycle.isExported = true;
             dataset_lifecycle.exportedTo = 'string';
-            dataset_lifecycle.dateOfPublishing = date;
+            dataset_lifecycle.dateOfPublishing = this.date;
             dataset_lifecycle.datasetId = '<PID>/' + obj.pid;
             dataset_lifecycle.rawDatasetId = dataset_lifecycle.datasetId;
             dataset_lifecycle.derivedDatasetId = dataset_lifecycle.datasetId;
-            dataset_lifecycle.createdAt = date;
-            dataset_lifecycle.updatedAt = date;
+            dataset_lifecycle.createdAt = this.date;
+            dataset_lifecycle.updatedAt = this.date;
 
             console.log(JSON.stringify(obj));
             console.log(JSON.stringify(dataset_lifecycle));
