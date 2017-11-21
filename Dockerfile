@@ -6,5 +6,9 @@ WORKDIR /home/node/app
 COPY package.json /home/node/app
 
 
-RUN npm install
-RUN npm test
+RUN npm install -g yarn
+RUN git clone https://github.com/datacurationproject/CatanieDataLoad.git
+WORKDIR /home/node/app/CatanieDataLoad
+RUN yarn install
+RUN ls
+RUN yarn test

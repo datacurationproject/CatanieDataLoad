@@ -1,10 +1,7 @@
 # CatanieDataLoad
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e9c631a50f8c4018925d0aaedbb38d30)](https://www.codacy.com/app/garethcmurphy/CatanieDataLoad?utm_source=github.com&utm_medium=referral&utm_content=datacurationproject/CatanieDataLoad&utm_campaign=badger)
-
 [![Build Status](https://travis-ci.org/datacurationproject/CatanieDataLoad.svg?branch=master)](https://travis-ci.org/datacurationproject/CatanieDataLoad)
-
-
 [![Coverage Status](https://coveralls.io/repos/github/datacurationproject/CatanieDataLoad/badge.svg?branch=master)](https://coveralls.io/github/datacurationproject/CatanieDataLoad?branch=master)
 
 This repository contains classes to load synthetic metadata to the scicat data catalogue, for testing and benchmarking purposes.
@@ -12,22 +9,22 @@ This repository contains classes to load synthetic metadata to the scicat data c
 
 ## Getting Started
 
-You can just use Docker
+The easiest way to build is to use Docker, which will install the node modules.
+```
+docker build . -t dataloader
+```
 
 ### Prerequisites
 
-Docker
+Docker (17.09.0-ce)
 
-Node
+Node (tested in v7,8,9)
 
-Typescript
+Typescript (v2.6)
 
-Catanie
+SciCat
 
 
-```
-Give examples
-```
 
 ### Installing
 
@@ -37,12 +34,13 @@ Install packages
 npm install
 ```
 
-
 ```
-node ./load_data_to_catamel.js
+node ./src/DatasetLoader.js
+```
+```
+ts-node ./src/DatasetLoader.ts
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
@@ -77,17 +75,16 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Docker](http://hub.docker.com/) - The container setup used
+* [Travis](https://travis-ci.org/) - The CI framework
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/datacurationproject/CatanieDataLoad/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/datacurationproject/CatanieDataLoad/tags). 
 
 ## Authors
 
