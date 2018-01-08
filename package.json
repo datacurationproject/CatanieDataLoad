@@ -27,7 +27,7 @@
   "devDependencies": {
     "@types/chai": "^4.0.5",
     "@types/mocha": "^2.2.44",
-    "@types/node": "^8.0.53",
+    "@types/node": "^9.3.0",
     "babel-cli": "^6.26.0",
     "chai": "^4.1.2",
     "coveralls": "^3.0.0",
