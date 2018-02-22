@@ -20,8 +20,6 @@ class Dataset {
     'license': any;
     'ownerGroup': any;
     'accessGroups': any;
-    'datasetId': any;
-    'packagedSize': any;
     'sampleId': any;
     'proposalId': any;
 }

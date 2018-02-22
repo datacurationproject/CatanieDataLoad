@@ -4,7 +4,7 @@
   "description": "",
   "main": "new.js",
   "scripts": {
-    "pretest": "tsc",
+    "pretest": "npx tsc",
     "test": "nyc mocha",
     "watch": "mocha-typescript-watch",
     "prepare": "tsc",
