@@ -14,6 +14,14 @@ class CatamelInterface{
 		const dm_url = 'kubetest02.dm.esss.dk:32094'
 		const ess_url = 'scicat02.esss.lu.se:32361'
         const url = 'http://'+ess_url+'/api/v2/' + api_descriptor + '?access_token=' + access_token;
+	console.log(url)
+
+
+function reqListener () {
+  console.log(this.responseText);
+}
+	xhr.addEventListener("load", reqListener);
+
         xhr.open('POST', url, true);
         xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
@@ -21,13 +29,14 @@ class CatamelInterface{
         xhr.send(JSON.stringify(obj));
 
 
-        xhr.onloadend = function () {
+        xhr.onload = function () {
             console.log('DONE', xhr.readyState);
             console.log('xhr.status=', xhr.status);
             console.log('response=', xhr.responseText);
         };
 
-        if (xhr.readyState == 4 || xhr.status == 200) {
+	xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 &&  xhr.status === 200) {
             console.log('xhr.readyState=', xhr.readyState);
             console.log('xhr.status=', xhr.status);
             console.log('response=', xhr.responseText);
@@ -35,6 +44,7 @@ class CatamelInterface{
             let data = JSON.parse(xhr.responseText);
             let uploadResult = data['message'];
             console.log('uploadResult=', uploadResult);
+};
 
             if (uploadResult == 'failure') {
                 console.log('failed to upload file');

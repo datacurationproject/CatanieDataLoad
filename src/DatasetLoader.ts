@@ -25,6 +25,7 @@ class DatasetLoader {
             this.date = '2013-05-15T09:34:26.550Z';
             this.futuredate = '2013-05-15T09:34:26.550Z';
             let dataset_id = 100 + i;
+
             obj.principalInvestigator = 'J. Carberry';
             obj.endTime = this.date;
             obj.creationLocation = 'strong';
@@ -40,6 +41,7 @@ class DatasetLoader {
             obj.contactEmail = 'gareth.murphy@esss.se';
             obj.sourceFolder = '/ESS/disk' + i;
             obj.size = 10 + i;
+            obj.packedSize = 10 + i;
             obj.creationTime = '2014-05-15T09:34:26.550Z';
             obj.type = 'experiment';
             obj.validationStatus = 'validated';
@@ -48,11 +50,16 @@ class DatasetLoader {
             obj.userTargetLocation = 'C-SPEC';
             obj.classification = 'AV=medium,CO=low';
             obj.license = 'ESS';
+	    obj.version= "string";
+	    obj.doi= "string";
+	    obj.isPublished = true;
             obj.ownerGroup = 'multigrid' ;
             obj.accessGroups = [
                 'multigrid',
                 'multiblade'
             ];
+            obj.createdAt = this.date;
+            obj.updatedAt = this.date;
             obj.sampleId = '771' + i;
             obj.proposalId = 123 + i;
 
@@ -79,12 +86,12 @@ class DatasetLoader {
             dataset_lifecycle.createdAt = this.date;
             dataset_lifecycle.updatedAt = this.date;
 
-            console.log(JSON.stringify(obj));
-            console.log(JSON.stringify(dataset_lifecycle));
+            //console.log(JSON.stringify(obj));
+            //console.log(JSON.stringify(dataset_lifecycle));
             const xhr = catamel_interface.send_to_catamel(obj, 'RawDatasets');
-            const xhr2 = catamel_interface.send_to_catamel(dataset_lifecycle, 'DatasetLifecycles');
+            //const xhr2 = catamel_interface.send_to_catamel(dataset_lifecycle, 'DatasetLifecycles');
             console.log(xhr);
-            console.log(xhr2);
+            //console.log(xhr2);
 
         }
 

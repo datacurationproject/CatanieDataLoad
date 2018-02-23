@@ -10,6 +10,7 @@ class Dataset {
     'contactEmail': any;
     'sourceFolder': any;
     'size': any;
+    'packedSize': any;
     'creationTime': any;
     'type': any;
     'validationStatus': any;
@@ -18,8 +19,13 @@ class Dataset {
     'userTargetLocation': any;
     'classification': any;
     'license': any;
+    'version': any;
+    'doi': any;
+    'isPublished': any;
     'ownerGroup': any;
     'accessGroups': any;
+    'createdAt': any;
+    'updatedAt': any;
     'sampleId': any;
     'proposalId': any;
 }
@@ -42,6 +48,8 @@ class DatasetLifecycle {
     'datasetId': any;
     'rawDatasetId': any;
     'derivedDatasetId': any;
+    'ownerGroup': any;
+    'accessGroups': any;
     'createdAt': any;
     'updatedAt': any;
 }
