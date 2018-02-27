@@ -11,8 +11,8 @@ class CatamelInterface{
         const token = new AccessT();
         const access_token = token.access_token;
 
-		const dm_url = 'kubetest02.dm.esss.dk:32222'
-		const ess_url = 'scicat02.esss.lu.se:32222'
+	      const dm_url  = 'kubetest02.dm.esss.dk:32222'
+      	const ess_url =   'scicat02.esss.lu.se:32222'
         const url = 'http://'+ess_url+'/api/v2/' + api_descriptor + '?access_token=' + access_token;
         xhr.open('POST', url, true);
         xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
