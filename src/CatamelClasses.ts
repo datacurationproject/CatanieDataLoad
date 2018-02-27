@@ -42,6 +42,8 @@ class DatasetLifecycle {
     'datasetId': any;
     'rawDatasetId': any;
     'derivedDatasetId': any;
+    'ownerGroup': any;
+    'accessGroups': any;
     'createdAt': any;
     'updatedAt': any;
 }

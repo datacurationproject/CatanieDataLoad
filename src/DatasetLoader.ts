@@ -22,9 +22,9 @@ class DatasetLoader {
         for (let i = 0; i < this.dataset_number; i++) {
             let obj = new Dataset();
             let dataset_lifecycle = new DatasetLifecycle();
-            this.date = '2013-05-15T09:34:26.550Z';
+            this.date = '2018-05-15T09:34:26.550Z';
             this.futuredate = '2013-05-15T09:34:26.550Z';
-            let dataset_id = 100 + i;
+            let dataset_id = 300 + i;
             obj.principalInvestigator = 'J. Carberry';
             obj.endTime = this.date;
             obj.creationLocation = 'strong';
@@ -80,7 +80,7 @@ class DatasetLoader {
             dataset_lifecycle.updatedAt = this.date;
 
             console.log(JSON.stringify(obj));
-            console.log(JSON.stringify(dataset_lifecycle));
+            //console.log(JSON.stringify(dataset_lifecycle));
             const xhr = catamel_interface.send_to_catamel(obj, 'RawDatasets');
             const xhr2 = catamel_interface.send_to_catamel(dataset_lifecycle, 'DatasetLifecycles');
             console.log(xhr);
