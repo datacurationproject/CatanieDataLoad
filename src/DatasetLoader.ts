@@ -15,7 +15,7 @@ let catamel_interface = new CatamelInterface();
 class DatasetLoader {
     date: any;
     futuredate: any;
-    dataset_number: number = 2;
+    dataset_number: number = 90;
     prefix: any;
 
     load_dataset() {
@@ -24,7 +24,7 @@ class DatasetLoader {
             let dataset_lifecycle = new DatasetLifecycle();
             this.date = '2013-05-15T09:34:26.550Z';
             this.futuredate = '2013-05-15T09:34:26.550Z';
-            let dataset_id = 100 + i;
+            let dataset_id = 7000 + i;
 
             obj.principalInvestigator = 'J. Carberry';
             obj.endTime = this.date;
@@ -53,22 +53,22 @@ class DatasetLoader {
 	    obj.version= "string";
 	    obj.doi= "string";
 	    obj.isPublished = true;
-            obj.ownerGroup = 'multigrid' ;
+            obj.ownerGroup = 'p2222' ;
             obj.accessGroups = [
                 'multigrid',
-                'multiblade'
+                'p2222'
             ];
             obj.createdAt = this.date;
             obj.updatedAt = this.date;
             obj.sampleId = '771' + i;
             obj.proposalId = 123 + i;
 
-            this.prefix = '10.17199'
+            this.prefix = '10.17199/'
 
             dataset_lifecycle.id = this.prefix + obj.pid;
             dataset_lifecycle.isOnDisk = true;
             dataset_lifecycle.isOnTape = true;
-            dataset_lifecycle.archiveStatusMessage = 'archiveStatus';
+            dataset_lifecycle.archiveStatusMessage = 'datasetRetrieved';
             dataset_lifecycle.retrieveStatusMessage = 'retrieveStatus';
             dataset_lifecycle.lastUpdateMessage = 'string';
             dataset_lifecycle.archiveReturnMessage = 'archiveStatus';
@@ -86,12 +86,12 @@ class DatasetLoader {
             dataset_lifecycle.createdAt = this.date;
             dataset_lifecycle.updatedAt = this.date;
 
-            //console.log(JSON.stringify(obj));
-            //console.log(JSON.stringify(dataset_lifecycle));
+            console.log(JSON.stringify(obj));
+            console.log(JSON.stringify(dataset_lifecycle));
             const xhr = catamel_interface.send_to_catamel(obj, 'RawDatasets');
-            //const xhr2 = catamel_interface.send_to_catamel(dataset_lifecycle, 'DatasetLifecycles');
+            const xhr2 = catamel_interface.send_to_catamel(dataset_lifecycle, 'DatasetLifecycles');
             console.log(xhr);
-            //console.log(xhr2);
+            console.log(xhr2);
 
         }
 

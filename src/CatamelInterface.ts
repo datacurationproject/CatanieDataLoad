@@ -11,8 +11,8 @@ class CatamelInterface{
         const token = new AccessT();
         const access_token = token.access_token;
 
-		const dm_url = 'kubetest02.dm.esss.dk:32094'
-		const ess_url = 'scicat02.esss.lu.se:32361'
+		const dm_url = 'kubetest02.dm.esss.dk:32222'
+		const ess_url = 'scicat02.esss.lu.se:32222'
         const url = 'http://'+ess_url+'/api/v2/' + api_descriptor + '?access_token=' + access_token;
 	console.log(url)
 
@@ -44,13 +44,13 @@ function reqListener () {
             let data = JSON.parse(xhr.responseText);
             let uploadResult = data['message'];
             console.log('uploadResult=', uploadResult);
-};
-
             if (uploadResult == 'failure') {
                 console.log('failed to upload file');
             } else if (uploadResult == 'success') {
                 console.log('successfully uploaded file');
             }
+};
+
         }
         return xhr;
     }
