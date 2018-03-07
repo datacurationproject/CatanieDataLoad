@@ -12,19 +12,25 @@ import {Dataset, DatasetLifecycle} from './CatamelClasses';
 let catamel_interface = new CatamelInterface();
 
 
+
 class DatasetLoader {
+	constructor(){
+	this.instrument = ["NMX", "BEER", "C-SPEC", "BIFROST", "MIRACLES", "MAGIC", "T-REX", "HEIMDAL", "LOKI", "FREIA", "ESTIA", "SKADI", "VESPA", "ODIN ", "DREAM"];
+}
     date: any;
     futuredate: any;
-    dataset_number: number = 2;
+    dataset_number: number = 15;
     prefix: any;
+	instrument: any;
+
 
     load_dataset() {
         for (let i = 0; i < this.dataset_number; i++) {
             let obj = new Dataset();
             let dataset_lifecycle = new DatasetLifecycle();
-            this.date = '2018-05-15T09:34:26.550Z';
-            this.futuredate = '2013-05-15T09:34:26.550Z';
-            let dataset_id = 300 + i;
+            this.date = '2018-03-05T09:34:26.550Z';
+            this.futuredate = '2018-03-05T09:34:26.550Z';
+            let dataset_id = 400 + i;
             obj.principalInvestigator = 'J. Carberry';
             obj.endTime = this.date;
             obj.creationLocation = 'strong';
@@ -38,9 +44,9 @@ class DatasetLoader {
             obj.owner = 'Gareth Murphy';
             obj.orcidOfOwner = 'orcid.org/0000-0002-1825-0097';
             obj.contactEmail = 'gareth.murphy@esss.se';
-            obj.sourceFolder = '/ESS/disk' + i;
+            obj.sourceFolder = '/'+this.instrument[i]+'/disk' + i;
             obj.size = 10 + i;
-            obj.creationTime = '2014-05-15T09:34:26.550Z';
+            obj.creationTime = this.date;
             obj.type = 'experiment';
             obj.validationStatus = 'validated';
             obj.keywords = ['lifecycle keywords'];
@@ -79,12 +85,12 @@ class DatasetLoader {
             dataset_lifecycle.createdAt = this.date;
             dataset_lifecycle.updatedAt = this.date;
 
-            console.log(JSON.stringify(obj));
+            //console.log(JSON.stringify(obj));
             //console.log(JSON.stringify(dataset_lifecycle));
             const xhr = catamel_interface.send_to_catamel(obj, 'RawDatasets');
-            const xhr2 = catamel_interface.send_to_catamel(dataset_lifecycle, 'DatasetLifecycles');
-            console.log(xhr);
-            console.log(xhr2);
+            //const xhr2 = catamel_interface.send_to_catamel(dataset_lifecycle, 'DatasetLifecycles');
+            //console.log(xhr);
+            //console.log(xhr2);
 
         }
 
