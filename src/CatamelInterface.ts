@@ -11,22 +11,26 @@ class CatamelInterface{
         const token = new AccessT();
         const access_token = token.access_token;
 
-		const dm_url = 'kubetest02.dm.esss.dk:32222'
-		const ess_url = 'scicat02.esss.lu.se:32222'
-        const url = 'http://'+ess_url+'/api/v2/' + api_descriptor + '?access_token=' + access_token;
-	console.log(url)
 
 
 function reqListener () {
   console.log(this.responseText);
 }
 	xhr.addEventListener("load", reqListener);
+	    const local_url  = 'localhost:3000'
+	    const dm_url  = 'kubetest02.dm.esss.dk:32222'
+      	const ess_url = 'scicat02.esss.lu.se:32222'
+        const url = 'http://'+dm_url+'/api/v2/' + api_descriptor + '?access_token=' + access_token;
+	console.log(url)
 
         xhr.open('POST', url, true);
         xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
         // send the collected data as JSON
-        xhr.send(JSON.stringify(obj));
+		const catamel_obj=JSON.stringify(obj);
+        xhr.send(catamel_obj);
+		console.log(url);
+		console.log(catamel_obj);
 
 
         xhr.onload = function () {
