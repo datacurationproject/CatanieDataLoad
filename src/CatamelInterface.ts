@@ -20,7 +20,8 @@ function reqListener () {
 	    const local_url  = 'localhost:3000'
 	    const dm_url  = 'kubetest02.dm.esss.dk:32222'
       	const ess_url = 'scicat02.esss.lu.se:32222'
-        const url = 'http://'+dm_url+'/api/v2/' + api_descriptor + '?access_token=' + access_token;
+	    const dst_url  = 'scicatapi.esss.dk'
+        const url = 'http://'+dst_url+'/api/v2/' + api_descriptor + '?access_token=' + access_token;
 	console.log(url)
 
         xhr.open('POST', url, true);
