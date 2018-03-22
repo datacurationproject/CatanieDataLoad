@@ -5,6 +5,7 @@
 [![Build Status](https://travis-ci.org/datacurationproject/CatanieDataLoad.svg?branch=master)](https://travis-ci.org/datacurationproject/CatanieDataLoad)
 [![Coverage Status](https://coveralls.io/repos/github/datacurationproject/CatanieDataLoad/badge.svg?branch=master)](https://coveralls.io/github/datacurationproject/CatanieDataLoad?branch=master)
 [![DOI](https://zenodo.org/badge/103987354.svg)](https://zenodo.org/badge/latestdoi/103987354)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdatacurationproject%2FCatanieDataLoad.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdatacurationproject%2FCatanieDataLoad?ref=badge_shield)
 
 
 This repository contains classes to load synthetic metadata to the scicat data catalogue, for testing and benchmarking purposes.
@@ -85,9 +86,11 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 This project is licensed under the GPL-3 License - see the [LICENSE](LICENSE) file for details
 
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdatacurationproject%2FCatanieDataLoad.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdatacurationproject%2FCatanieDataLoad?ref=badge_large)
+
 ## Acknowledgments
 
 * Hat tip to anyone who's code was used
 * Inspiration
 * etc
-
