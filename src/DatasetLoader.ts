@@ -30,7 +30,7 @@ class DatasetLoader {
             let dataset_lifecycle = new DatasetLifecycle();
             this.date = '2018-03-05T09:34:26.550Z';
             this.futuredate = '2018-03-05T09:34:26.550Z';
-            let dataset_id = 400 + i;
+            let dataset_id = 500 + i;
             obj.principalInvestigator = 'J. Carberry';
             obj.endTime = this.date;
             obj.creationLocation = 'strong';
@@ -69,7 +69,7 @@ class DatasetLoader {
             obj.sampleId = '771' + i;
             obj.proposalId = 123 + i;
 
-            this.prefix = '10.17199/'
+            this.prefix = '10.17199/';
 
             dataset_lifecycle.id = this.prefix + obj.pid;
             dataset_lifecycle.isOnDisk = true;
@@ -95,7 +95,7 @@ class DatasetLoader {
             //console.log(JSON.stringify(obj));
             //console.log(JSON.stringify(dataset_lifecycle));
             const xhr = catamel_interface.send_to_catamel(obj, 'RawDatasets');
-            //const xhr2 = catamel_interface.send_to_catamel(dataset_lifecycle, 'DatasetLifecycles');
+            const xhr2 = catamel_interface.send_to_catamel(dataset_lifecycle, 'DatasetLifecycles');
             //console.log(xhr);
             //console.log(xhr2);
 
