@@ -84,8 +84,8 @@ class DatasetLoader {
             dataset_lifecycle.isExported = true;
             dataset_lifecycle.exportedTo = 'string';
             dataset_lifecycle.dateOfPublishing = this.date;
-  			dataset_lifecycle.ownerGroup= "multigrid",
-  			dataset_lifecycle.accessGroups= [ "multigrid" ],
+  			dataset_lifecycle.ownerGroup= "multigrid";
+  			dataset_lifecycle.accessGroups= [ "multigrid" ];
             dataset_lifecycle.datasetId = this.prefix + obj.pid;
             dataset_lifecycle.rawDatasetId = dataset_lifecycle.datasetId;
             dataset_lifecycle.derivedDatasetId = dataset_lifecycle.datasetId;
