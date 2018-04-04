@@ -11,4 +11,4 @@ RUN git clone https://github.com/datacurationproject/CatanieDataLoad.git
 WORKDIR /home/node/app/CatanieDataLoad
 RUN yarn install
 RUN ls
-RUN yarn test
+RUN yarn run mocha -r ts-node/register test/*.ts --exit

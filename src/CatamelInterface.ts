@@ -10,13 +10,20 @@ class CatamelInterface{
         const xhr = new XMLHttpRequest();
         const token = new AccessT();
         const access_token = token.access_token;
+        let url = new Map<string, string>();
 
 
 
-function reqListener () {
+
+        function reqListener () {
   console.log(this.responseText);
 }
-	xhr.addEventListener("load", reqListener);
+	xhr.addEventListener('load', reqListener);
+        url.set('local', 'localhost:3000')
+        url.set('dm', 'kubetest02.dm.esss.dk:32222')
+        url.set('ess', 'scicat02.esss.lu.se:32222')
+        url.set('dst', 'scicatapi.esss.dk')
+
 	    const local_url  = 'localhost:3000';
 	    const dm_url  = 'kubetest02.dm.esss.dk:32222';
       	const ess_url = 'scicat02.esss.lu.se:32222';
