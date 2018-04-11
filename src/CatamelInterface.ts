@@ -1,5 +1,6 @@
 import {AccessT} from './AccessToken';
 
+const fs = require('fs');
 "use strict";
 
 let XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
@@ -14,6 +15,7 @@ class CatamelInterface {
         this.url_pick = new Map<string, string>();
         this.url_pick.set('local', 'http://localhost:3000');
         this.url_pick.set('macmurphy.local', 'http://localhost:3000');
+        this.url_pick.set('CI00020036', 'http://localhost:3000');
         this.url_pick.set('kubetest01', 'https://kubetest02.dm.esss.dk:32222');
         this.url_pick.set('scicat01', 'http://scicat02.esss.lu.se:32222');
         this.url_pick.set('dst', 'https://scicatapi.esss.dk');
@@ -29,9 +31,22 @@ class CatamelInterface {
     }
 
     login() {
+
+
+        let rawdata = fs.readFileSync('/tmp/creds');
         const xhr = new XMLHttpRequest();
-        xhr.open('POST', url, true);
+        xhr.open('POST', this.url, true);
         xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+        const login_info = JSON.stringify(rawdata);
+        xhr.send(login_info);
+        console.log(this.url);
+
+
+        xhr.onload = function () {
+            console.log('DONE', xhr.readyState);
+            console.log('xhr.status=', xhr.status);
+            console.log('response=', xhr.responseText);
+        };
     }
 
     send_to_catamel(obj, api_descriptor) {
@@ -80,9 +95,9 @@ class CatamelInterface {
                 let data = JSON.parse(xhr.responseText);
                 let uploadResult = data['message'];
                 console.log('uploadResult=', uploadResult);
-                if (uploadResult == 'failure') {
+                if (uploadResult === 'failure') {
                     console.log('failed to upload file');
-                } else if (uploadResult == 'success') {
+                } else if (uploadResult === 'success') {
                     console.log('successfully uploaded file');
                 }
             }
