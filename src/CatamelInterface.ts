@@ -1,44 +1,68 @@
+import {AccessT} from './AccessToken';
+
+"use strict";
 
 let XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+const os = require('os');
 
-import { AccessT} from './AccessToken';
+class CatamelInterface {
+    url_pick: any;
+    url: string;
+    machine_name: string;
 
-class CatamelInterface{
+    constructor() {
+        this.url_pick = new Map<string, string>();
+        this.url_pick.set('local', 'http://localhost:3000');
+        this.url_pick.set('macmurphy.local', 'http://localhost:3000');
+        this.url_pick.set('kubetest01', 'https://kubetest02.dm.esss.dk:32222');
+        this.url_pick.set('scicat01', 'http://scicat02.esss.lu.se:32222');
+        this.url_pick.set('dst', 'https://scicatapi.esss.dk');
+
+        this.machine_name = os.hostname();
+
+        this.url = this.url_pick.get(this.machine_name);
+
+        console.log(this.machine_name);
+        console.log(this.url);
+
+
+    }
+
+    login() {
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    }
 
     send_to_catamel(obj, api_descriptor) {
 // construct an HTTP request
         const xhr = new XMLHttpRequest();
         const token = new AccessT();
         const access_token = token.access_token;
-        let url_pick = new Map<string, string>();
 
 
+        function reqListener() {
+            console.log(this.responseText);
+        }
+
+        xhr.addEventListener('load', reqListener);
 
 
-        function reqListener () {
-  console.log(this.responseText);
-}
-	xhr.addEventListener('load', reqListener);
-        url_pick.set('local', 'localhost:3000')
-        url_pick.set('dm', 'kubetest02.dm.esss.dk:32222')
-        url_pick.set('ess', 'scicat02.esss.lu.se:32222')
-        url_pick.set('dst', 'scicatapi.esss.dk')
-
-	    const local_url  = 'localhost:3000';
-	    const dm_url  = 'kubetest02.dm.esss.dk:32222';
-      	const ess_url = 'scicat02.esss.lu.se:32222';
-	    const dst_url  = 'scicatapi.esss.dk';
-        const url = 'https://'+dm_url+'/api/v2/' + api_descriptor + '?access_token=' + access_token;
-	console.log(url);
+        const local_url = 'http://localhost:3000';
+        const dm_url = 'https://kubetest02.dm.esss.dk:32222';
+        const ess_url = 'http://scicat02.esss.lu.se:32222';
+        const dst_url = 'https://scicatapi.esss.dk';
+        const url = dm_url + '/api/v2/' + api_descriptor + '?access_token=' + access_token;
+        console.log(url);
 
         xhr.open('POST', url, true);
         xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
         // send the collected data as JSON
-		const catamel_obj=JSON.stringify(obj);
+        const catamel_obj = JSON.stringify(obj);
         xhr.send(catamel_obj);
-		console.log(url);
-		console.log(catamel_obj);
+        console.log(url);
+        console.log(catamel_obj);
 
 
         xhr.onload = function () {
@@ -47,21 +71,21 @@ class CatamelInterface{
             console.log('response=', xhr.responseText);
         };
 
-	xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 &&  xhr.status === 200) {
-            console.log('xhr.readyState=', xhr.readyState);
-            console.log('xhr.status=', xhr.status);
-            console.log('response=', xhr.responseText);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log('xhr.readyState=', xhr.readyState);
+                console.log('xhr.status=', xhr.status);
+                console.log('response=', xhr.responseText);
 
-            let data = JSON.parse(xhr.responseText);
-            let uploadResult = data['message'];
-            console.log('uploadResult=', uploadResult);
-            if (uploadResult == 'failure') {
-                console.log('failed to upload file');
-            } else if (uploadResult == 'success') {
-                console.log('successfully uploaded file');
+                let data = JSON.parse(xhr.responseText);
+                let uploadResult = data['message'];
+                console.log('uploadResult=', uploadResult);
+                if (uploadResult == 'failure') {
+                    console.log('failed to upload file');
+                } else if (uploadResult == 'success') {
+                    console.log('successfully uploaded file');
+                }
             }
-};
 
         };
         return xhr;
@@ -70,4 +94,4 @@ class CatamelInterface{
 }
 
 
-export { CatamelInterface};
+export {CatamelInterface};
