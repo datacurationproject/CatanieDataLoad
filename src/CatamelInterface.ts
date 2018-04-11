@@ -71,7 +71,7 @@ class CatamelInterface {
         const dm_url = 'https://kubetest02.dm.esss.dk:32222';
         const ess_url = 'http://scicat02.esss.lu.se:32222';
         const dst_url = 'https://scicatapi.esss.dk';
-        const url = dm_url + '/api/v2/' + api_descriptor + '?access_token=' + access_token;
+        const url = this.url + '/api/v2/' + api_descriptor + '?access_token=' + access_token;
         console.log(url);
 
         xhr.open('POST', url, true);
