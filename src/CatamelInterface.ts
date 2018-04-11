@@ -10,15 +10,18 @@ class CatamelInterface {
     url_pick: any;
     url: string;
     machine_name: string;
+    access_token: string;
 
     constructor() {
         this.url_pick = new Map<string, string>();
         this.url_pick.set('local', 'http://localhost:3000');
         this.url_pick.set('macmurphy.local', 'http://localhost:3000');
         this.url_pick.set('CI00020036', 'http://localhost:3000');
-        this.url_pick.set('kubetest01', 'https://kubetest02.dm.esss.dk:32222');
+        this.url_pick.set('kubetest01', 'https://kubetest02.dm.esss.dk:32223');
+
         this.url_pick.set('scicat01', 'http://scicat02.esss.lu.se:32222');
         this.url_pick.set('dst', 'https://scicatapi.esss.dk');
+
 
         this.machine_name = os.hostname();
 
@@ -26,7 +29,9 @@ class CatamelInterface {
 
         console.log(this.machine_name);
         console.log(this.url);
+        this.login();
 
+        this.access_token = 'x';
 
     }
 
@@ -53,7 +58,6 @@ class CatamelInterface {
 // construct an HTTP request
         const xhr = new XMLHttpRequest();
         const token = new AccessT();
-        const access_token = token.access_token;
 
 
         function reqListener() {
