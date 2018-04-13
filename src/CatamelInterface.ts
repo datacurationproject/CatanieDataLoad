@@ -23,8 +23,7 @@ class CatamelInterface {
             "dst": "https://scicatapi.esss.dk"
         };
 
-        this.path ='/tmp/creds'
-
+        this.path = '/tmp/creds';
 
 
         this.machine_name = os.hostname();
@@ -40,12 +39,12 @@ class CatamelInterface {
     }
 
     login() {
-        let rawdata={'user':'fhjkda','password':'fhgjek'}
+        let rawdata = {'user': 'fhjkda', 'password': 'fhgjek'};
         fs.lstat(this.path, (err, stats) => {
 
-            if(err)
+            if (err)
                 return console.log(err); //Handle error
-            let rawdata = fs.readFileSync('/tmp/creds');
+            rawdata = fs.readFileSync('/tmp/creds');
 
             console.log(`Is file: ${stats.isFile()}`);
         });

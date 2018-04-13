@@ -31,7 +31,7 @@ class DatasetLoader {
         for (let i = 0; i < this.dataset_number; i++) {
             let obj = new Dataset();
             let dataset_lifecycle = new DatasetLifecycle();
-            let dataset_id = 500 + i;
+            let dataset_id = 1500 + i;
             obj.principalInvestigator = 'J. Carberry';
             obj.endTime = this.date;
             obj.creationLocation = 'strong';
@@ -96,8 +96,8 @@ class DatasetLoader {
             //console.log(JSON.stringify(dataset_lifecycle));
             const xhr = catamel_interface.send_to_catamel(obj, 'RawDatasets');
             const xhr2 = catamel_interface.send_to_catamel(dataset_lifecycle, 'DatasetLifecycles');
-            //console.log(xhr);
-            //console.log(xhr2);
+            console.log(xhr);
+            console.log(xhr2);
 
         }
 
