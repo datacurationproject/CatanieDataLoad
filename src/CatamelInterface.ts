@@ -4,6 +4,22 @@ let XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 import { AccessT} from './AccessToken';
 
 class CatamelInterface{
+    url: string;
+
+
+    constructor(){
+        url_pick.set('local', 'localhost:3000')
+        url_pick.set('dm', 'kubetest02.dm.esss.dk:32222')
+        url_pick.set('ess', 'scicat02.esss.lu.se:32222')
+        url_pick.set('dst', 'scicatapi.esss.dk')
+
+        const local_url  = 'localhost:3000';
+        const dm_url  = 'kubetest02.dm.esss.dk:32222';
+        const ess_url = 'scicat02.esss.lu.se:32222';
+        const dst_url  = 'scicatapi.esss.dk';
+        this.url = 'https://'+dm_url+'/api/v2/' + api_descriptor + '?access_token=' + access_token;
+        console.log(url);
+    }
 
     send_to_catamel(obj, api_descriptor) {
 // construct an HTTP request
@@ -19,19 +35,9 @@ class CatamelInterface{
   console.log(this.responseText);
 }
 	xhr.addEventListener('load', reqListener);
-        url_pick.set('local', 'localhost:3000')
-        url_pick.set('dm', 'kubetest02.dm.esss.dk:32222')
-        url_pick.set('ess', 'scicat02.esss.lu.se:32222')
-        url_pick.set('dst', 'scicatapi.esss.dk')
 
-	    const local_url  = 'localhost:3000';
-	    const dm_url  = 'kubetest02.dm.esss.dk:32222';
-      	const ess_url = 'scicat02.esss.lu.se:32222';
-	    const dst_url  = 'scicatapi.esss.dk';
-        const url = 'https://'+dm_url+'/api/v2/' + api_descriptor + '?access_token=' + access_token;
-	console.log(url);
 
-        xhr.open('POST', url, true);
+        xhr.open('POST', this.url, true);
         xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
         // send the collected data as JSON
