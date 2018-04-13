@@ -15,7 +15,7 @@ let catamel_interface = new CatamelInterface();
 class DatasetLoader {
     date: any;
     futuredate: any;
-    dataset_number: number = 15;
+    dataset_number: number;
     prefix: any;
     instrument: any;
 
@@ -23,6 +23,7 @@ class DatasetLoader {
         this.instrument = ["NMX", "BEER", "C-SPEC", "BIFROST", "MIRACLES", "MAGIC", "T-REX", "HEIMDAL", "LOKI", "FREIA", "ESTIA", "SKADI", "VESPA", "ODIN ", "DREAM"];
         this.date = '2018-03-05T09:34:26.550Z';
         this.futuredate = '2018-03-05T09:34:26.550Z';
+        this.dataset_number = 15;
         this.prefix = '10.17199/';
     }
 
