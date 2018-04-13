@@ -31,18 +31,24 @@ describe('Access Token', () => {
 describe('Job Loader', () => {
     it('checks token is string', () => {
         let job = new JobLoader();
+        let job_num = job._number_of_jobs_to_load ;
+        expect(job_num).to.be.above(1);
     });
 });
 
 
-describe('Job Loader', () => {
-    it('checks token is string', () => {
-        let job = new DatasetLoader();
+describe('Dataset Loader', () => {
+    it('checks dataset number is a  number', () => {
+        let dataset = new DatasetLoader();
+        let dataset_num = dataset.dataset_number;
+        expect(dataset_num).to.be.above(1);
     });
 });
 
-describe('Job Loader', () => {
-    it('checks token is string', () => {
-        let job = new CatamelInterface();
+describe('Catamel Interface', () => {
+    it('checks machine name is string', () => {
+        let cat = new CatamelInterface();
+        let token = cat.machine_name;
+        expect(token).to.be.a('string');
     });
 });
