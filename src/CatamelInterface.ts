@@ -11,6 +11,7 @@ class CatamelInterface {
     url: string;
     machine_name: string;
     access_token: string;
+    path: string;
 
     constructor() {
         this.url_pick = {
@@ -21,6 +22,9 @@ class CatamelInterface {
             "scicat01": "http://scicat02.esss.lu.se:32222",
             "dst": "https://scicatapi.esss.dk"
         };
+
+        this.path ='/tmp/creds'
+
 
 
         this.machine_name = os.hostname();
@@ -36,9 +40,16 @@ class CatamelInterface {
     }
 
     login() {
+        let rawdata={'user':'fhjkda','password':'fhgjek'}
+        fs.lstat(this.path, (err, stats) => {
 
+            if(err)
+                return console.log(err); //Handle error
+            let rawdata = fs.readFileSync('/tmp/creds');
 
-        let rawdata = fs.readFileSync('/tmp/creds');
+            console.log(`Is file: ${stats.isFile()}`);
+        });
+
         const xhr = new XMLHttpRequest();
         xhr.open('POST', this.url, true);
         xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
