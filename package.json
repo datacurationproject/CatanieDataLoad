@@ -4,7 +4,7 @@
   "description": "",
   "main": "new.js",
   "scripts": {
-    "test": "nyc mocha --exit ",
+    "test": "nyc mocha  test/*.ts --exit ",
     "cover": "istanbul cover _mocha",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
