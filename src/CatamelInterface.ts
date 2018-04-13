@@ -32,7 +32,7 @@ class CatamelInterface {
         this.login();
 
         const token = new AccessT();
-        this.access_token = token.get_token();
+        this.access_token = token.access_token();
 
     }
 
