@@ -4,23 +4,27 @@
  * @version 0.2
  */
 
-import {CatamelInterface} from './CatamelInterface';
+import {AbstractInterface} from './AbstractInterface';
 import {Job} from './CatamelClasses';
 
 
 class JobLoader {
+    date: any;
+
+    constructor(catamel_interface: AbstractInterface) {
+        this.date = new Date('2015-03-25T12:00:00Z');
+        this.number_of_jobs_to_load = 20;
+        this.catamel_interface = catamel_interface;
+    }
+
+    private _number_of_jobs_to_load: any;
+
     get number_of_jobs_to_load(): any {
         return this._number_of_jobs_to_load;
     }
 
     set number_of_jobs_to_load(value: any) {
         this._number_of_jobs_to_load = value;
-    }
-    date : any;
-    private _number_of_jobs_to_load: any;
-    constructor() {
-        this.date = new Date('2015-03-25T12:00:00Z');
-        this.number_of_jobs_to_load = 20;
     }
 
     load_jobs() {
@@ -42,18 +46,13 @@ class JobLoader {
 
             //console.log(JSON.stringify(my_new_job));
 
-            let catamel_interface = new CatamelInterface();
-            const xhdr = catamel_interface.send_to_catamel(my_new_job, 'Jobs');
+            const xhdr = this.catamel_interface.send_to_catamel(my_new_job, 'Jobs');
             console.log(xhdr);
 
         }
     }
 
 }
-
-
-
-
 
 
 export {JobLoader};

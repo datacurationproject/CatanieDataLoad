@@ -1,18 +1,13 @@
 // Reference mocha-typescript's global definitions:
-import {slow, suite, test, timeout} from "mocha-typescript";
 import 'mocha';
 import {AccessT} from "../src/AccessToken";
-import {CatamelInterface} from "../src/CatamelInterface";
+import {FakeInterface} from "../src/FakeInterface";
 import {DatasetLoader} from "../src/DatasetLoader"
 import {JobLoader} from "../src/JobLoader"
 import {expect} from 'chai'
 
 
-
 /// <reference path="../node_modules/mocha-typescript/globals.d.ts" />
-
-
-
 
 
 describe('Access Token', () => {
@@ -28,14 +23,15 @@ describe('Access Token', () => {
 describe('Job Loader', () => {
     it('checks job number is a  number', () => {
         let job = new JobLoader();
-        let job_num = job.number_of_jobs_to_load ;
+        let job_num = job.number_of_jobs_to_load;
         expect(job_num).to.be.above(1);
     });
 });
 
 
 describe('Dataset Loader2', () => {
-    let dataset = new DatasetLoader();
+    let catamel_interface = new FakeInterface();
+    let dataset = new DatasetLoader(catamel_interface);
     it('checks dataset number is a  number', () => {
         let dataset_num = dataset.dataset_number;
         expect(dataset_num).to.be.above(1);
@@ -56,7 +52,7 @@ describe('Dataset Loader2', () => {
 
 describe('Catamel Interface2', () => {
     it('checks machine name is string', () => {
-        let cat = new CatamelInterface();
+        let cat = new FakeInterface();
         let token = cat.machine_name;
         expect(token).to.be.a('string');
     });
