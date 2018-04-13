@@ -24,6 +24,7 @@ class CatamelInterface {
 
 
         this.machine_name = os.hostname();
+        this.machine_name = "kubetest01";
 
         this.url = this.url_pick[this.machine_name];
 
