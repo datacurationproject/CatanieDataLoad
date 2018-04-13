@@ -44,5 +44,6 @@ describe('Job Loader', () => {
 describe('Job Loader', () => {
     it('checks token is string', () => {
         let job = new CatamelInterface();
+        job.login();
     });
 });
