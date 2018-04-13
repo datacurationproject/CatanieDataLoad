@@ -20,7 +20,7 @@ class JobLoader {
     private _number_of_jobs_to_load: any;
     constructor() {
         this.date = new Date('2015-03-25T12:00:00Z');
-        this._number_of_jobs_to_load = 20;
+        this.number_of_jobs_to_load = 20;
     }
 
     load_jobs() {
