@@ -34,6 +34,8 @@ describe('Dataset Loader2', () => {
     let dataset = new DatasetLoader(catamel_interface);
     it('checks dataset number is a  number', () => {
         let dataset_num = dataset.dataset_number;
+        dataset.load_dataset();
+        catamel_interface.login();
         expect(dataset_num).to.be.above(1);
     });
     it('checks prefix is a  string', () => {

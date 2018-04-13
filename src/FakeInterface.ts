@@ -6,6 +6,7 @@ class FakeInterface {
 
     constructor() {
         //super();
+        this.machine_name = "kubetest01";
     }
 
     login() {
