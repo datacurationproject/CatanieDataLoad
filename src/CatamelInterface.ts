@@ -31,7 +31,8 @@ class CatamelInterface {
         console.log(this.url);
         this.login();
 
-        this.access_token = 'x';
+        const token = new AccessT();
+        this.access_token = token.get_token();
 
     }
 
@@ -57,7 +58,6 @@ class CatamelInterface {
     send_to_catamel(obj, api_descriptor) {
 // construct an HTTP request
         const xhr = new XMLHttpRequest();
-        const token = new AccessT();
 
 
         function reqListener() {
@@ -71,7 +71,7 @@ class CatamelInterface {
         const dm_url = 'https://kubetest02.dm.esss.dk:32222';
         const ess_url = 'http://scicat02.esss.lu.se:32222';
         const dst_url = 'https://scicatapi.esss.dk';
-        const url = this.url + '/api/v2/' + api_descriptor + '?access_token=' + access_token;
+        const url = this.url + '/api/v2/' + api_descriptor + '?access_token=' + this.access_token;
         console.log(url);
 
         xhr.open('POST', url, true);
