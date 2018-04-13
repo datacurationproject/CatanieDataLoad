@@ -13,19 +13,19 @@ class CatamelInterface {
     access_token: string;
 
     constructor() {
-        this.url_pick = new Map<string, string>();
-        this.url_pick.set('local', 'http://localhost:3000');
-        this.url_pick.set('macmurphy.local', 'http://localhost:3000');
-        this.url_pick.set('CI00020036', 'http://localhost:3000');
-        this.url_pick.set('kubetest01', 'https://kubetest02.dm.esss.dk:32223');
-
-        this.url_pick.set('scicat01', 'http://scicat02.esss.lu.se:32222');
-        this.url_pick.set('dst', 'https://scicatapi.esss.dk');
+        this.url_pick = {
+            "local": "http://localhost:3000",
+            "macmurphy.local": "http://localhost:3000",
+            "CI00020036": "http://localhost:3000",
+            "kubetest01": "https://kubetest02.dm.esss.dk:32223",
+            "scicat01": "http://scicat02.esss.lu.se:32222",
+            "dst": "https://scicatapi.esss.dk"
+        };
 
 
         this.machine_name = os.hostname();
 
-        this.url = this.url_pick.get(this.machine_name);
+        this.url = this.url_pick[this.machine_name];
 
         console.log(this.machine_name);
         console.log(this.url);
