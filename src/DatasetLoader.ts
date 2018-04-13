@@ -44,7 +44,7 @@ class DatasetLoader {
             obj.owner = 'Gareth Murphy';
             obj.orcidOfOwner = 'orcid.org/0000-0002-1825-0097';
             obj.contactEmail = 'gareth.murphy@esss.se';
-            obj.sourceFolder = '/'+this.instrument[i]+'/disk' + i;
+            obj.sourceFolder = '/'+this.instrument[i % 15]+'/disk' + i;
             obj.size = 10 + i;
             obj.packedSize = 10 + i;
             obj.creationTime = '2014-05-15T09:34:26.550Z';
