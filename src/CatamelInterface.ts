@@ -31,8 +31,6 @@ class CatamelInterface {
         console.log(this.url);
         this.login();
 
-        const token = new AccessT();
-        this.access_token = token.access_token();
 
     }
 
@@ -58,6 +56,7 @@ class CatamelInterface {
     send_to_catamel(obj, api_descriptor) {
 // construct an HTTP request
         const xhr = new XMLHttpRequest();
+        const token = new AccessT();
 
 
         function reqListener() {
@@ -66,8 +65,9 @@ class CatamelInterface {
 
         xhr.addEventListener('load', reqListener);
 
+        let access_token = token.access_token;
 
-        const url = this.url + '/api/v2/' + api_descriptor + '?access_token=' + this.access_token;
+        const url = this.url + '/api/v2/' + api_descriptor + '?access_token=' + access_token;
         console.log(url);
 
         xhr.open('POST', url, true);
