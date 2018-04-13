@@ -33,10 +33,22 @@ describe('Job Loader', () => {
 
 
 describe('Dataset Loader2', () => {
+    let dataset = new DatasetLoader();
     it('checks dataset number is a  number', () => {
-        let dataset = new DatasetLoader();
         let dataset_num = dataset.dataset_number;
         expect(dataset_num).to.be.above(1);
+    });
+    it('checks prefix is a  string', () => {
+        let prefix = dataset.prefix;
+        expect(prefix).to.be.a('string');
+    });
+    it('checks date is a  string', () => {
+        let date = dataset.date;
+        expect(date).to.be.a('string');
+    });
+    it('checks futuredate is a  string', () => {
+        let futuredate = dataset.futuredate;
+        expect(futuredate).to.be.a('string');
     });
 });
 

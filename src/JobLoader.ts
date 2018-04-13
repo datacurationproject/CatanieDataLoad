@@ -52,10 +52,8 @@ class JobLoader {
 }
 
 
-let job_loader = new JobLoader();
 
 
-job_loader.load_jobs();
 
 
 export {JobLoader};

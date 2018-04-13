@@ -12,24 +12,24 @@ import {Dataset, DatasetLifecycle} from './CatamelClasses';
 let catamel_interface = new CatamelInterface();
 
 
-
 class DatasetLoader {
-	constructor(){
-	this.instrument = ["NMX", "BEER", "C-SPEC", "BIFROST", "MIRACLES", "MAGIC", "T-REX", "HEIMDAL", "LOKI", "FREIA", "ESTIA", "SKADI", "VESPA", "ODIN ", "DREAM"];
-}
     date: any;
     futuredate: any;
     dataset_number: number = 15;
     prefix: any;
-	instrument: any;
+    instrument: any;
 
+    constructor() {
+        this.instrument = ["NMX", "BEER", "C-SPEC", "BIFROST", "MIRACLES", "MAGIC", "T-REX", "HEIMDAL", "LOKI", "FREIA", "ESTIA", "SKADI", "VESPA", "ODIN ", "DREAM"];
+        this.date = '2018-03-05T09:34:26.550Z';
+        this.futuredate = '2018-03-05T09:34:26.550Z';
+        this.prefix = '10.17199/';
+    }
 
     load_dataset() {
         for (let i = 0; i < this.dataset_number; i++) {
             let obj = new Dataset();
             let dataset_lifecycle = new DatasetLifecycle();
-            this.date = '2018-03-05T09:34:26.550Z';
-            this.futuredate = '2018-03-05T09:34:26.550Z';
             let dataset_id = 500 + i;
             obj.principalInvestigator = 'J. Carberry';
             obj.endTime = this.date;
@@ -44,7 +44,7 @@ class DatasetLoader {
             obj.owner = 'Gareth Murphy';
             obj.orcidOfOwner = 'orcid.org/0000-0002-1825-0097';
             obj.contactEmail = 'gareth.murphy@esss.se';
-            obj.sourceFolder = '/'+this.instrument[i % 15]+'/disk' + i;
+            obj.sourceFolder = '/' + this.instrument[i % 15] + '/disk' + i;
             obj.size = 10 + i;
             obj.packedSize = 10 + i;
             obj.creationTime = '2014-05-15T09:34:26.550Z';
@@ -56,10 +56,10 @@ class DatasetLoader {
             obj.userTargetLocation = 'C-SPEC';
             obj.classification = 'AV=medium,CO=low';
             obj.license = 'ESS';
-	    obj.version= "string";
-	    obj.doi= "string";
-	    obj.isPublished = true;
-            obj.ownerGroup = 'p2222' ;
+            obj.version = "string";
+            obj.doi = "string";
+            obj.isPublished = true;
+            obj.ownerGroup = 'p2222';
             obj.accessGroups = [
                 'multigrid',
                 'p2222'
@@ -69,7 +69,6 @@ class DatasetLoader {
             obj.sampleId = '771' + i;
             obj.proposalId = 123 + i;
 
-            this.prefix = '10.17199/';
 
             dataset_lifecycle.id = this.prefix + obj.pid;
             dataset_lifecycle.isOnDisk = true;
@@ -84,8 +83,8 @@ class DatasetLoader {
             dataset_lifecycle.isExported = true;
             dataset_lifecycle.exportedTo = 'string';
             dataset_lifecycle.dateOfPublishing = this.date;
-  			dataset_lifecycle.ownerGroup= "multigrid";
-  			dataset_lifecycle.accessGroups= [ "multigrid" ];
+            dataset_lifecycle.ownerGroup = "multigrid";
+            dataset_lifecycle.accessGroups = ["multigrid"];
             dataset_lifecycle.datasetId = this.prefix + obj.pid;
             dataset_lifecycle.rawDatasetId = dataset_lifecycle.datasetId;
             dataset_lifecycle.derivedDatasetId = dataset_lifecycle.datasetId;
@@ -104,12 +103,6 @@ class DatasetLoader {
     }
 
 }
-
-
-let ds_load = new DatasetLoader();
-
-
-ds_load.load_dataset();
 
 
 export {DatasetLoader};
