@@ -35,14 +35,14 @@ SciCat
 
 Install packages
 ```
-npm install
+yarn install
 ```
 
 ```
 node ./src/DatasetLoader.js
 ```
 ```
-ts-node ./src/DatasetLoader.ts
+yarn ts-node ./src/DatasetLoader.ts
 ```
 
 
@@ -52,7 +52,7 @@ Tests use mocha
 
 You can try running 
 ```
-npm test
+yarn test
 ```
 
 Tests should run automatically on travis-ci.org
