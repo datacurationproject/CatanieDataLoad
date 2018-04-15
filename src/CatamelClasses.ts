@@ -1,3 +1,4 @@
+"use strict";
 class Dataset {
     'principalInvestigator': any;
     'endTime': any;

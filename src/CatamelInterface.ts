@@ -1,3 +1,4 @@
+"use strict";
 import {AbstractInterface} from './AbstractInterface';
 import {AccessT} from './AccessToken';
 

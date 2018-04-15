@@ -1,3 +1,4 @@
+"use strict";
 /**
  * @file Loads jobs into catamel
  * @author Gareth Murphy
@@ -24,7 +25,6 @@ class AccessT {
     set access_token(value: string) {
         this._access_token = value;
     }
-
 
 
 }

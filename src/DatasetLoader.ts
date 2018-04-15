@@ -1,3 +1,4 @@
+"use strict";
 /**
  * @file Loads jobs into catamel
  * @author Gareth Murphy
