@@ -2,7 +2,7 @@ import AbstractInterface from "./AbstractInterface";
 
 typeof AbstractInterface;
 
-class FakeInterface {
+class FakeInterface {//extends AbstractInterface{
 
     constructor() {
         //super();

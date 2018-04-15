@@ -16,14 +16,18 @@ describe('Access Token', () => {
         let token = access.access_token;
         expect(token).to.be.a('string');
         expect(token).to.have.lengthOf(64);
+        access.access_token = "bGIxwenScw36wD5nHnjZHa7a9FDc40BHC4XCHnaIOQH0C2fFcFhAnXpKKX32SFbs";
     });
 });
 
 
 describe('Job Loader', () => {
     it('checks job number is a  number', () => {
-        let job = new JobLoader();
+        let catamel_interface = new FakeInterface();
+        let job = new JobLoader(catamel_interface);
+        job.number_of_jobs_to_load=2;
         let job_num = job.number_of_jobs_to_load;
+        job.load_jobs();
         expect(job_num).to.be.above(1);
     });
 });
