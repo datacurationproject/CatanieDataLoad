@@ -32,7 +32,6 @@ class AbstractInterface {
 
         console.log(this.machine_name);
         console.log(this.url);
-        this.login();
 
 
     }
