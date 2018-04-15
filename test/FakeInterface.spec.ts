@@ -4,10 +4,7 @@ import {FakeInterface} from "../src/FakeInterface";
 import {expect} from 'chai'
 
 
-/// <reference path="../node_modules/mocha-typescript/globals.d.ts" />
-
-
-describe('Catamel Interface2', () => {
+describe('Fake Interface2', () => {
     it('checks machine name is string', () => {
         let cat = new FakeInterface();
         let token = cat.machine_name;

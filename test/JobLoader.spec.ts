@@ -5,9 +5,6 @@ import {JobLoader} from "../src/JobLoader"
 import {expect} from 'chai'
 
 
-/// <reference path="../node_modules/mocha-typescript/globals.d.ts" />
-
-
 describe('Job Loader', () => {
     it('checks job number is a  number', () => {
         let catamel_interface = new FakeInterface();

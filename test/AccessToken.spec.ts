@@ -4,9 +4,6 @@ import {AccessT} from "../src/AccessToken";
 import {expect} from 'chai'
 
 
-/// <reference path="../node_modules/mocha-typescript/globals.d.ts" />
-
-
 describe('Access Token', () => {
     it('checks token is string', () => {
         let access = new AccessT();
