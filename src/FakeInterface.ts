@@ -1,7 +1,5 @@
 "use strict";
-import AbstractInterface from "./AbstractInterface";
 
-typeof AbstractInterface;
 
 class FakeInterface {//extends AbstractInterface{
 
@@ -18,7 +16,7 @@ class FakeInterface {//extends AbstractInterface{
         console.log("Not actually sending");
     }
 
-};
+}
 
 
 export {FakeInterface}
