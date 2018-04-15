@@ -4,5 +4,9 @@ node_js:
   - "9"
 env:
   - CODACY_PROJECT_TOKEN ="16ba6c62937f40fe98063cd0f2361b57"
+  - CODECOV_TOKEN =":c644c860-2927-4051-a512-5f2efa323601"
 script:
-- yarn run mocha -r ts-node/register test/*.ts --exit
+  - yarn install codecov -g
+  - yarn run mocha -r ts-node/register test/*.ts --exit
+after_success:
+  - codecov
