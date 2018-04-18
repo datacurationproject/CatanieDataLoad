@@ -85,7 +85,7 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 ## License
 
-This project is licensed under the GPL-3 License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the BSD 2 Clause License - see the [LICENSE](LICENSE) file for details
 
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdatacurationproject%2FCatanieDataLoad.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdatacurationproject%2FCatanieDataLoad?ref=badge_large)
