@@ -22,7 +22,7 @@
     "all": true
   },
   "author": "Gareth Murphy",
-  "license": "GPL-3.0",
+  "license": "BSD-2-Clause",
   "dependencies": {
     "cleanup-dependencies": "0.0.6",
     "codacy-coverage": "^2.0.3",
