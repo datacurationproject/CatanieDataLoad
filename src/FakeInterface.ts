@@ -1,11 +1,13 @@
 "use strict";
 
 
-class FakeInterface {//extends AbstractInterface{
+import {AbstractInterface} from './AbstractInterface';
+
+class FakeInterface extends AbstractInterface {
 
     constructor() {
-        //super();
-        this.machine_name = "kubetest01";
+        super();
+        //this.machine_name = "kubetest01";
     }
 
     login() {
