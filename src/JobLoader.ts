@@ -11,6 +11,7 @@ import {Job} from './CatamelClasses';
 
 class JobLoader {
     date: any;
+    catamel_interface: any;
 
     constructor(catamel_interface: AbstractInterface) {
         this.date = new Date('2015-03-25T12:00:00Z');
