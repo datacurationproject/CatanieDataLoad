@@ -16,7 +16,7 @@ class AbstractInterface {
             "local": "http://localhost:3000",
             "macmurphy.local": "http://localhost:3000",
             "CI0020036": "http://localhost:3000",
-            "kubetest01": "https://kubetest02.dm.esss.dk:32223",
+            "kubetest01.dm.esss.dk": "https://kubetest02.dm.esss.dk:32223",
             "scicat01": "http://scicat02.esss.lu.se:32222",
             "dst": "https://scicatapi.esss.dk"
         };
