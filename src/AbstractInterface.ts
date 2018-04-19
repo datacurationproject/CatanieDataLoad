@@ -11,7 +11,6 @@ class AbstractInterface {
     path: string;
 
     constructor() {
-        this.access_t = new AccessT();
         this.url_pick = {
             "local": "http://localhost:3000",
             "macmurphy.local": "http://localhost:3000",

@@ -23,10 +23,10 @@ class DatasetLoader {
         this.instrument = ["NMX", "BEER", "C-SPEC", "BIFROST", "MIRACLES", "MAGIC", "T-REX", "HEIMDAL", "LOKI", "FREIA", "ESTIA", "SKADI", "VESPA", "ODIN ", "DREAM"];
         this.date = '2018-03-05T09:34:26.550Z';
         this.futuredate = '2018-03-05T09:34:26.550Z';
-        this.dataset_number = 2;
+        this.dataset_number = 1;
         this.prefix = '10.17199/';
         this.catamel_interface = abstract_interface;
-        this.starting_id = 1700;
+        this.starting_id = 1900;
 
     }
 
@@ -99,9 +99,9 @@ class DatasetLoader {
             //console.log(JSON.stringify(obj));
             //console.log(JSON.stringify(dataset_lifecycle));
             const xhr = this.catamel_interface.send_to_catamel(obj, 'RawDatasets');
-            const xhr2 = this.catamel_interface.send_to_catamel(dataset_lifecycle, 'DatasetLifecycles');
+            //const xhr2 = this.catamel_interface.send_to_catamel(dataset_lifecycle, 'DatasetLifecycles');
             console.log(xhr);
-            console.log(xhr2);
+            //console.log(xhr2);
 
         }
 

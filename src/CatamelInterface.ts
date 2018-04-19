@@ -20,7 +20,8 @@ class CatamelInterface extends AbstractInterface {
     login() {
 
         this.access_t = new AccessT();
-        let rawdata = data;
+        console.log('previous access token', this.access_t.access_token );
+        console.log('private data ', data);
         fs.lstat(this.path, (err, stats) => {
 
             if (err)
@@ -29,6 +30,7 @@ class CatamelInterface extends AbstractInterface {
 
             console.log(`Is file: ${stats.isFile()}`);
         });
+        let rawdata = data;
 
         var options = {
             url: this.url + '/api/v2/Users/login',
@@ -39,17 +41,21 @@ class CatamelInterface extends AbstractInterface {
             requestCert: true
         };
 
+        let local_access = 'test';
 
-        rp(options)
+        let login_promise= rp(options)
             .then(function (parsedBody) {
-                this.access_t.access_token = parsedBody.id;
+                //this.access_t.access_token = parsedBody.id;
                 console.log('gm test output ', parsedBody.id);
+                local_access = parsedBody.id;
+                return (parsedBody.id);
             })
             .catch(function (err) {
                 console.log('what went wrong?', err);
                 // POST failed...
             });
 
+        console.log('did it work?', this.access_t.access_token);
 
         //console.log(response.body.id);
         //console.log('gm output ',response);
@@ -74,7 +80,7 @@ class CatamelInterface extends AbstractInterface {
 
         xhr.addEventListener('load', reqListener);
 
-        let access_token = token.access_token;
+        let access_token = this.access_t.access_token;
 
         const url = this.url + '/api/v2/' + api_descriptor + '?access_token=' + access_token;
         console.log(url);
