@@ -1,7 +1,7 @@
 "use strict";
 import {AbstractInterface} from './AbstractInterface';
 import {AccessT} from './AccessToken';
-
+import * as data from './config.json'
 
 var rp = require('request-promise');
 
@@ -20,7 +20,7 @@ class CatamelInterface extends AbstractInterface {
     login() {
 
         this.access_t = new AccessT();
-        let rawdata = {"username": "ingestor", "password": "aman"};
+        let rawdata = data;
         fs.lstat(this.path, (err, stats) => {
 
             if (err)

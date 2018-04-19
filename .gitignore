@@ -112,3 +112,4 @@ typings/
 *.js
 *.js.map
 yarn.lock
+config.json
