@@ -1,15 +1,17 @@
 "use strict";
 const os = require('os');
+import {AccessT} from './AccessToken';
 
 
 class AbstractInterface {
     url_pick: any;
     url: string;
     machine_name: string;
-    access_token: string;
+    access_t: any;
     path: string;
 
     constructor() {
+        this.access_t = new AccessT();
         this.url_pick = {
             "local": "http://localhost:3000",
             "macmurphy.local": "http://localhost:3000",

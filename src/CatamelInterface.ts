@@ -3,6 +3,8 @@ import {AbstractInterface} from './AbstractInterface';
 import {AccessT} from './AccessToken';
 
 
+var rp = require('request-promise');
+
 const fs = require('fs');
 
 let XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
@@ -16,29 +18,44 @@ class CatamelInterface extends AbstractInterface {
 
 
     login() {
-        let rawdata = {'user': 'fhjkda', 'password': 'fhgjek'};
+        let rawdata = {'user': 'ingestor', 'password': 'xgxgyu'};
         fs.lstat(this.path, (err, stats) => {
 
             if (err)
-                return console.log(err); //Handle error
+                return console.log('error gm', err); //Handle error
             rawdata = fs.readFileSync('/tmp/creds');
 
             console.log(`Is file: ${stats.isFile()}`);
         });
 
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', this.url, true);
-        xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-        const login_info = JSON.stringify(rawdata);
-        xhr.send(login_info);
-        console.log(this.url);
-
-
-        xhr.onload = function () {
-            console.log('DONE', xhr.readyState);
-            console.log('xhr.status=', xhr.status);
-            console.log('response=', xhr.responseText);
+        var options = {
+            url: this.url,
+            method: 'POST',
+            body: rawdata,
+            json: true,
+            rejectUnauthorized: false,
+            requestCert: true
         };
+
+
+        rp(options)
+            .then(function (parsedBody) {
+                // POST succeeded...
+            })
+            .catch(function (err) {
+                // POST failed...
+            });
+
+
+        //console.log(response.body.id);
+        //console.log('gm output ',response);
+
+
+
+
+
+
+
     }
 
     send_to_catamel(obj, api_descriptor) {

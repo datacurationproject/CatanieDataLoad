@@ -17,21 +17,25 @@ class DatasetLoader {
     prefix: any;
     instrument: any;
     catamel_interface: any;
+    starting_id: any;
 
     constructor(abstract_interface: AbstractInterface) {
         this.instrument = ["NMX", "BEER", "C-SPEC", "BIFROST", "MIRACLES", "MAGIC", "T-REX", "HEIMDAL", "LOKI", "FREIA", "ESTIA", "SKADI", "VESPA", "ODIN ", "DREAM"];
         this.date = '2018-03-05T09:34:26.550Z';
         this.futuredate = '2018-03-05T09:34:26.550Z';
-        this.dataset_number = 15;
+        this.dataset_number = 2;
         this.prefix = '10.17199/';
         this.catamel_interface = abstract_interface;
+        this.starting_id = 1600;
+
     }
 
     load_dataset() {
+        this.catamel_interface.login();
         for (let i = 0; i < this.dataset_number; i++) {
             let obj = new Dataset();
             let dataset_lifecycle = new DatasetLifecycle();
-            let dataset_id = 1500 + i;
+            let dataset_id = this.starting_id + i;
             obj.principalInvestigator = 'J. Carberry';
             obj.endTime = this.date;
             obj.creationLocation = 'strong';
