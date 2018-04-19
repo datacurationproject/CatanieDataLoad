@@ -18,7 +18,7 @@ class CatamelInterface extends AbstractInterface {
 
 
     login() {
-        let rawdata = {'user': 'ingestor', 'password': 'xgxgyu'};
+        let rawdata = {"username": "ingestor", "password": "xgxgyu"};
         fs.lstat(this.path, (err, stats) => {
 
             if (err)
@@ -29,7 +29,7 @@ class CatamelInterface extends AbstractInterface {
         });
 
         var options = {
-            url: this.url,
+            url: this.url + '/api/v2/Users/login',
             method: 'POST',
             body: rawdata,
             json: true,
@@ -40,9 +40,11 @@ class CatamelInterface extends AbstractInterface {
 
         rp(options)
             .then(function (parsedBody) {
-                // POST succeeded...
+                //this.access_t.access_token= parsedBody.id;
+                console.log('gm test output ', parsedBody.id);
             })
             .catch(function (err) {
+                console.log('what went wrong?', err);
                 // POST failed...
             });
 
