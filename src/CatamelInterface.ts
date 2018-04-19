@@ -18,6 +18,8 @@ class CatamelInterface extends AbstractInterface {
 
 
     login() {
+
+        this.access_t = new AccessT();
         let rawdata = {"username": "ingestor", "password": "aman"};
         fs.lstat(this.path, (err, stats) => {
 
