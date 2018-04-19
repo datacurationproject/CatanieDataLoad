@@ -10,7 +10,7 @@ const assert = require('assert');
 
 class AccessT {
     constructor() {
-        this._access_token = "bGIxwenScw36wD5nHnjZHa7a9FDc40BHC4XCHnaIOQH0C2fFcFhAnXpKKX32SFbs";
+        this._access_token = "FzANviG5wJ2Hejj3qxhc3tK0jF9hQCNH0BEFctH25dGrX8LeacFZKb8OsTESBe0h";
     }
 
     private _access_token: string;
