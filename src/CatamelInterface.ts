@@ -40,7 +40,7 @@ class CatamelInterface extends AbstractInterface {
 
         rp(options)
             .then(function (parsedBody) {
-                //this.access_t.access_token= parsedBody.id;
+                this.access_t.access_token = parsedBody.id;
                 console.log('gm test output ', parsedBody.id);
             })
             .catch(function (err) {
