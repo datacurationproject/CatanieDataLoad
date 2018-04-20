@@ -1,5 +1,9 @@
 # CatanieDataLoad
 
+<img src="assets/scicat.png" alt="alt text" width="100" height="100">
+
+
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/datacurationproject/CatanieDataLoad.svg)](https://greenkeeper.io/)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e9c631a50f8c4018925d0aaedbb38d30)](https://www.codacy.com/app/garethcmurphy/CatanieDataLoad?utm_source=github.com&utm_medium=referral&utm_content=datacurationproject/CatanieDataLoad&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/datacurationproject/CatanieDataLoad.svg?branch=master)](https://travis-ci.org/datacurationproject/CatanieDataLoad)
