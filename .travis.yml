@@ -6,7 +6,7 @@ env:
   - CODACY_PROJECT_TOKEN ="lTbP7Sp77jutsccIL2GyzUzYweHv4nf5K"
   - CODECOV_TOKEN =":c644c860-2927-4051-a512-5f2efa323601"
 script:
-  - echo "{\"username\":\"fj\",\"password\":\"fjkd\"}" > src/config.json
+  - printf '{"username":"fj","password":"fjkd"}' > src/config.json
   - yarn global add codecov
   - yarn run mocha -r ts-node/register test/*.ts --exit
   - yarn 
