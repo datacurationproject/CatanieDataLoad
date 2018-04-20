@@ -16,6 +16,7 @@ class FakeInterface extends AbstractInterface {
 
     send_to_catamel(obj, api_descriptor) {
         console.log("Not actually sending");
+        console.log(api_descriptor);
     }
 
 }

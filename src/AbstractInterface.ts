@@ -1,6 +1,5 @@
 "use strict";
 const os = require('os');
-import {AccessT} from './AccessToken';
 
 
 class AbstractInterface {
@@ -19,7 +18,7 @@ class AbstractInterface {
             "scicat01": "http://scicat02.esss.lu.se:32222",
             "dst": "https://scicatapi.esss.dk"
         };
-        this.path = '/tmp/creds';
+        this.path = './config.json';
 
 
         this.machine_name = os.hostname();
@@ -41,6 +40,7 @@ class AbstractInterface {
 
     send_to_catamel(obj, api_descriptor) {
         console.log("Not actually sending");
+        console.log(api_descriptor);
     }
 }
 

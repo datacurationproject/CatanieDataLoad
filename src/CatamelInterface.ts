@@ -3,7 +3,7 @@ import {AbstractInterface} from './AbstractInterface';
 import {AccessT} from './AccessToken';
 import * as data from './config.json'
 
-var rp = require('request-promise');
+const rp = require('request-promise');
 
 const fs = require('fs');
 
@@ -20,19 +20,22 @@ class CatamelInterface extends AbstractInterface {
     login() {
 
         this.access_t = new AccessT();
-        console.log('previous access token', this.access_t.access_token );
+        console.log('previous access token', this.access_t.access_token);
         console.log('private data ', data);
+        let sample_data = {"username": "fdwk", "password": "fjw"};
         fs.lstat(this.path, (err, stats) => {
 
-            if (err)
+            if (err) {
+                fs.writeFileSync(this.path, sample_data);
                 return console.log('error gm', err); //Handle error
-            rawdata = fs.readFileSync('/tmp/creds');
+            }
+            rawdata = fs.readFileSync(this.path);
 
             console.log(`Is file: ${stats.isFile()}`);
         });
         let rawdata = data;
 
-        var options = {
+        let options = {
             url: this.url + '/api/v2/Users/login',
             method: 'POST',
             body: rawdata,
@@ -43,7 +46,7 @@ class CatamelInterface extends AbstractInterface {
 
         let local_access = 'test';
 
-        let login_promise= rp(options)
+        let login_promise = rp(options)
             .then(function (parsedBody) {
                 //this.access_t.access_token = parsedBody.id;
                 console.log('gm test output ', parsedBody.id);
@@ -61,17 +64,11 @@ class CatamelInterface extends AbstractInterface {
         //console.log('gm output ',response);
 
 
-
-
-
-
-
     }
 
     send_to_catamel(obj, api_descriptor) {
 // construct an HTTP request
         const xhr = new XMLHttpRequest();
-        const token = new AccessT();
 
 
         function reqListener() {

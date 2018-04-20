@@ -16,7 +16,7 @@ describe('Dataset Loader2', () => {
         dataset.dataset_number = 2;
         dataset.load_dataset();
         catamel_interface.login();
-        expect(dataset_num).to.be.above(1);
+        expect(dataset_num).to.be.above(0);
     });
     it('checks prefix is a  string', () => {
         let prefix = dataset.prefix;
