@@ -5,12 +5,6 @@ import * as data from './config.json'
 
 const rp = require('request-promise');
 
-var request = require('request');
-
-
-const fs = require('fs');
-
-let XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 
 class CatamelInterface extends AbstractInterface {
 
@@ -23,7 +17,6 @@ class CatamelInterface extends AbstractInterface {
     login() {
 
         console.log('private data ', data);
-        let sample_data = {"username": "fdwk", "password": "fjw"};
         let rawdata = data;
         let options = {
             url: this.url + '/api/v2/Users/login',
@@ -33,7 +26,7 @@ class CatamelInterface extends AbstractInterface {
             rejectUnauthorized: false,
             requestCert: true
         };
-        let a = rp(options).then((body) => {
+        rp(options).then((body) => {
             this.access_t.access_token = body.id;
             console.log("login OK: " + body.id);
         });
@@ -57,13 +50,12 @@ class CatamelInterface extends AbstractInterface {
         };
 
 
-        let access_token = this.access_t.access_token;
 
 
         const catamel_obj = JSON.stringify(obj);
 
 
-        let a = rp(options).then((body) => {
+        rp(options).then((body) => {
             console.log("login OK: " + body.id);
             let access_token = body.id;
             const url = this.url + '/api/v2/' + api_descriptor + '?access_token=' + access_token;
@@ -107,8 +99,10 @@ class CatamelInterface extends AbstractInterface {
                 rejectUnauthorized: false,
                 requestCert: true
             };
-            for (let i = 0; i < 1000; i++) {
-                let data_promise = rp(options2)
+            const dataset_number = 1000;
+            console.log(dataset_number);
+            for (let i = 0; i < dataset_number; i++) {
+                rp(options2)
             }
         }).catch(function (err) {
             console.log('what went wrong?', err);
