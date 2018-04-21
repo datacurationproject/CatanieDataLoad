@@ -45,8 +45,7 @@ class CatamelInterface extends AbstractInterface {
 // construct an HTTP request
         this.access_t = new AccessT();
 
-        console.log('private data ', data);
-        let sample_data = {"username": "fdwk", "password": "fjw"};
+        //console.log('private data ', data);
         let rawdata = data;
         let options = {
             url: this.url + '/api/v2/Users/login',
