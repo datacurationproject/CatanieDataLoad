@@ -6,8 +6,8 @@
  */
 
 
-import {AbstractInterface} from './AbstractInterface';
-import {Dataset, DatasetLifecycle} from './CatamelClasses';
+import {AbstractInterface} from "./AbstractInterface";
+import {Dataset, DatasetLifecycle} from "./CatamelClasses";
 
 
 class DatasetLoader {
@@ -21,72 +21,72 @@ class DatasetLoader {
 
     constructor(abstract_interface: AbstractInterface) {
         this.instrument = ["NMX", "BEER", "C-SPEC", "BIFROST", "MIRACLES", "MAGIC", "T-REX", "HEIMDAL", "LOKI", "FREIA", "ESTIA", "SKADI", "VESPA", "ODIN ", "DREAM"];
-        this.date = '2018-03-05T09:34:26.550Z';
-        this.futuredate = '2018-03-05T09:34:26.550Z';
+        this.date = "2018-03-05T09:34:26.550Z";
+        this.futuredate = "2018-03-05T09:34:26.550Z";
         this.dataset_number = 1;
-        this.prefix = '10.17199/';
+        this.prefix = "10.17199/";
         this.catamel_interface = abstract_interface;
         this.starting_id = 1900;
 
     }
 
     load_dataset() {
-        this.catamel_interface.login();
+        //this.catamel_interface.login();
         for (let i = 0; i < this.dataset_number; i++) {
             let obj = new Dataset();
             let dataset_lifecycle = new DatasetLifecycle();
             let dataset_id = this.starting_id + i;
-            obj.principalInvestigator = 'J. Carberry';
+            obj.principalInvestigator = "J. Carberry";
             obj.endTime = this.date;
-            obj.creationLocation = 'strong';
-            obj.dataFormat = 'nexus-hdf5';
+            obj.creationLocation = "strong";
+            obj.dataFormat = "nexus-hdf5";
             obj.scientificMetadata = {
-                'CIF': 'H20',
-                'raw': true,
-                'processed': false
+                "CIF": "H20",
+                "raw": true,
+                "processed": false
             };
             obj.pid = dataset_id;
-            obj.owner = 'Gareth Murphy';
-            obj.orcidOfOwner = 'orcid.org/0000-0002-1825-0097';
-            obj.contactEmail = 'gareth.murphy@esss.se';
-            obj.sourceFolder = '/' + this.instrument[i % 15] + '/disk' + i;
+            obj.owner = "Gareth Murphy";
+            obj.orcidOfOwner = "orcid.org/0000-0002-1825-0097";
+            obj.contactEmail = "gareth.murphy@esss.se";
+            obj.sourceFolder = "/" + this.instrument[i % 15] + "/disk" + i;
             obj.size = 10 + i;
             obj.packedSize = 10 + i;
-            obj.creationTime = '2014-05-15T09:34:26.550Z';
+            obj.creationTime = "2014-05-15T09:34:26.550Z";
             obj.creationTime = this.date;
-            obj.type = 'experiment';
-            obj.validationStatus = 'validated';
-            obj.keywords = ['lifecycle keywords'];
-            obj.description = 'Dopamine -hydrobromide 100-200ms cooling from 100K ';
-            obj.userTargetLocation = 'C-SPEC';
-            obj.classification = 'AV=medium,CO=low';
-            obj.license = 'ESS';
+            obj.type = "experiment";
+            obj.validationStatus = "validated";
+            obj.keywords = ["lifecycle keywords"];
+            obj.description = "Dopamine -hydrobromide 100-200ms cooling from 100K ";
+            obj.userTargetLocation = "C-SPEC";
+            obj.classification = "AV=medium,CO=low";
+            obj.license = "ESS";
             obj.version = "string";
             obj.doi = "string";
             obj.isPublished = true;
-            obj.ownerGroup = 'p2222';
+            obj.ownerGroup = "p2222";
             obj.accessGroups = [
-                'multigrid',
-                'p2222'
+                "multigrid",
+                "p2222"
             ];
             obj.createdAt = this.date;
             obj.updatedAt = this.date;
-            obj.sampleId = '771' + i;
+            obj.sampleId = "771" + i;
             obj.proposalId = 123 + i;
 
 
             dataset_lifecycle.id = this.prefix + obj.pid;
             dataset_lifecycle.isOnDisk = true;
             dataset_lifecycle.isOnTape = true;
-            dataset_lifecycle.archiveStatusMessage = 'datasetRetrieved';
-            dataset_lifecycle.retrieveStatusMessage = 'retrieveStatus';
-            dataset_lifecycle.lastUpdateMessage = 'string';
-            dataset_lifecycle.archiveReturnMessage = 'archiveStatus';
+            dataset_lifecycle.archiveStatusMessage = "datasetRetrieved";
+            dataset_lifecycle.retrieveStatusMessage = "retrieveStatus";
+            dataset_lifecycle.lastUpdateMessage = "string";
+            dataset_lifecycle.archiveReturnMessage = "archiveStatus";
             dataset_lifecycle.dateOfLastMessage = this.date;
             dataset_lifecycle.dateOfDiskPurging = this.date;
             dataset_lifecycle.archiveRetentionTime = this.date;
             dataset_lifecycle.isExported = true;
-            dataset_lifecycle.exportedTo = 'string';
+            dataset_lifecycle.exportedTo = "string";
             dataset_lifecycle.dateOfPublishing = this.date;
             dataset_lifecycle.ownerGroup = "multigrid";
             dataset_lifecycle.accessGroups = ["multigrid"];
@@ -98,9 +98,9 @@ class DatasetLoader {
 
             //console.log(JSON.stringify(obj));
             //console.log(JSON.stringify(dataset_lifecycle));
-            const xhr = this.catamel_interface.send_to_catamel(obj, 'RawDatasets');
-            //const xhr2 = this.catamel_interface.send_to_catamel(dataset_lifecycle, 'DatasetLifecycles');
-            console.log(xhr);
+            this.catamel_interface.send_to_catamel(obj, "RawDatasets");
+            //const xhr2 = this.catamel_interface.send_to_catamel(dataset_lifecycle, "DatasetLifecycles");
+//            console.log(xhr);
             //console.log(xhr2);
 
         }

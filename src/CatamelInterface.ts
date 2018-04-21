@@ -5,6 +5,9 @@ import * as data from './config.json'
 
 const rp = require('request-promise');
 
+var request = require('request');
+
+
 const fs = require('fs');
 
 let XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
@@ -19,22 +22,32 @@ class CatamelInterface extends AbstractInterface {
 
     login() {
 
-        this.access_t = new AccessT();
-        console.log('previous access token', this.access_t.access_token);
         console.log('private data ', data);
         let sample_data = {"username": "fdwk", "password": "fjw"};
-        fs.lstat(this.path, (err, stats) => {
-
-            if (err) {
-                fs.writeFileSync(this.path, sample_data);
-                return console.log('error gm', err); //Handle error
-            }
-            rawdata = fs.readFileSync(this.path);
-
-            console.log(`Is file: ${stats.isFile()}`);
-        });
         let rawdata = data;
+        let options = {
+            url: this.url + '/api/v2/Users/login',
+            method: 'POST',
+            body: rawdata,
+            json: true,
+            rejectUnauthorized: false,
+            requestCert: true
+        };
+        let a = rp(options).then((body) => {
+            this.access_t.access_token = body.id;
+            console.log("login OK: " + body.id);
+        });
 
+
+    }
+
+    send_to_catamel(obj, api_descriptor) {
+// construct an HTTP request
+        this.access_t = new AccessT();
+
+        console.log('private data ', data);
+        let sample_data = {"username": "fdwk", "password": "fjw"};
+        let rawdata = data;
         let options = {
             url: this.url + '/api/v2/Users/login',
             method: 'POST',
@@ -44,78 +57,68 @@ class CatamelInterface extends AbstractInterface {
             requestCert: true
         };
 
-        let local_access = 'test';
-
-        let login_promise = rp(options)
-            .then(function (parsedBody) {
-                //this.access_t.access_token = parsedBody.id;
-                console.log('gm test output ', parsedBody.id);
-                local_access = parsedBody.id;
-                return (parsedBody.id);
-            })
-            .catch(function (err) {
-                console.log('what went wrong?', err);
-                // POST failed...
-            });
-
-        console.log('did it work?', this.access_t.access_token);
-
-        //console.log(response.body.id);
-        //console.log('gm output ',response);
-
-
-    }
-
-    send_to_catamel(obj, api_descriptor) {
-// construct an HTTP request
-        const xhr = new XMLHttpRequest();
-
-
-        function reqListener() {
-            console.log(this.responseText);
-        }
-
-        xhr.addEventListener('load', reqListener);
 
         let access_token = this.access_t.access_token;
 
-        const url = this.url + '/api/v2/' + api_descriptor + '?access_token=' + access_token;
-        console.log(url);
 
-        xhr.open('POST', url, true);
-        xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+        const catamel_obj = JSON.stringify(obj);
+
+
+        let a = rp(options).then((body) => {
+            console.log("login OK: " + body.id);
+            let access_token = body.id;
+            const url = this.url + '/api/v2/' + api_descriptor + '?access_token=' + access_token;
+            console.log(url);
+            console.log(catamel_obj);
+            let ee = {
+                "principalInvestigator": "J. Carberry",
+                "endTime": "2018-03-05T09:34:26.550Z",
+                "creationLocation": "strong",
+                "dataFormat": "nexus-hdf5",
+                "scientificMetadata": {"CIF": "H20", "raw": true, "processed": false},
+                "owner": "Gareth Murphy",
+                "orcidOfOwner": "orcid.org/0000-0002-1825-0097",
+                "contactEmail": "gareth.murphy@esss.se",
+                "sourceFolder": "/NMX/disk0",
+                "size": 10,
+                "packedSize": 10,
+                "creationTime": "2018-03-05T09:34:26.550Z",
+                "type": "experiment",
+                "validationStatus": "validated",
+                "keywords": ["lifecycle keywords"],
+                "description": "Dopamine -hydrobromide 100-200ms cooling from 100K ",
+                "userTargetLocation": "C-SPEC",
+                "classification": "AV=medium,CO=low",
+                "license": "ESS",
+                "version": "string",
+                "doi": "string",
+                "isPublished": true,
+                "ownerGroup": "p2222",
+                "accessGroups": ["multigrid", "p2222"],
+                "createdAt": "2018-03-05T09:34:26.550Z",
+                "updatedAt": "2018-03-05T09:34:26.550Z",
+                "sampleId": "7710",
+                "proposalId": 123
+            };
+            let options2 = {
+                url: url,
+                method: 'POST',
+                body: ee,
+                json: true,
+                rejectUnauthorized: false,
+                requestCert: true
+            };
+            for (let i = 0; i < 1000; i++) {
+                let data_promise = rp(options2)
+            }
+        }).catch(function (err) {
+            console.log('what went wrong?', err);
+            // POST failed...
+        });
+
 
         // send the collected data as JSON
-        const catamel_obj = JSON.stringify(obj);
-        xhr.send(catamel_obj);
-        console.log(url);
-        console.log(catamel_obj);
 
-
-        xhr.onload = function () {
-            console.log('DONE', xhr.readyState);
-            console.log('xhr.status=', xhr.status);
-            console.log('response=', xhr.responseText);
-        };
-
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                console.log('xhr.readyState=', xhr.readyState);
-                console.log('xhr.status=', xhr.status);
-                console.log('response=', xhr.responseText);
-
-                let data = JSON.parse(xhr.responseText);
-                let uploadResult = data['message'];
-                console.log('uploadResult=', uploadResult);
-                if (uploadResult === 'failure') {
-                    console.log('failed to upload file');
-                } else if (uploadResult === 'success') {
-                    console.log('successfully uploaded file');
-                }
-            }
-
-        };
-        return xhr;
     }
 
 }

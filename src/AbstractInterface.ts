@@ -8,6 +8,7 @@ class AbstractInterface {
     machine_name: string;
     access_t: any;
     path: string;
+    login_promise: any;
 
     constructor() {
         this.url_pick = {
@@ -18,7 +19,7 @@ class AbstractInterface {
             "scicat01": "http://scicat02.esss.lu.se:32222",
             "dst": "https://scicatapi.esss.dk"
         };
-        this.path = './config.json';
+        this.path = './src/config.json';
 
 
         this.machine_name = os.hostname();
