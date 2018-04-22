@@ -71,8 +71,8 @@ class CatamelInterface extends AbstractInterface {
                 "orcidOfOwner": "orcid.org/0000-0002-1825-0097",
                 "contactEmail": "gareth.murphy@esss.se",
                 "sourceFolder": "/NMX/disk0",
-                "size": 10,
-                "packedSize": 10,
+                "size": 1000000000,
+                "packedSize":  1000000000,
                 "creationTime": "2018-03-05T09:34:26.550Z",
                 "type": "experiment",
                 "validationStatus": "validated",
@@ -99,10 +99,12 @@ class CatamelInterface extends AbstractInterface {
                 rejectUnauthorized: false,
                 requestCert: true
             };
-            const dataset_number = 1000;
+            const dataset_number = 3200;
             console.log(dataset_number);
+
+            let chain = Promise.resolve();
             for (let i = 0; i < dataset_number; i++) {
-                rp(options2)
+                chain=chain.then(()=>rp(options2));
             }
         }).catch(function (err) {
             console.log('what went wrong?', err);
