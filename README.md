@@ -27,7 +27,7 @@ docker build . -t dataloader
 
 Docker (17.09.0-ce)
 
-Node (tested in v7,8,9)
+Node (tested in v8,9)
 
 Typescript (v2.6)
 
