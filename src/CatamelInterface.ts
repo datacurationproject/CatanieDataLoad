@@ -105,8 +105,13 @@ class CatamelInterface extends AbstractInterface {
             let chain = Promise.resolve();
             for (let i = 0; i < dataset_number; i++) {
                 options2.body.creationLocation = "NMX";
-                options2.body.creationLocation = this.instrument[i % 15];
-                chain=chain.then(()=>rp(options2));
+                chain = chain.then(() => {
+
+                    options2.body.creationLocation = this.instrument[i % 15];
+                    options2.body.sourceFolder = "/" + this.instrument[i % 15] + "/disk0";
+                    console.log(options2.body.creationLocation);
+                    rp(options2);
+                });
             }
         }).catch(function (err) {
             console.log('what went wrong?', err);
