@@ -73,8 +73,35 @@ class CatamelInterface extends AbstractInterface {
                 "datasetId": "string",
                 "rawDatasetId": "string",
                 "derivedDatasetId": "string"
-            }
+            };
+
+            let orig_data_blocks_json = {
+                "size": 0,
+                "dataFileList": [
+                    {
+                        "path": "string",
+                        "size": 0,
+                        "time": "2018-04-23T09:23:47.000Z",
+                        "chk": "string",
+                        "uid": "string",
+                        "gid": "string",
+                        "perm": "string"
+                    }
+                ],
+                "ownerGroup": "string",
+                "accessGroups": [
+                    "string"
+                ],
+                "createdBy": "string",
+                "updatedBy": "ingestor",
+                "datasetId": "<PID>/a4ec147c-0d5d-4cfd-9fa5-893423a68729",
+                "rawDatasetId": "string",
+                "derivedDatasetId": "string",
+                "createdAt": "2018-04-23T09:23:47.918Z",
+                "updatedAt": "2018-04-23T09:59:04.506Z"
+            };
             const url_attach = this.url + '/api/v2/' + 'DatasetAttachments' + '?access_token=' + access_token;
+
             let attachment_options = {
                 url: url_attach,
                 method: 'POST',
@@ -82,7 +109,19 @@ class CatamelInterface extends AbstractInterface {
                 json: true,
                 rejectUnauthorized: false,
                 requestCert: true
-            }
+            };
+
+            const url_orig = this.url + '/api/v2/' + 'OrigDatablocks' + '?access_token=' + access_token;
+            let orig_options = {
+                url: url_orig,
+                method: 'POST',
+                body: orig_data_blocks_json,
+                json: true,
+                rejectUnauthorized: false,
+                requestCert: true
+            };
+
+
             const dataset_number = 32;
             console.log(dataset_number);
 
@@ -94,8 +133,10 @@ class CatamelInterface extends AbstractInterface {
                     console.log(options2.body.creationLocation);
                     rp(options2).then(function (body) {
                         console.log(body.pid);
-                        attachment_options.body.datasetId = body.pid
+                        attachment_options.body.datasetId = body.pid;
                         rp(attachment_options);
+                        orig_options.body.datasetId = body.pid;
+                        rp(orig_options);
                     });
                 });
             }

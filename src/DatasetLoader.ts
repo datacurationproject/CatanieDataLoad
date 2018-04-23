@@ -35,7 +35,7 @@ class DatasetLoader {
         for (let i = 0; i < this.dataset_number; i++) {
             let obj = new Dataset();
             let dataset_lifecycle = new DatasetLifecycle();
-            let dataset_id = this.starting_id + i;
+            //let dataset_id = this.starting_id + i;
             obj.principalInvestigator = "J. Carberry";
             obj.endTime = this.date;
             obj.creationLocation = "xxxx";
@@ -49,7 +49,7 @@ class DatasetLoader {
             obj.orcidOfOwner = "orcid.org/0000-0002-1825-0097";
             obj.contactEmail = "gareth.murphy@esss.se";
             obj.sourceFolder = "/" + this.catamel_interface.instrument[i % 15] + "/disk" + i;
-            obj.size = 1024024024;
+            obj.size = 201024024024;
             obj.packedSize = 11024024024;
             obj.creationTime = "2014-05-15T09:34:26.550Z";
             obj.creationTime = this.date;
@@ -60,8 +60,8 @@ class DatasetLoader {
             obj.userTargetLocation = "C-SPEC";
             obj.classification = "AV=medium,CO=low";
             obj.license = "ESS";
-            obj.version = "string";
-            obj.doi = "string";
+            obj.version = "v1";
+            obj.doi = this.prefix + "101010101";
             obj.isPublished = true;
             obj.ownerGroup = "ess_p23232";
             obj.accessGroups = [
@@ -95,12 +95,7 @@ class DatasetLoader {
             dataset_lifecycle.createdAt = this.date;
             dataset_lifecycle.updatedAt = this.date;
 
-            //console.log(JSON.stringify(obj));
-            //console.log(JSON.stringify(dataset_lifecycle));
             this.catamel_interface.send_to_catamel(obj, "RawDatasets");
-            //const xhr2 = this.catamel_interface.send_to_catamel(dataset_lifecycle, "DatasetLifecycles");
-//            console.log(xhr);
-            //console.log(xhr2);
 
         }
 
