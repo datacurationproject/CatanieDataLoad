@@ -99,11 +99,13 @@ class CatamelInterface extends AbstractInterface {
                 rejectUnauthorized: false,
                 requestCert: true
             };
-            const dataset_number = 3200;
+            const dataset_number = 32;
             console.log(dataset_number);
 
             let chain = Promise.resolve();
             for (let i = 0; i < dataset_number; i++) {
+                options2.body.creationLocation = "NMX";
+                options2.body.creationLocation = this.instrument[i % 15];
                 chain=chain.then(()=>rp(options2));
             }
         }).catch(function (err) {

@@ -20,7 +20,6 @@ class DatasetLoader {
     starting_id: any;
 
     constructor(abstract_interface: AbstractInterface) {
-        this.instrument = ["NMX", "BEER", "C-SPEC", "BIFROST", "MIRACLES", "MAGIC", "T-REX", "HEIMDAL", "LOKI", "FREIA", "ESTIA", "SKADI", "VESPA", "ODIN ", "DREAM"];
         this.date = "2018-03-05T09:34:26.550Z";
         this.futuredate = "2018-03-05T09:34:26.550Z";
         this.dataset_number = 1;
@@ -49,7 +48,7 @@ class DatasetLoader {
             obj.owner = "Gareth Murphy";
             obj.orcidOfOwner = "orcid.org/0000-0002-1825-0097";
             obj.contactEmail = "gareth.murphy@esss.se";
-            obj.sourceFolder = "/" + this.instrument[i % 15] + "/disk" + i;
+            obj.sourceFolder = "/" + this.catamel_interface.instrument[i % 15] + "/disk" + i;
             obj.size = 10 + i;
             obj.packedSize = 10 + i;
             obj.creationTime = "2014-05-15T09:34:26.550Z";
