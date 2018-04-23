@@ -60,7 +60,6 @@ class CatamelInterface extends AbstractInterface {
             let access_token = body.id;
             const url = this.url + '/api/v2/' + api_descriptor + '?access_token=' + access_token;
             console.log(url);
-            console.log(catamel_obj);
             let ee = {
                 "principalInvestigator": "J. Carberry",
                 "endTime": "2018-03-05T09:34:26.550Z",
@@ -91,6 +90,7 @@ class CatamelInterface extends AbstractInterface {
                 "sampleId": "7710",
                 "proposalId": 123
             };
+            console.log(ee);
             let options2 = {
                 url: url,
                 method: 'POST',
