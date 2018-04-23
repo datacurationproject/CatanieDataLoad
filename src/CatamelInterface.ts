@@ -60,36 +60,7 @@ class CatamelInterface extends AbstractInterface {
             let access_token = body.id;
             const url = this.url + '/api/v2/' + api_descriptor + '?access_token=' + access_token;
             console.log(url);
-            let ee = {
-                "principalInvestigator": "J. Carberry",
-                "endTime": "2018-03-05T09:34:26.550Z",
-                "creationLocation": "NMX",
-                "dataFormat": "nexus-hdf5",
-                "scientificMetadata": {"CIF": "H20", "raw": true, "processed": false},
-                "owner": "Gareth Murphy",
-                "orcidOfOwner": "orcid.org/0000-0002-1825-0097",
-                "contactEmail": "gareth.murphy@esss.se",
-                "sourceFolder": "/NMX/disk0",
-                "size": 11737418240,
-                "packedSize": 11737418240,
-                "creationTime": "2018-03-05T09:34:26.550Z",
-                "type": "experiment",
-                "validationStatus": "validated",
-                "keywords": ["lifecycle keywords"],
-                "description": "Dopamine -hydrobromide 100-200ms cooling from 100K ",
-                "userTargetLocation": "C-SPEC",
-                "classification": "AV=medium,CO=low",
-                "license": "ESS",
-                "version": "string",
-                "doi": "string",
-                "isPublished": true,
-                "ownerGroup": "ess_p2222",
-                "accessGroups": ["multigrid", "p2222"],
-                "createdAt": "2018-03-05T09:34:26.550Z",
-                "updatedAt": "2018-03-05T09:34:26.550Z",
-                "sampleId": "7710",
-                "proposalId": 123
-            };
+            let ee = obj;
             console.log(ee);
             let options2 = {
                 url: url,
@@ -110,7 +81,9 @@ class CatamelInterface extends AbstractInterface {
                     options2.body.creationLocation = this.instrument[i % 15];
                     options2.body.sourceFolder = "/" + this.instrument[i % 15] + "/disk0";
                     console.log(options2.body.creationLocation);
-                    rp(options2);
+                    rp(options2).then(function (body) {
+                        console.log(body.pid);
+                    });
                 });
             }
         }).catch(function (err) {

@@ -20,7 +20,8 @@ class DatasetLoader {
     starting_id: any;
 
     constructor(abstract_interface: AbstractInterface) {
-        this.date = "2018-03-05T09:34:26.550Z";
+        let today = new Date();
+        this.date = today.toISOString();
         this.futuredate = "2018-03-05T09:34:26.550Z";
         this.dataset_number = 1;
         this.prefix = "10.17199/";
@@ -37,20 +38,19 @@ class DatasetLoader {
             let dataset_id = this.starting_id + i;
             obj.principalInvestigator = "J. Carberry";
             obj.endTime = this.date;
-            obj.creationLocation = "strong";
+            obj.creationLocation = "xxxx";
             obj.dataFormat = "nexus-hdf5";
             obj.scientificMetadata = {
                 "CIF": "H20",
                 "raw": true,
                 "processed": false
             };
-            obj.pid = dataset_id;
             obj.owner = "Gareth Murphy";
             obj.orcidOfOwner = "orcid.org/0000-0002-1825-0097";
             obj.contactEmail = "gareth.murphy@esss.se";
             obj.sourceFolder = "/" + this.catamel_interface.instrument[i % 15] + "/disk" + i;
-            obj.size = 10 + i;
-            obj.packedSize = 10 + i;
+            obj.size = 1024024024;
+            obj.packedSize = 11024024024;
             obj.creationTime = "2014-05-15T09:34:26.550Z";
             obj.creationTime = this.date;
             obj.type = "experiment";
@@ -63,7 +63,7 @@ class DatasetLoader {
             obj.version = "string";
             obj.doi = "string";
             obj.isPublished = true;
-            obj.ownerGroup = "p2222";
+            obj.ownerGroup = "ess_p23232";
             obj.accessGroups = [
                 "multigrid",
                 "p2222"
