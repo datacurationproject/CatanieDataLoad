@@ -29,7 +29,7 @@
     "codacy-coverage": "^2.0.3",
     "express": "^4.16.2",
     "istanbul": "^0.4.5",
-    "npm": "^5.8.0",
+    "npm": "^6.0.0",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
     "requests": "^0.2.2",
