@@ -79,7 +79,7 @@ class CatamelInterface extends AbstractInterface {
                 "size": 0,
                 "dataFileList": [
                     {
-                        "path": "string",
+                        "path": "http://localhost:8889/static/file1.txt",
                         "size": 0,
                         "time": "2018-04-23T09:23:47.000Z",
                         "chk": "string",
