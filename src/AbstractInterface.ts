@@ -18,7 +18,7 @@ class AbstractInterface {
             "macmurphy.local": "http://localhost:3000",
             "CI0020036": "http://localhost:3000",
             "kubetest01.dm.esss.dk": "https://kubetest02.dm.esss.dk:32223",
-            "scicat01.esss.lu.se": "http://scicat02.esss.lu.se:32222",
+            "scicat01.esss.lu.se": "https://scicat02.esss.lu.se:32223",
             "dst": "https://scicatapi.esss.dk"
         };
         this.path = './src/config.json';
