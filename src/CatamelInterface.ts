@@ -86,6 +86,15 @@ class CatamelInterface extends AbstractInterface {
                         "uid": "string",
                         "gid": "string",
                         "perm": "string"
+                    },
+                    {
+                        "path": "http://localhost:8889/static/file3.h5",
+                        "size": 0,
+                        "time": "2018-04-23T09:23:47.000Z",
+                        "chk": "string",
+                        "uid": "string",
+                        "gid": "string",
+                        "perm": "string"
                     }
                 ],
                 "ownerGroup": "string",
