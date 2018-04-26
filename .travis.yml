@@ -2,6 +2,7 @@ language: node_js
 node_js:
   - "8"
   - "9"
+  - "10"
 env:
   - CODACY_PROJECT_TOKEN ="lTbP7Sp77jutsccIL2GyzUzYweHv4nf5K"
   - CODECOV_TOKEN =":c644c860-2927-4051-a512-5f2efa323601"
