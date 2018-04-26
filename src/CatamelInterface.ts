@@ -95,6 +95,15 @@ class CatamelInterface extends AbstractInterface {
                         "uid": "string",
                         "gid": "string",
                         "perm": "string"
+                    },
+                    {
+                        "path": "/static/file4.nxs",
+                        "size": 3141592653,
+                        "time": "2018-04-23T09:23:47.000Z",
+                        "chk": "string",
+                        "uid": "string",
+                        "gid": "string",
+                        "perm": "string"
                     }
                 ],
                 "ownerGroup": "string",
