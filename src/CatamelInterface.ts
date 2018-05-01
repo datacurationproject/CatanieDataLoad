@@ -79,7 +79,7 @@ class CatamelInterface extends AbstractInterface {
                 "size":  5859874481,
                 "dataFileList": [
                     {
-                        "path": "/static/file1.txt",
+                        "path": "/static/test.txt",
                         "size": 2718281828,
                         "time": "2018-04-23T09:23:47.000Z",
                         "chk": "string",
@@ -88,7 +88,7 @@ class CatamelInterface extends AbstractInterface {
                         "perm": "string"
                     },
                     {
-                        "path": "/static/file3.h5",
+                        "path": "/static/GEM_3300V_4000V_2cm_2cm_dataTree_thresh100dead200.h5",
                         "size": 3141592653,
                         "time": "2018-04-23T09:23:47.000Z",
                         "chk": "string",
