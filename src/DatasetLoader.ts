@@ -71,7 +71,7 @@ class DatasetLoader {
             obj.createdAt = this.date;
             obj.updatedAt = this.date;
             obj.sampleId = "771" + i;
-            obj.proposalId = 123 + i;
+            obj.proposalId = "ESS2018-306";
 
 
             dataset_lifecycle.id = this.prefix + obj.pid;
