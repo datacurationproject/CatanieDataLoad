@@ -3,6 +3,8 @@ import {AbstractInterface} from './AbstractInterface';
 import {AccessT} from './AccessToken';
 import * as data from './config.json'
 
+const async = require('async');
+
 const rp = require('request-promise');
 
 
@@ -76,7 +78,7 @@ class CatamelInterface extends AbstractInterface {
             };
 
             let orig_data_blocks_json = {
-                "size":  5859874481,
+                "size": 5859874481,
                 "dataFileList": [
                     {
                         "path": "/static/test.txt",
@@ -166,6 +168,36 @@ class CatamelInterface extends AbstractInterface {
 
         // send the collected data as JSON
 
+    }
+
+
+    send_async(obj, api_descriptor) {
+        let access_token = "";
+        const url = this.url + '/api/v2/' + api_descriptor + '?access_token=' + access_token;
+
+        let options2 = {
+            url: url,
+            method: 'POST',
+            body: ee,
+            json: true,
+            rejectUnauthorized: false,
+            requestCert: true
+        };
+
+        let track = async.queue(function (runner, finishLine) {
+            console.log("> " + runner.name + " entered his lane");
+            rp(options2);
+        }, 4);
+
+        track.drain = function () {
+            console.log("All the results are in now. We have a winner");
+        };
+
+        track.push({name: "bolt"});
+        track.push({name: "mo"});
+        track.push({name: "phil"});
+        track.push({name: "dave"});
+        track.push({name: "alex"});
     }
 
 }
