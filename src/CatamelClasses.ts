@@ -7,6 +7,7 @@ class Dataset {
     'scientificMetadata': any;
     'pid': any;
     'owner': any;
+    'ownerEmail': any;
     'orcidOfOwner': any;
     'contactEmail': any;
     'sourceFolder': any;
@@ -25,6 +26,8 @@ class Dataset {
     'isPublished': any;
     'ownerGroup': any;
     'accessGroups': any;
+    'createdBy': any;
+    'updatedBy': any;
     'createdAt': any;
     'updatedAt': any;
     'sampleId': any;

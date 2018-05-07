@@ -16,8 +16,8 @@ class AbstractInterface {
         this.url_pick = {
             "local": "http://localhost:3000",
             "macmurphy.local": "http://localhost:3000",
-            //"CI0020036": "http://localhost:3000",
-            "CI0020036": "https://scicatapi.esss.dk",
+            "CI0020036": "http://localhost:3000",
+            //"CI0020036": "https://scicatapi.esss.dk",
             "kubetest01.dm.esss.dk": "https://kubetest02.dm.esss.dk:32223",
             "scicat01.esss.lu.se": "https://scicat02.esss.lu.se:32223",
             "dst": "https://scicatapi.esss.dk"

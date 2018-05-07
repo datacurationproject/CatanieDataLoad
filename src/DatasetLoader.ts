@@ -36,42 +36,47 @@ class DatasetLoader {
             let obj = new Dataset();
             let dataset_lifecycle = new DatasetLifecycle();
             //let dataset_id = this.starting_id + i;
+
+
             obj.principalInvestigator = "J. Carberry";
             obj.endTime = this.date;
             obj.creationLocation = "xxxx";
-            obj.dataFormat = "nexus-hdf5";
-            obj.scientificMetadata = {
-                "CIF": "H20",
-                "raw": true,
-                "processed": false
-            };
+            obj.dataFormat = "nexus hdf5";
+            obj.scientificMetadata = [
+                "processed"
+            ];
             obj.owner = "Gareth Murphy";
+            obj.ownerEmail = "gareth.murphy@esss.se";
             obj.orcidOfOwner = "orcid.org/0000-0002-1825-0097";
             obj.contactEmail = "gareth.murphy@esss.se";
-            obj.sourceFolder = "/" + this.catamel_interface.instrument[i % 15] + "/disk" + i;
-            obj.size = 201024024024;
-            obj.packedSize = 11024024024;
-            obj.creationTime = "2014-05-15T09:34:26.550Z";
+            obj.sourceFolder =  this.catamel_interface.instrument[i % 15] + " disk" + i;
+            obj.size = 0;
+            obj.packedSize = 0;
+
             obj.creationTime = this.date;
-            obj.type = "experiment";
+            obj.type = "raw";
             obj.validationStatus = "validated";
             obj.keywords = ["lifecycle keywords"];
-            obj.description = "Dopamine -hydrobromide 100-200ms cooling from 100K ";
-            obj.userTargetLocation = "C-SPEC";
-            obj.classification = "AV=medium,CO=low";
+            obj.description = "Dopamine  hydrobromide 100 200ms cooling from 100K ";
+
+            obj.userTargetLocation = "NMX";
+            obj.classification = "AV";
             obj.license = "ESS";
-            obj.version = "v1";
+            obj.version = "2.7.0";
             obj.doi = this.prefix + "101010101";
+
             obj.isPublished = true;
             obj.ownerGroup = "ess_p23232";
             obj.accessGroups = [
-                "multigrid",
                 "p2222"
             ];
+
+            obj.createdBy = "string";
+            obj.updatedBy = "string";
             obj.createdAt = this.date;
             obj.updatedAt = this.date;
             obj.sampleId = "771" + i;
-            obj.proposalId = "ESS2018-306";
+            obj.proposalId = "ESS2018306";
 
 
             dataset_lifecycle.id = this.prefix + obj.pid;
