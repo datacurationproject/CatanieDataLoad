@@ -50,8 +50,8 @@ class DatasetLoader {
             obj.orcidOfOwner = "orcid.org/0000-0002-1825-0097";
             obj.contactEmail = "gareth.murphy@esss.se";
             obj.sourceFolder =  this.catamel_interface.instrument[i % 15] + " disk" + i;
-            obj.size = 0;
-            obj.packedSize = 0;
+            obj.size = 2000000000;
+            obj.packedSize = obj.size;
 
             obj.creationTime = this.date;
             obj.type = "raw";
@@ -100,7 +100,8 @@ class DatasetLoader {
             dataset_lifecycle.createdAt = this.date;
             dataset_lifecycle.updatedAt = this.date;
 
-            this.catamel_interface.send_to_catamel(obj, "RawDatasets");
+            //this.catamel_interface.send_to_catamel(obj, "RawDatasets");
+            this.catamel_interface.send_async(obj, "RawDatasets");
 
         }
 

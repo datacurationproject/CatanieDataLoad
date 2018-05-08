@@ -1,7 +1,9 @@
 "use strict";
 import {AbstractInterface} from './AbstractInterface';
 import {AccessT} from './AccessToken';
-import * as data from './config.json'
+import {DatasetSetup} from './DatasetSetup';
+import {Orig} from './Orig';
+import * as data from './config.json';
 
 const async = require('async');
 
@@ -50,6 +52,7 @@ class CatamelInterface extends AbstractInterface {
             rejectUnauthorized: false,
             requestCert: true
         };
+
 
 
         rp(options).then((body) => {
@@ -172,25 +175,29 @@ class CatamelInterface extends AbstractInterface {
 
 
     send_async(obj, api_descriptor) {
+        //opt : any;
+
         let access_token = "uYFmQT2mFKA4GFYOAEdD9aOVSpWhTKwvqoPVHr86nsc9RKrrDlQ6CASIOpjt72j1";
         const url = this.url + '/api/v2/' + api_descriptor + '?access_token=' + access_token;
 
-        let options2 = {
-            url: url,
-            method: 'POST',
-            body: obj,
-            json: true,
-            rejectUnauthorized: false,
-            requestCert: true
-        };
+
+        let opt = new DatasetSetup();
+        let options2= opt.options;
+        options2.url = url;
+        options2.body = obj;
+
+        let orig_opt = new Orig();
+        let orig_options= orig_opt.options;
+        orig_options.url = this.url + '/api/v2/'+'OrigDatablocks' + '?access_token=' + access_token;
+        orig_options.body = orig_opt.data;
 
         const queue_size = 20;
-        let track = async.cargo(function (runner, callback1) {
+        let queue = async.cargo(function (runner, callback1) {
 
             async.nextTick(callback1);
         }, queue_size);
 
-        track.drain = function () {
+        queue.drain = function () {
             console.log("Queue completely drained");
         };
 
@@ -198,13 +205,15 @@ class CatamelInterface extends AbstractInterface {
         let range = Array.apply(null, {length: dataset_number}).map(Number.call, Number);
 
         for (let i of range) {
-            //track.push({name: "dataset_" + i});
+            //queue.push({name: "dataset_" + i});
             options2.body.creationLocation = this.instrument[i % 15];
             options2.body.sourceFolder = "/" + this.instrument[i % 15] + "/disk0";
             options2.body.size = 2.5e11 * (0.5 + 0.5 * Math.random());
-            track.push(rp(options2)
+            queue.push(rp(options2)
                 .then(function (body) {
                     console.log(body.pid);
+                    orig_options.body.datasetId = body.pid;
+                    rp(orig_options);
                     return (body.pid);
                 }).catch(function (err) {
                     console.log("disaster!", err);
