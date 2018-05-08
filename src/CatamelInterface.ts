@@ -142,7 +142,7 @@ class CatamelInterface extends AbstractInterface {
             };
 
 
-            const dataset_number = 32;
+            const dataset_number = 4;
             console.log(dataset_number);
 
             let chain = Promise.resolve();
@@ -172,33 +172,47 @@ class CatamelInterface extends AbstractInterface {
 
 
     send_async(obj, api_descriptor) {
-        let access_token = "";
+        let access_token = "uYFmQT2mFKA4GFYOAEdD9aOVSpWhTKwvqoPVHr86nsc9RKrrDlQ6CASIOpjt72j1";
         const url = this.url + '/api/v2/' + api_descriptor + '?access_token=' + access_token;
 
         let options2 = {
             url: url,
             method: 'POST',
-            body: ee,
+            body: obj,
             json: true,
             rejectUnauthorized: false,
             requestCert: true
         };
 
-        let track = async.queue(function (runner, finishLine) {
-            console.log("> " + runner.name + " entered his lane");
-            rp(options2);
-        }, 4);
+        const queue_size = 20;
+        let track = async.cargo(function (runner, callback1) {
+
+            async.nextTick(callback1);
+        }, queue_size);
 
         track.drain = function () {
-            console.log("All the results are in now. We have a winner");
+            console.log("Queue completely drained");
         };
 
-        track.push({name: "bolt"});
-        track.push({name: "mo"});
-        track.push({name: "phil"});
-        track.push({name: "dave"});
-        track.push({name: "alex"});
+        const dataset_number = 30;
+        let range = Array.apply(null, {length: dataset_number}).map(Number.call, Number);
+
+        for (let i of range) {
+            //track.push({name: "dataset_" + i});
+            options2.body.creationLocation = this.instrument[i % 15];
+            options2.body.sourceFolder = "/" + this.instrument[i % 15] + "/disk0";
+            options2.body.size = 2.5e11 * (0.5 + 0.5 * Math.random());
+            track.push(rp(options2)
+                .then(function (body) {
+                    console.log(body.pid);
+                    return (body.pid);
+                }).catch(function (err) {
+                    console.log("disaster!", err);
+                }));
+            //console.log('gmi', i);
+        }
     }
+
 
 }
 
