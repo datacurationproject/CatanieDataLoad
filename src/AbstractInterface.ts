@@ -20,7 +20,7 @@ class AbstractInterface {
             //"CI0020036": "https://scicatapi.esss.dk",
             "kubetest01.dm.esss.dk": "https://kubetest02.dm.esss.dk:32223",
             "scicat01.esss.lu.se": "https://scicat02.esss.lu.se:32223",
-            "dst": "https://scicatapi.esss.dk"
+            "dst": "https://scicatapi.esss.dk",
             "k8s": "http://catamel-dacat-api-server-dev"
         };
         this.path = './src/config.json';
