@@ -12,3 +12,4 @@ WORKDIR /home/node/app/CatanieDataLoad
 RUN yarn install
 RUN ls
 RUN yarn run mocha -r ts-node/register test/*.ts --exit
+CMD yarn run send

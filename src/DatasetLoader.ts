@@ -100,8 +100,8 @@ class DatasetLoader {
             dataset_lifecycle.createdAt = this.date;
             dataset_lifecycle.updatedAt = this.date;
 
-            //this.catamel_interface.send_to_catamel(obj, "RawDatasets");
-            this.catamel_interface.send_async(obj, "RawDatasets");
+            this.catamel_interface.send_to_catamel(obj, "RawDatasets");
+            //this.catamel_interface.send_async(obj, "RawDatasets");
 
         }
 

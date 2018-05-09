@@ -173,6 +173,10 @@ class CatamelInterface extends AbstractInterface {
 
     }
 
+    make_url (api_descriptor, access_token){
+        const url = this.url + '/api/v2/' + api_descriptor + '?access_token=' + access_token;
+       return url
+    }
 
     send_async(obj, api_descriptor) {
         //opt : any;
@@ -188,7 +192,7 @@ class CatamelInterface extends AbstractInterface {
 
         let orig_opt = new Orig();
         let orig_options= orig_opt.options;
-        orig_options.url = this.url + '/api/v2/'+'OrigDatablocks' + '?access_token=' + access_token;
+        orig_options.url = this.make_url('OrigDataBlocks', access_token);
         orig_options.body = orig_opt.data;
 
         const queue_size = 20;
@@ -208,7 +212,7 @@ class CatamelInterface extends AbstractInterface {
             //queue.push({name: "dataset_" + i});
             options2.body.creationLocation = this.instrument[i % 15];
             options2.body.sourceFolder = "/" + this.instrument[i % 15] + "/disk0";
-            options2.body.size = 2.5e11 * (0.5 + 0.5 * Math.random());
+            orig_options.body.size = 2.5e11 * (0.5 + 0.5 * Math.random());
             queue.push(rp(options2)
                 .then(function (body) {
                     console.log(body.pid);
