@@ -3,7 +3,7 @@ import {AbstractInterface} from './AbstractInterface';
 import {AccessT} from './AccessToken';
 import {DatasetSetup} from './DatasetSetup';
 import {Orig} from './Orig';
-import * as data from './config.json';
+import * as data from '/tmp/config.json';
 
 const async = require('async');
 

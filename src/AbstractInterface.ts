@@ -27,6 +27,7 @@ class AbstractInterface {
 
 
         this.machine_name = os.hostname();
+        this.machine_name = "http://catamel-dacat-api-server-dev"
         console.log("machine name ", this.machine_name);
         //this.machine_name = "kubetest01";
 

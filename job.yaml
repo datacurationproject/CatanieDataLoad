@@ -1,15 +1,22 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: pi
+  name: jobs2
 spec:
   template:
     spec:
       containers:
-      - name: pi
-        image: perl
-        command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(2000)"]
+      - name: cataniedataload
+        image: garethcmurphy/cataniedataload
+        imagePullPolicy: Always
+        command: ["yarn","run", "send"]
+        volumeMounts:
+        - name: foo
+          mountPath: "/tmp/config.json"
+          readOnly: true
+      volumes:
+      - name: foo
+        secret:
+          secretName: db-user-pass
       restartPolicy: Never
-      imagePullSecrets:
-      - name: db-user-pass
-  backoffLimit: 4
+  backoffLimit: 1
