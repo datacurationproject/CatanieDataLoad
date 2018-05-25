@@ -12,7 +12,7 @@ class AbstractInterface {
     instrument: any;
 
     constructor() {
-        this.instrument = ["NMX", "BEER", "C-SPEC", "BIFROST", "MIRACLES", "MAGIC", "T-REX", "HEIMDAL", "LOKI", "FREIA", "ESTIA", "SKADI", "VESPA", "ODIN ", "DREAM"];
+        this.instrument = ["BEER", "BIFROST", "C-SPEC", "DREAM", "ESTIA", "FREIA", "HEIMDAL", "LOKI", "MAGIC", "MIRACLES", "NMX", "ODIN ", "SKADI", "T-REX", "VESPA" ];
         this.url_pick = {
             "local": "http://localhost:3000",
             "macmurphy.local": "http://localhost:3000",
