@@ -8,7 +8,4 @@ class AccessT {
     name: string;
     principal_investigator: string;
 
-
-
-
 }
