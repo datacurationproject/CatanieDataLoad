@@ -15,26 +15,26 @@ class Orig {
             "size": 5859874481,
             "dataFileList": [
                 {
-                    "path": "/static/test.txt",
-                    "size": 2718281828,
-                    "time": "2018-04-23T09:23:47.000Z",
-                    "chk": "string",
-                    "uid": "string",
-                    "gid": "string",
-                    "perm": "string"
-                },
-                {
-                    "path": "/static/GEM_3300V_4000V_2cm_2cm_dataTree_thresh100dead200.h5",
-                    "size": 3141592653,
-                    "time": "2018-04-23T09:23:47.000Z",
-                    "chk": "string",
-                    "uid": "string",
-                    "gid": "string",
-                    "perm": "string"
-                },
-                {
-                    "path": "/static/file4.nxs",
-                    "size": 3141592653,
+					"path": "/static/experiments/BF3_ESS_aging/rate.png",
+					"size": 2718281828,
+					"time": "2018-04-23T09:23:47.000Z",
+					"chk": "string",
+					"uid": "string",
+					"gid": "string",
+					"perm": "string"
+				},
+				{
+					"path": "/static/experiments/nmx/data/h5/analyzed/parameters/thresh100_thresh150.h5",
+					"size": 3141592653,
+					"time": "2018-04-23T09:23:47.000Z",
+					"chk": "string",
+					"uid": "string",
+					"gid": "string",
+					"perm": "string"
+				},
+				{
+					"path": "/static/experiments/IFE_Dec04_2012_blades/table.txt",
+					"size": 3141592653,
                     "time": "2018-04-23T09:23:47.000Z",
                     "chk": "string",
                     "uid": "string",

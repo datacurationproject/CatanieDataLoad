@@ -12,7 +12,7 @@ const async = require('async');
 const rp = require('request-promise');
 
 
-class CatamelInterface extends AbstractInterface {
+class CatamelDelete extends AbstractInterface {
 
 
     constructor() {
@@ -20,27 +20,10 @@ class CatamelInterface extends AbstractInterface {
     }
 
 
-    login() {
-
-        console.log('private data ', data);
-        let rawdata = data;
-        let options = {
-            url: this.url + '/api/v2/Users/login',
-            method: 'POST',
-            body: rawdata,
-            json: true,
-            rejectUnauthorized: false,
-            requestCert: true
-        };
-        rp(options).then((body) => {
-            this.access_t.access_token = body.id;
-            console.log("login OK: " + body.id);
-        });
 
 
-    }
 
-    send_to_catamel(obj, api_descriptor) {
+    delete_from_catamel() {
 // construct an HTTP request
         this.access_t = new AccessT();
 
@@ -60,16 +43,14 @@ class CatamelInterface extends AbstractInterface {
         rp(login_options).then((body) => {
             console.log("login OK: " + body.id);
             let access_token = body.id;
-            const url = this.url + '/api/v2/' + api_descriptor + '?access_token=' + access_token;
+            const url = this.url + '/api/v2/' + 'Datasets' + '?access_token=' + access_token;
             console.log(url);
-			console.log(datasets["orig1"]);
             let ee = datasets["orig1"];
             console.log(ee);
             let optionz_dataset = {
                 url: url,
-                method: 'POST',
-                body: ee,
-                json: true,
+                method: 'GET',
+                body: 'GET',
                 rejectUnauthorized: false,
                 requestCert: true
             };
@@ -103,17 +84,14 @@ class CatamelInterface extends AbstractInterface {
             };
 
 
-            const dataset_number = 4;
+            const dataset_number = 1;
             console.log(dataset_number);
 
             let chain = Promise.resolve();
             for (let i = 0; i < dataset_number; i++) {
                 chain = chain.then(() => {
-                    optionz_dataset.body.creationLocation = "MultiBlade";
-                    optionz_dataset.body.sourceFolder = "/" + "MultiBlade" ;
-                    console.log(optionz_dataset.body.creationLocation);
                     rp(optionz_dataset).then(function (body) {
-                        console.log(body.pid);
+                        console.log(body);
                         attachment_optionz.body.datasetId = body.pid;
                         rp(attachment_optionz);
                         orig_optionz.body.datasetId = body.pid;
@@ -136,56 +114,8 @@ class CatamelInterface extends AbstractInterface {
        return url
     }
 
-    send_async(obj, api_descriptor) {
-        //opt : any;
-
-        let access_token = "uYFmQT2mFKA4GFYOAEdD9aOVSpWhTKwvqoPVHr86nsc9RKrrDlQ6CASIOpjt72j1";
-        const url = this.url + '/api/v2/' + api_descriptor + '?access_token=' + access_token;
-
-
-        let opt = new DatasetSetup();
-        let optionz_dataset= opt.options;
-        optionz_dataset.url = url;
-        optionz_dataset.body = obj;
-
-        let orig_opt = new Orig();
-        let orig_optionz= orig_opt.options;
-        orig_optionz.url = this.make_url('OrigDataBlocks', access_token);
-        orig_optionz.body = orig_opt.data;
-
-        const queue_size = 20;
-        let queue = async.cargo(function (runner, callback1) {
-
-            async.nextTick(callback1);
-        }, queue_size);
-
-        queue.drain = function () {
-            console.log("Queue completely drained");
-        };
-
-        const dataset_number = 30;
-        let range = Array.apply(null, {length: dataset_number}).map(Number.call, Number);
-
-        for (let i of range) {
-            //queue.push({name: "dataset_" + i});
-            optionz_dataset.body.creationLocation = this.instrument[i % 15];
-            optionz_dataset.body.sourceFolder = "/" + this.instrument[i % 15] + "/disk0";
-            orig_optionz.body.size = 2.5e11 * (0.5 + 0.5 * Math.random());
-            queue.push(rp(optionz_dataset)
-                .then(function (body) {
-                    console.log(body.pid);
-                    orig_optionz.body.datasetId = body.pid;
-                    rp(orig_optionz);
-                    return (body.pid);
-                }).catch(function (err) {
-                    console.log("disaster!", err);
-                }));
-            //console.log('gmi', i);
-        }
-    }
-
-
 }
+let a= new CatamelDelete()
+a.delete_from_catamel()
 
-
-export {CatamelInterface};
+export {CatamelDelete};

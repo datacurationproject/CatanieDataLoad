@@ -1,0 +1,37 @@
+{
+  "principalInvestigator": "Francesco Piscitelli",
+  "endTime": "2018-06-07T07:45:44.584Z",
+  "creationLocation": "string",
+  "dataFormat": "string",
+  "scientificMetadata": {},
+  "owner": "string",
+  "ownerEmail": "string",
+  "orcidOfOwner": "string",
+  "contactEmail": "string",
+  "sourceFolder": "string",
+  "size": 0,
+  "packedSize": 0,
+  "creationTime": "2018-06-07T07:45:44.584Z",
+  "type": "string",
+  "validationStatus": "string",
+  "keywords": [
+    "string"
+  ],
+  "description": "string",
+  "userTargetLocation": "string",
+  "classification": "string",
+  "license": "string",
+  "version": "string",
+  "doi": "string",
+  "isPublished": true,
+  "ownerGroup": "string",
+  "accessGroups": [
+    "string"
+  ],
+  "createdBy": "string",
+  "updatedBy": "string",
+  "createdAt": "2018-06-07T07:45:44.584Z",
+  "updatedAt": "2018-06-07T07:45:44.584Z",
+  "sampleId": "string",
+  "proposalId": "string"
+}
