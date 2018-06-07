@@ -18,8 +18,8 @@ function make_url(temp_url, access_token){
 }
 
 async function login(){
-	var code =3;
-	let url=login_url();
+
+    let url = login_url();
 	let rawdata = data;
 	console.log(data);
 
@@ -42,15 +42,15 @@ async function login(){
 }
 
 function get_datasets(response){
-	var access = response.id;
-	console.log(access)
+    const access = response.id;
+    console.log(access);
 	assert ( access.length == 64);
 	let dataset_url= datasets_url();
 	let url= "https://scicatapi.esss.dk/api/v2/Datasets?access_token="+access;
 	console.log(url);
 
 
-    for (var key in datasets) {
+    for (let key in datasets) {
         if (datasets.hasOwnProperty(key)) {
             console.log(key + " -> " + datasets[key].pid);
 
@@ -75,9 +75,9 @@ function get_datasets(response){
 }
 
 async function main(){
-	var x = await login();
-	var y = await get_datasets(x)
-	console.log(y);
+    const x = await login();
+    const y = await get_datasets(x);
+    console.log(y);
 }
 
-main()
+main();
