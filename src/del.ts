@@ -65,10 +65,11 @@ function get_datasets(response){
 
 	let deletable = body[0].pid.replace("/","%2F");
 	let url= "https://scicatapi.esss.dk/api/v2/Datasets/"+deletable+"?access_token="+access;
+    console.log(url);
     let options3 = {
             url: url,
             method: 'DELETE',
-            body: body[0].pid,
+            body: deletable,
             rejectUnauthorized: false,
             requestCert: true
     };

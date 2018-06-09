@@ -111,6 +111,7 @@ class CatamelInterface extends AbstractInterface {
                 chain = chain.then(() => {
                     optionz_dataset.body.creationLocation = "MultiBlade";
                     optionz_dataset.body.sourceFolder = "/" + "MultiBlade" ;
+                    optionz_dataset.body.pid =  "MB"+String(i) ;
                     console.log(optionz_dataset.body.creationLocation);
                     rp(optionz_dataset).then(function (body) {
                         console.log(body.pid);
