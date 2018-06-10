@@ -41,29 +41,61 @@ async function login(){
 
 }
 
-function get_datasets(response){
+async function get_datasets(response){
     const access = response.id;
     console.log(access);
 	assert ( access.length == 64);
 	let dataset_url= datasets_url();
 	let url= "https://scicatapi.esss.dk/api/v2/Datasets?access_token="+access;
+	let url_orig= "https://scicatapi.esss.dk/api/v2/OrigDatablocks?access_token="+access;
 	console.log(url);
+    let y= 0;
+    let z= 0;
+
 
 
     for (let key in datasets) {
         if (datasets.hasOwnProperty(key)) {
-            console.log(key + " -> " + datasets[key].pid);
+            console.log(key + " -> " + datasets[key]["dataset"]);
+        console.log(url_orig)
+        console.log(datasets[key]["orig"])
 
 
             let options3 = {
                 url: url,
                 method: 'POST',
-                body: datasets[key],
+                body: datasets[key]["dataset"],
                 json: true,
                 rejectUnauthorized: false,
                 requestCert: true
             };
-            rp(options3);
+    try {
+      const response = await rp(options3);
+      return Promise.resolve(response);
+    }
+    catch (error) {
+    console.log(error);
+      return Promise.reject(error);
+    }
+
+            let options4 = {
+                url: url_orig,
+                method: 'POST',
+                body: datasets[key]["orig"],
+                json: true,
+                rejectUnauthorized: false,
+                requestCert: true
+            };
+    try {
+      const response = await rp(options4);
+      return Promise.resolve(response);
+    }
+    catch (error) {
+        console.log(url_orig)
+        console.log(error)
+      return Promise.reject(error);
+    }
+
         }
     }
 
