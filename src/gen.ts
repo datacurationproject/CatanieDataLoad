@@ -71,7 +71,7 @@ async function get_datasets(response){
             };
     try {
       const response = await rp(options3);
-      return Promise.resolve(response);
+      //return Promise.resolve(response);
     }
     catch (error) {
     console.log(error);
@@ -88,7 +88,7 @@ async function get_datasets(response){
             };
     try {
       const response = await rp(options4);
-      return Promise.resolve(response);
+      Promise.resolve(response);
     }
     catch (error) {
         console.log(url_orig)
