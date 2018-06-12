@@ -12,19 +12,17 @@ class MetadataUploader extends LoggerIn {
         const access = response.id;
         console.log(access);
         assert(access.length == 64);
-        let dataset_url = this.datasets_url();
+
         let url = this.url_base + "Datasets?access_token=" + access;
         let url_orig = this.url_base + "OrigDatablocks?access_token=" + access;
         console.log(url);
-        let y = 0;
-        let z = 0;
 
 
         for (let key in datasets) {
             if (datasets.hasOwnProperty(key)) {
                 console.log(key + " -> " + datasets[key]["dataset"]);
-                console.log(url_orig)
-                console.log(datasets[key]["orig"])
+                console.log(url_orig);
+                console.log(datasets[key]["orig"]);
 
 
                 let options3 = {
@@ -36,8 +34,7 @@ class MetadataUploader extends LoggerIn {
                     requestCert: true
                 };
                 try {
-                    const response = await
-                        rp(options3);
+                     await rp(options3);
                     //return Promise.resolve(response);
                 }
                 catch (error) {
@@ -59,8 +56,8 @@ class MetadataUploader extends LoggerIn {
                     Promise.resolve(response);
                 }
                 catch (error) {
-                    console.log(url_orig)
-                    console.log(error)
+                    console.log(url_orig);
+                    console.log(error);
                     return Promise.reject(error);
                 }
 
@@ -78,5 +75,5 @@ class MetadataUploader extends LoggerIn {
     }
 }
 
-let met = new MetadataUploader()
+let met = new MetadataUploader();
 met.main()
