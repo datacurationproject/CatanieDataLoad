@@ -1,8 +1,7 @@
+"use strict";
 import * as data from '/tmp/config.json';
-import * as assert from 'assert';
-import * as datasets from './datasets.json';
 
-const rp = require('request-promise') ;
+const rp = require('request-promise');
 
 class LoggerIn {
 
@@ -55,4 +54,7 @@ class LoggerIn {
 }
 
 
-export {LoggerIn}
+export {
+    LoggerI
+    n
+}
