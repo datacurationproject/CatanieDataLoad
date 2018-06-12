@@ -133,8 +133,7 @@ class CatamelInterface extends AbstractInterface {
     }
 
     make_url (api_descriptor, access_token){
-        const url = this.url + '/api/v2/' + api_descriptor + '?access_token=' + access_token;
-       return url
+        return this.url + '/api/v2/' + api_descriptor + '?access_token=' + access_token;
     }
 
     send_async(obj, api_descriptor) {
