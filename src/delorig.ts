@@ -12,7 +12,7 @@ class DeleterOrig extends LoggerIn {
         console.log(access)
         assert(access.length == 64);
         var datasets = 'ddd';
-        let dataset_url = datasets_url();
+        let dataset_url = this.datasets_url();
         let url = this.url_base + "OrigDatablocks?access_token=" + access;
         console.log(url);
 
@@ -66,8 +66,8 @@ class DeleterOrig extends LoggerIn {
     }
 
     async main() {
-        var x = await login();
-        var y = await get_datasets(x)
+        var x = await this.login();
+        var y = await this.get_datasets(x)
         console.log(y);
     }
 
