@@ -13,12 +13,7 @@ class LoggerIn {
         //this.url_base = "https://kubetest02.dm.esss.dk:32223/api/v2/"
         this.login_url = this.url_base + "Users/login";
     }
-    datasets_url() {
-        return this.url_base + "Datasets"
-    }
-    make_url(temp_url, access_token) {
-        return temp_url + '?access_token=' + access_token;
-    }
+
     async login() {
 
         let url = this.login_url;
