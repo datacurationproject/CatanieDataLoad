@@ -8,7 +8,7 @@ class AbstractInterface {
     machine_name: string;
     access_t: any;
     path: string;
-    login_promise: any;
+
     instrument: any;
 
     constructor() {
