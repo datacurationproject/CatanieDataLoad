@@ -9,11 +9,11 @@ class Deleter extends LoggerIn {
 
 
     get_datasets(response) {
-        var access = response.id;
-        console.log(access)
+        const access = response.id;
+        console.log(access);
         assert(access.length == 64);
-        var datasets = 'ddd';
-        let dataset_url = this.datasets_url();
+        const datasets = 'ddd';
+
         let url = this.url_base+"Datasets?access_token=" + access;
         console.log(url);
 
@@ -27,12 +27,10 @@ class Deleter extends LoggerIn {
         };
 
         rp(options2).then((body) => {
-            var a = JSON.stringify(body);
-            //console.log("login OK: " + a);
             console.log(JSON.stringify(body[0]));
 
 
-            for (var key in body) {
+            for (let key in body) {
                 if (body.hasOwnProperty(key)) {
 
                     let deletable = body[key].pid.replace("/", "%2F");
@@ -54,8 +52,8 @@ class Deleter extends LoggerIn {
     }
 
     async main() {
-        var x = await this.login();
-        var y = await this.get_datasets(x)
+        const x = await this.login();
+        const y = await this.get_datasets(x);
         console.log(y);
     }
 
@@ -64,4 +62,4 @@ class Deleter extends LoggerIn {
 
 
 let met = new Deleter()
-met.main()
+met.main();
