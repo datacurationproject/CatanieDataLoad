@@ -1,11 +1,5 @@
 "use strict";
-/**
- * @file Loads jobs into catamel
- * @author Gareth Murphy
- * @version 0.1
- */
 
-const assert = require('assert');
 
 
 class AccessT {
