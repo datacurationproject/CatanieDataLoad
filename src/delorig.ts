@@ -13,7 +13,7 @@ class DeleterOrig extends LoggerIn {
         assert(access.length == 64);
         var datasets = 'ddd';
         let dataset_url = datasets_url();
-        let url = "https://scicatapi.esss.dk/api/v2/OrigDatablocks?access_token=" + access;
+        let url = this.url_base + "OrigDatablocks?access_token=" + access;
         console.log(url);
 
         let options2 = {
@@ -31,7 +31,7 @@ class DeleterOrig extends LoggerIn {
             console.log(JSON.stringify(body[0]));
 
             let deletable = body[0].id;
-            let url = "https://scicatapi.esss.dk/api/v2/OrigDatablocks/" + deletable + "?access_token=" + access;
+            let url = this.url_base + "OrigDatablocks/" + deletable + "?access_token=" + access;
             console.log(url);
             let options3 = {
                 url: url,
