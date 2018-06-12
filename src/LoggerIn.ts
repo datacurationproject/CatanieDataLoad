@@ -54,7 +54,4 @@ class LoggerIn {
 }
 
 
-export {
-    LoggerI
-    n
-}
+export {LoggerIn}
