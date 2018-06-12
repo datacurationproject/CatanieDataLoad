@@ -72,3 +72,6 @@ class DeleterOrig extends LoggerIn {
     }
 
 }
+
+let met = new DeleterOrig()
+met.main()
