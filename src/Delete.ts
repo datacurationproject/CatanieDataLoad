@@ -1,13 +1,12 @@
 "use strict";
 import {AbstractInterface} from './AbstractInterface';
 import {AccessT} from './AccessToken';
-import {DatasetSetup} from './DatasetSetup';
 import {Orig} from './Orig';
 import {Attach} from './Attach';
 import * as data from '/tmp/config.json';
 import * as datasets from './datasets.json'
 
-const async = require('async');
+
 
 const rp = require('request-promise');
 
@@ -109,13 +108,8 @@ class CatamelDelete extends AbstractInterface {
 
     }
 
-    make_url (api_descriptor, access_token){
-        const url = this.url + '/api/v2/' + api_descriptor + '?access_token=' + access_token;
-       return url
-    }
-
 }
-let a= new CatamelDelete()
-a.delete_from_catamel()
+let a= new CatamelDelete();
+a.delete_from_catamel();
 
 export {CatamelDelete};
