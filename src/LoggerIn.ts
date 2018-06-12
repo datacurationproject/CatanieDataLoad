@@ -6,15 +6,15 @@ const rp = require('request-promise');
 class LoggerIn {
 
     url_base: string
+    login_url: string
 
     constructor() {
         this.url_base = "https://scicatapi.esss.dk/api/v2/"
+        this.login_url = this.url_base + "Users/login"
+        }
     }
 
 
-    login_url() {
-        return this.url_base + "Users/login"
-    }
 
 
     datasets_url() {
@@ -28,7 +28,7 @@ class LoggerIn {
 
     async login() {
 
-        let url = this.login_url();
+        let url = this.login_url;
         let rawdata = data;
         console.log(data);
 
