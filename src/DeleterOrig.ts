@@ -46,7 +46,7 @@ class DeleterOrig extends LoggerIn {
 
 
                     let deletable = body[key].id;
-                    let url = "https://scicatapi.esss.dk/api/v2/OrigDatablocks/" + deletable + "?access_token=" + access;
+                    let url = this.url_base + "OrigDatablocks/" + deletable + "?access_token=" + access;
                     let options3 = {
                         url: url,
                         method: 'DELETE',
