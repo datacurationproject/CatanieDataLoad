@@ -11,6 +11,7 @@ class LoggerIn {
     constructor() {
         this.url_base = "https://scicatapi.esss.dk/api/v2/";
         //this.url_base = "https://kubetest02.dm.esss.dk:32223/api/v2/"
+        //this.url_base = "https://scicat03.esss.lu.se:32223/api/v2/"
         this.login_url = this.url_base + "Users/login";
     }
 
