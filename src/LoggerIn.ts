@@ -8,9 +8,11 @@ class LoggerIn {
 
     url_base: string;
     login_url: string;
+    machine_name: string;
+    url_pick: any;
 
     constructor() {
-	        this.url_pick = {
+	   this.url_pick = {
             "local": "http://localhost:3000",
             //"macmurphy.local": "http://localhost:3000",
             "macmurphy.local": "https://scicatapi.esss.dk",
@@ -29,7 +31,7 @@ class LoggerIn {
         //this.machine_name = "kubetest01";
 
         this.url = this.url_pick[this.machine_name];
-        this.url_base = "https://scicatapi.esss.dk/api/v2/";
+        this.url_base = this.url+"/api/v2/";
         //this.url_base = "https://kubetest02.dm.esss.dk:32223/api/v2/"
         //this.url_base = "https://scicat03.esss.lu.se:32223/api/v2/"
         this.login_url = this.url_base + "Users/login";
