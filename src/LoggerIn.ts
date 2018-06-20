@@ -9,6 +9,7 @@ class LoggerIn {
     url_base: string;
     login_url: string;
     machine_name: string;
+    url: string;
     url_pick: any;
 
     constructor() {
