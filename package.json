@@ -37,7 +37,7 @@
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
     "requests": "^0.2.2",
-    "ts-node": "^6.0.3",
+    "ts-node": "^7.0.0",
     "uglify-js": "^3.3.24",
     "xmlhttprequest": "^1.8.0",
     "yarn": "^1.6.0"
