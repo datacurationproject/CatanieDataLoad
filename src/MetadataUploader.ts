@@ -34,7 +34,7 @@ class MetadataUploader extends LoggerIn {
                     requestCert: true
                 };
                 try {
-                     await rp(options3);
+                    await rp(options3);
                     //return Promise.resolve(response);
                 }
                 catch (error) {
@@ -76,4 +76,4 @@ class MetadataUploader extends LoggerIn {
 }
 
 let met = new MetadataUploader();
-met.main()
+met.main();
