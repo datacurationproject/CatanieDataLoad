@@ -14,7 +14,7 @@ class Deleter extends LoggerIn {
         assert(access.length == 64);
         const datasets = 'ddd';
 
-        let url = this.url_base+"Datasets?access_token=" + access;
+        let url = this.url_base + "Datasets?access_token=" + access;
         console.log(url);
 
         let options2 = {
@@ -34,7 +34,7 @@ class Deleter extends LoggerIn {
                 if (body.hasOwnProperty(key)) {
 
                     let deletable = body[key].pid.replace("/", "%2F");
-                    let url =  this.url_base+"Datasets/" + deletable + "?access_token=" + access;
+                    let url = this.url_base + "Datasets/" + deletable + "?access_token=" + access;
                     let options3 = {
                         url: url,
                         method: 'DELETE',
@@ -60,6 +60,5 @@ class Deleter extends LoggerIn {
 }
 
 
-
-let met = new Deleter()
+let met = new Deleter();
 met.main();
