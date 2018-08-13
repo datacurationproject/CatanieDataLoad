@@ -4,6 +4,7 @@
         "module": "commonjs",
         "sourceMap": true,
         "experimentalDecorators": true,
+        "resolveJsonModule": true,
         "lib": [ "es6" ]
     }
 }
