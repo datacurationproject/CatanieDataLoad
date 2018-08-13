@@ -4,8 +4,8 @@ import {AccessT} from './AccessToken';
 import {DatasetSetup} from './DatasetSetup';
 import {Orig} from './Orig';
 import {Attach} from './Attach';
-import * as data from '/tmp/config.json';
-import * as datasets from './datasets.json'
+const data = require('./config.json');
+const datasets = require('../datasets.json');
 
 const async = require('async');
 
