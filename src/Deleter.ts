@@ -28,7 +28,8 @@ class Deleter extends LoggerIn {
 
             for (let key in body) {
                 if (body.hasOwnProperty(key)) {
-                    let deletable = body[key].pid.replace("/", "%2F");
+                  let deletable2 = body[key].pid.replace("/", "%2F");
+                  let deletable = deletable2.replace("/", "%2F");
                     let url =
                         this.url_base + "Datasets/" + deletable + "?access_token=" + access;
                     let options3 = {
