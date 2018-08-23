@@ -1,10 +1,8 @@
 "use strict";
 
-
-import {AbstractInterface} from './AbstractInterface';
+import { AbstractInterface } from "./AbstractInterface";
 
 class FakeInterface extends AbstractInterface {
-
     constructor() {
         super();
         //this.machine_name = "kubetest01";
@@ -18,8 +16,6 @@ class FakeInterface extends AbstractInterface {
         console.log("Not actually sending");
         console.log(api_descriptor);
     }
-
 }
 
-
-export {FakeInterface}
+export { FakeInterface };

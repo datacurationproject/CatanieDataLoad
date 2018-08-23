@@ -1,10 +1,9 @@
 "use strict";
 
-
-
 class AccessT {
     constructor() {
-        this._access_token = "FzANviG5wJ2Hejj3qxhc3tK0jF9hQCNH0BEFctH25dGrX8LeacFZKb8OsTESBe0h";
+        this._access_token =
+            "FzANviG5wJ2Hejj3qxhc3tK0jF9hQCNH0BEFctH25dGrX8LeacFZKb8OsTESBe0h";
     }
 
     private _access_token: string;
@@ -19,9 +18,6 @@ class AccessT {
     set access_token(value: string) {
         this._access_token = value;
     }
-
-
 }
 
-
-export {AccessT};
+export { AccessT };

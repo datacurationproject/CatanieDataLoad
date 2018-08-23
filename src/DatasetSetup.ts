@@ -14,8 +14,8 @@ class DatasetSetup {
         this.data = 0;
         this.options = {
             url: "www",
-            method: 'POST',
-            body: {"name":"test"},
+            method: "POST",
+            body: {name: "test"},
             json: true,
             rejectUnauthorized: false,
             requestCert: true
@@ -23,4 +23,4 @@ class DatasetSetup {
     }
 }
 
-export {DatasetSetup};
+export { DatasetSetup };

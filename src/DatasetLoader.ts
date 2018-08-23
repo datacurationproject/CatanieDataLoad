@@ -5,10 +5,8 @@
  * @version 0.1
  */
 
-
-import {AbstractInterface} from "./AbstractInterface";
-import {Dataset, DatasetLifecycle} from "./CatamelClasses";
-
+import { AbstractInterface } from "./AbstractInterface";
+import { Dataset, DatasetLifecycle } from "./CatamelClasses";
 
 class DatasetLoader {
     date: any;
@@ -27,7 +25,6 @@ class DatasetLoader {
         this.prefix = "10.17199/";
         this.catamel_interface = abstract_interface;
         this.starting_id = 1900;
-
     }
 
     load_dataset() {
@@ -37,19 +34,17 @@ class DatasetLoader {
             let dataset_lifecycle = new DatasetLifecycle();
             //let dataset_id = this.starting_id + i;
 
-
             obj.principalInvestigator = "J. Carberry";
             obj.endTime = this.date;
             obj.creationLocation = "xxxx";
             obj.dataFormat = "nexus hdf5";
-            obj.scientificMetadata = [
-                "processed"
-            ];
+            obj.scientificMetadata = ["processed"];
             obj.owner = "Gareth Murphy";
             obj.ownerEmail = "gareth.murphy@esss.se";
             obj.orcidOfOwner = "orcid.org/0000-0002-1825-0097";
             obj.contactEmail = "gareth.murphy@esss.se";
-            obj.sourceFolder =  this.catamel_interface.instrument[i % 15] + " disk" + i;
+            obj.sourceFolder =
+                this.catamel_interface.instrument[i % 15] + " disk" + i;
             obj.size = 2000000000;
             obj.packedSize = obj.size;
 
@@ -67,9 +62,7 @@ class DatasetLoader {
 
             obj.isPublished = true;
             obj.ownerGroup = "ess_p23232";
-            obj.accessGroups = [
-                "p2222"
-            ];
+            obj.accessGroups = ["p2222"];
 
             obj.createdBy = "string";
             obj.updatedBy = "string";
@@ -77,7 +70,6 @@ class DatasetLoader {
             obj.updatedAt = this.date;
             obj.sampleId = "771" + i;
             obj.proposalId = "ESS2018306";
-
 
             dataset_lifecycle.id = this.prefix + obj.pid;
             dataset_lifecycle.isOnDisk = true;
@@ -102,12 +94,8 @@ class DatasetLoader {
 
             this.catamel_interface.send_to_catamel(obj, "RawDatasets");
             //this.catamel_interface.send_async(obj, "RawDatasets");
-
         }
-
     }
-
 }
 
-
-export {DatasetLoader};
+export { DatasetLoader };

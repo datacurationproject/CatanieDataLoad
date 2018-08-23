@@ -35,7 +35,6 @@ class Dataset {
     "proposalId": any;
 }
 
-
 class DatasetLifecycle {
     "id": any;
     "isOnDisk": any;
@@ -59,7 +58,6 @@ class DatasetLifecycle {
     "updatedAt": any;
 }
 
-
 class Job {
     "emailJobInitiator": string;
     "type": string;
@@ -72,4 +70,4 @@ class Job {
     "updatedAt": Date;
 }
 
-export {Dataset, DatasetLifecycle, Job};
+export { Dataset, DatasetLifecycle, Job };
