@@ -25,7 +25,7 @@
   "author": "Gareth Murphy",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "@types/node": "^10.7.1",
+    "@types/node": "^10.9.0",
     "@types/request": "^2.47.1",
     "cleanup-dependencies": "0.0.6",
     "codacy-coverage": "^3.0.0",
