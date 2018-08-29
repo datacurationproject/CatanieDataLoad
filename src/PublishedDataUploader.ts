@@ -1,16 +1,16 @@
 "use strict";
 import * as assert from "assert";
-import * as datasets from "./datasets.json";
+import * as datasets from "./published_data.json";
 import { LoggerIn } from "./LoggerIn";
 import rp = require("request-promise");
 
-class MetadataUploader extends LoggerIn {
+class PublishedDataUploader extends LoggerIn {
   async get_datasets(response) {
     const access = response.id;
     console.log(access);
     assert(access.length == 64);
 
-    let url = this.url_base + "Datasets?access_token=" + access;
+    let url = this.url_base + "PublishedData?access_token=" + access;
     let url_orig = this.url_base + "OrigDatablocks?access_token=" + access;
     let url_attach = this.url_base + "DatasetAttachments?access_token=" + access;
     console.log(url);
@@ -76,5 +76,5 @@ class MetadataUploader extends LoggerIn {
   }
 }
 
-let met = new MetadataUploader();
+let met = new PublishedDataUploader();
 met.main();
