@@ -12,7 +12,8 @@ class PublishedDataUploader extends LoggerIn {
 
     let url = this.url_base + "PublishedData?access_token=" + access;
     let url_orig = this.url_base + "OrigDatablocks?access_token=" + access;
-    let url_attach = this.url_base + "DatasetAttachments?access_token=" + access;
+    let url_attach =
+      this.url_base + "DatasetAttachments?access_token=" + access;
     console.log(url);
 
     for (let key in datasets) {
