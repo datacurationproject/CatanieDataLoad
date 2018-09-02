@@ -1,0 +1,126 @@
+{
+  "orig2018-06-14 15:12:5600000": {
+    "proposal": {
+      "proposalId": "2018ESS1",
+      "pi_email": "francesco.piscitelli@esss.se",
+      "pi_firstname": "Francesco",
+      "pi_lastname": "Piscitelli",
+      "email": "francesco.piscitelli@esss.se",
+      "firstname": "Francesco",
+      "lastname": "Piscitelli",
+      "title": "Multiblade",
+      "abstract": "Multiblade",
+      "attachments": [
+        "string"
+      ],
+      "ownerGroup": "ess",
+      "accessGroups": [
+        "ess",
+        "brightness"
+      ],
+      "createdBy": "2017-10-26 17:15:19",
+      "updatedBy": "2017-10-26 17:15:19",
+      "createdAt": "2017-10-26 17:15:19",
+      "updatedAt": "2017-10-26 17:15:19",
+      "MeasurementPeriodList": [
+        "string"
+      ],
+      "measurementPeriods": [
+        "string"
+      ]
+    }
+  },
+  "orig2018-06-13 15:12:5600000": {
+    "proposal": {
+      "proposalId": "2018ESS2",
+      "pi_email": "Ramsey.AlJebali@esss.se",
+      "pi_firstname": "Ramsey",
+      "pi_lastname": "Al Jebali",
+      "email": "Ramsey.AlJebali@esss.se",
+      "firstname": "Ramsey",
+      "lastname": "Al Jebali",
+      "title": "SONDE",
+      "abstract": "SONDE",
+      "attachments": [
+        "string"
+      ],
+      "ownerGroup": "ess",
+      "accessGroups": [
+        "ess",
+        "brightness"
+      ],
+      "createdBy": "2017-10-26 17:15:19",
+      "updatedBy": "2017-10-26 17:15:19",
+      "createdAt": "2017-10-26 17:15:19",
+      "updatedAt": "2017-10-26 17:15:19",
+      "MeasurementPeriodList": [
+        "string"
+      ],
+      "measurementPeriods": [
+        "string"
+      ]
+    }
+  },
+  "orig2018-06-17 15:12:5600000": {
+    "proposal": {
+      "proposalId": "2018ESS3",
+      "pi_email": "Anton.Khaplanov@esss.se",
+      "pi_firstname": "Anton",
+      "pi_lastname": "Khaplanov",
+      "email": "Anton.Khaplanov@esss.se",
+      "firstname": "Anton",
+      "lastname": "Khaplanov",
+      "title": "Multigrid",
+      "abstract": "Multigrid",
+      "attachments": [
+        "string"
+      ],
+      "ownerGroup": "ess",
+      "accessGroups": [
+        "ess",
+        "brightness"
+      ],
+      "createdBy": "2017-10-26 17:15:19",
+      "updatedBy": "2017-10-26 17:15:19",
+      "createdAt": "2017-10-26 17:15:19",
+      "updatedAt": "2017-10-26 17:15:19",
+      "MeasurementPeriodList": [
+        "string"
+      ],
+      "measurementPeriods": [
+        "string"
+      ]
+    }
+  },
+  "orig2018-06-18 15:12:5600000": {
+    "proposal": {
+      "proposalId": "2018ESS4",
+      "pi_email": "Dorothea.Pfeiffer@esss.se",
+      "pi_firstname": "Dorothea",
+      "pi_lastname": "Pfeiffer",
+      "email": "Dorothea.Pfeiffer@esss.se",
+      "firstname": "Dorothea",
+      "lastname": "Pfeiffer",
+      "title": "NMX",
+      "abstract": "NMX",
+      "attachments": [
+        "string"
+      ],
+      "ownerGroup": "ess",
+      "accessGroups": [
+        "ess",
+        "brightness"
+      ],
+      "createdBy": "2017-10-26 17:15:19",
+      "updatedBy": "2017-10-26 17:15:19",
+      "createdAt": "2017-10-26 17:15:19",
+      "updatedAt": "2017-10-26 17:15:19",
+      "MeasurementPeriodList": [
+        "string"
+      ],
+      "measurementPeriods": [
+        "string"
+      ]
+    }
+  }
+}

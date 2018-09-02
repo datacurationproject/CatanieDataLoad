@@ -1,8 +1,8 @@
 "use strict";
-import * as data from '/tmp/config.json';
+import * as data from "/tmp/config.json";
+import * as os from "os";
 
 const rp = require('request-promise');
-import * as os from 'os';
 
 class LoggerIn {
 
@@ -15,10 +15,10 @@ class LoggerIn {
     constructor() {
 	   this.url_pick = {
             "local": "http://localhost:3000",
-            //"macmurphy.local": "http://localhost:3000",
-            "macmurphy.local": "https://scicatapi.esss.dk",
-            //"CI0020036": "http://localhost:3000",
-            "CI0020036": "https://scicatapi.esss.dk",
+       "macmurphy.local": "http://localhost:3000",
+       //"macmurphy.local": "https://scicatapi.esss.dk",
+       "CI0020036": "http://localhost:3000",
+       //"CI0020036": "https://scicatapi.esss.dk",
             "kubetest01.dm.esss.dk": "https://kubetest02.dm.esss.dk:32223",
             "scicat01.esss.lu.se": "https://scicat03.esss.lu.se:32223",
             "dst": "https://scicatapi.esss.dk",
