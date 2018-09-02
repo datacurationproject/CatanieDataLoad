@@ -12,7 +12,7 @@ class MetadataUploader extends LoggerIn {
 
     let url = this.url_base + "Datasets?access_token=" + access;
     let url_orig = this.url_base + "OrigDatablocks?access_token=" + access;
-    let url_attach = this.url_base + "DatasetAttachments?access_token=" + access;
+    let url_publish = this.url_base + "PublishedData?access_token=" + access;
     console.log(url);
 
     for (let key in datasets) {
@@ -45,6 +45,7 @@ class MetadataUploader extends LoggerIn {
           rejectUnauthorized: false,
           requestCert: true
         };
+
         try {
           const response = await rp(options4);
           Promise.resolve(response);
@@ -55,13 +56,21 @@ class MetadataUploader extends LoggerIn {
         }
 
         let options5 = {
-          url: url_attach,
-          method: "POST",
-          body: datasets[key]["orig"],
+          url: url_publish,
+          method: "PUT",
+          body: datasets[key]["published"],
           json: true,
           rejectUnauthorized: false,
           requestCert: true
         };
+        try {
+          const response = await rp(options5);
+          Promise.resolve(response);
+        } catch (error) {
+          console.log(url_orig);
+          console.log(error);
+          return Promise.reject(error);
+        }
         console.log(options5);
       }
     }
