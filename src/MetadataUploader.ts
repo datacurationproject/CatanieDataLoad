@@ -97,9 +97,6 @@ class MetadataUploader extends LoggerIn {
     }
 
 
-      }
-    }
-
     return datasets;
   }
 

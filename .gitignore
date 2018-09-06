@@ -114,3 +114,4 @@ typings/
 yarn.lock
 config.json
 src/datasets.json
+.idea/*

@@ -42,7 +42,6 @@ class LoggerIn {
 
         let url = this.login_url;
         let rawdata = data;
-        console.log(data);
 
         let options1 = {
             url: url,
