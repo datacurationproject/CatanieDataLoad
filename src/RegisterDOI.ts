@@ -5,14 +5,30 @@ import { PublishedData } from "./CatamelClasses";
 const datacite_authentication = require("/tmp/generic_config.json");
 
 class RegisterDOI {
+  get_first(fullName) {
+    const firstName = fullName
+      .split(" ")
+      .slice(0, -1)
+      .join(" ");
+    return firstName;
+  }
+
+  get_last(fullName) {
+    const lastName = fullName
+      .split(" ")
+      .slice(-1)
+      .join(" ");
+    return lastName;
+  }
+
   async register_doi() {
     for (let key in datasets) {
       if (datasets.hasOwnProperty(key)) {
         const published: PublishedData = datasets[key]["published"];
         console.log(key + " -> " + published.doi);
 
-        const first_name = "Gareth";
-        const last_name = "Murphy";
+        const first_name = this.get_first(published.creator);
+        const last_name = this.get_last(published.creator);
         const affiliation = published.affiliation;
         const publisher = published.publisher;
         const publication_year = published.publicationYear;
@@ -22,7 +38,7 @@ class RegisterDOI {
         const doi = published.doi;
         const resource_type = published.resourceType;
         const url =
-          "https://doi.esss.se/detail/10.17199%252FBRIGHTNESS%252FNMX0001";
+          "https://doi.esss.se/detail/" + encodeURIComponent(encodeURIComponent(doi));
 
         const xml = `<?xml version="1.0" encoding="UTF-8"?> \
 <resource xmlns="http://datacite.org/schema/kernel-4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4/metadata.xsd">  \
@@ -47,13 +63,36 @@ class RegisterDOI {
   <resourceType resourceTypeGeneral="Text">${resource_type}</resourceType> \
 </resource>`;
 
-        let options5 = {
-          url: url,
+        const register_plain_text = `#Content-Type:text/plain;charset=UTF-8
+doi= ${doi}
+url= ${url}`;
+
+        const datacite_register_metadata =
+          "https://mds.datacite.org/metadata" + "/" + doi;
+        const datacite_register_doi = "https://mds.datacite.org/doi" + "/" + doi;
+
+        console.log(register_plain_text);
+        let options_put = {
+          url: datacite_register_metadata,
           method: "PUT",
           body: xml,
           rejectUnauthorized: false,
           requestCert: true
         };
+
+
+        const options_register_put = {
+          method: "PUT",
+          body: register_plain_text,
+          uri: datacite_register_doi,
+          headers: {
+            "content-type": "text/plain;charset=UTF-8"
+          },
+          auth: datacite_authentication
+        };
+
+
+
         /*
         try {
           const response = await rp(options5);
@@ -64,7 +103,7 @@ class RegisterDOI {
           return Promise.reject(error);
         }
         */
-        // console.log(options5);
+        console.log(options5);
       }
     }
 
