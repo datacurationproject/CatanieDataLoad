@@ -13,7 +13,8 @@ class MetadataUploader extends LoggerIn {
     let url = this.url_base + "Datasets?access_token=" + access;
     let url_orig = this.url_base + "OrigDatablocks?access_token=" + access;
     let url_publish = this.url_base + "PublishedData?access_token=" + access;
-    let url_lifecycle = this.url_base + "DatasetLifecycles?access_token=" + access;
+    let url_lifecycle =
+      this.url_base + "DatasetLifecycles?access_token=" + access;
     console.log(url);
 
     for (let key in datasets) {
@@ -91,11 +92,8 @@ class MetadataUploader extends LoggerIn {
           return Promise.reject(error);
         }
         console.log(options_lifecycle);
-
-
       }
     }
-
 
     return datasets;
   }

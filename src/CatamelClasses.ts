@@ -82,10 +82,14 @@ class PublishedData {
   "publicationYear": number;
   "title": string;
   "url": string;
+  "abstract": string;
+  "thumbnail": string;
+  "resourceType": string;
+  "numberOfFiles": number;
+  "sizeOfArchive": number;
   "pidArray": Array<any>;
   "authors": Array<any>;
-  "doiRegisteredSuccessfullyTime"?: Date;
-  "id"?: any;
+  "doiRegisteredSuccessfullyTime": Date;
 }
 
 export { PublishedData, Dataset, DatasetLifecycle, Job, DatasetAttachment };
