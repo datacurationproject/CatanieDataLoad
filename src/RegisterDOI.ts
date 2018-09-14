@@ -1,6 +1,7 @@
 "use strict";
 import * as datasets from "./datasets.json";
 import { PublishedData } from "./CatamelClasses";
+const rp = require("request-promise");
 
 const datacite_authentication = require("/tmp/generic_config.json");
 
@@ -38,7 +39,8 @@ class RegisterDOI {
         const doi = published.doi;
         const resource_type = published.resourceType;
         const url =
-          "https://doi.esss.se/detail/" + encodeURIComponent(encodeURIComponent(doi));
+          "https://doi.esss.se/detail/" +
+          encodeURIComponent(encodeURIComponent(encodeURIComponent(doi)));
 
         const xml = `<?xml version="1.0" encoding="UTF-8"?> \
 <resource xmlns="http://datacite.org/schema/kernel-4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4/metadata.xsd">  \
@@ -52,15 +54,18 @@ class RegisterDOI {
     </creator> \
   </creators>  \
   <titles> \
-    <title>${title} </title> \
+    <title xml:lang="en">${title} </title> \
   </titles>  \
   <publisher>${publisher}</publisher>  \
   <publicationYear>${publication_year}</publicationYear>  \
+  <subjects> \
+    <subject xml:lang="en">${title} </title> \
+    <subject xml:lang="en">ESS neutron data</title> \
+  </subjects>  \
+  <resourceType resourceTypeGeneral="Dataset">${resource_type}</resourceType> \
   <descriptions>  \
-    <description xml:lang="en-us" descriptionType="TechnicalInfo">${technical_info}</description>  \
-    <description xml:lang="en-us" descriptionType="Abstract">${abstract}</description> \
+    <description xml:lang="en" descriptionType="Abstract">${abstract}</description> \
   </descriptions>  \
-  <resourceType resourceTypeGeneral="Text">${resource_type}</resourceType> \
 </resource>`;
 
         const register_plain_text = `#Content-Type:text/plain;charset=UTF-8
@@ -69,17 +74,16 @@ url= ${url}`;
 
         const datacite_register_metadata =
           "https://mds.datacite.org/metadata" + "/" + doi;
-        const datacite_register_doi = "https://mds.datacite.org/doi" + "/" + doi;
+        const datacite_register_doi =
+          "https://mds.datacite.org/doi" + "/" + doi;
 
         console.log(register_plain_text);
         let options_put = {
           url: datacite_register_metadata,
           method: "PUT",
           body: xml,
-          rejectUnauthorized: false,
-          requestCert: true
+          auth: datacite_authentication
         };
-
 
         const options_register_put = {
           method: "PUT",
@@ -91,19 +95,32 @@ url= ${url}`;
           auth: datacite_authentication
         };
 
+        await rp(options_put)
+          .then(function(parsedBody) {
+            console.log("register metadata worked");
+            //console.log(parsedBody);
+            // POST succeeded...
+          })
+          .catch(function(err) {
+            console.log("register metadata failed");
+            console.log(err);
+            // POST failed...
+          });
 
+        await rp(options_register_put)
+          .then(function(parsedBody) {
+            console.log("register doi worked");
+            //console.log(parsedBody);
+            // POST succeeded...
+          })
+          .catch(function(err) {
+            console.log("register doi failed");
+            console.log(err);
+            // POST failed...
+          });
 
-        /*
-        try {
-          const response = await rp(options5);
-          Promise.resolve(response);
-        } catch (error) {
-          console.log(url_orig);
-          console.log(error);
-          return Promise.reject(error);
-        }
-        */
-        console.log(options5);
+        console.log(options_put);
+        console.log(options_register_put);
       }
     }
 
