@@ -10,7 +10,7 @@ class MetadataUploader extends LoggerIn {
     console.log(access);
     assert(access.length == 64);
 
-    let url = this.url_base + "Datasets?access_token=" + access;
+    let url = this.url_base + "RawDatasets?access_token=" + access;
     let url_orig = this.url_base + "OrigDatablocks?access_token=" + access;
     let url_publish = this.url_base + "PublishedData?access_token=" + access;
     let url_lifecycle =
