@@ -26,7 +26,7 @@ class DeleterPublisher extends LoggerIn {
         rp(options2).then(body => {
             console.log(JSON.stringify(body[0]));
 
-            let deletable = body[0].doi;
+            let deletable = encodeURI(body[0].doi);
             let url =
                 this.url_base +
                 "PublishedData/" +
