@@ -17,7 +17,7 @@ class DeleterPublisher extends LoggerIn {
         let options2 = {
             url: url,
             method: "GET",
-            body: {test: "test"},
+            body: { test: "test" },
             json: true,
             rejectUnauthorized: false,
             requestCert: true
@@ -26,7 +26,7 @@ class DeleterPublisher extends LoggerIn {
         rp(options2).then(body => {
             console.log(JSON.stringify(body[0]));
 
-            let deletable = encodeURI(body[0].doi);
+            let deletable = encodeURIComponent(body[0].doi);
             let url =
                 this.url_base +
                 "PublishedData/" +
@@ -47,7 +47,7 @@ class DeleterPublisher extends LoggerIn {
                 if (body.hasOwnProperty(key)) {
                     //console.log(key + " -> " + body[key].pid);
 
-                    let deletable = body[key].doi;
+                    let deletable = encodeURIComponent(body[key].doi);
                     let url =
                         this.url_base +
                         "PublishedData/" +
@@ -57,7 +57,7 @@ class DeleterPublisher extends LoggerIn {
                     let options3 = {
                         url: url,
                         method: "DELETE",
-                        body: body[0].pid,
+                        body: deletable,
                         rejectUnauthorized: false,
                         requestCert: true
                     };
