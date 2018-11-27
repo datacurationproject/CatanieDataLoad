@@ -25,7 +25,7 @@ class MetadataUploader extends LoggerIn {
 
         let options3 = {
           url: url,
-          method: "POST",
+          method: "PUT",
           body: datasets[key]["dataset"],
           json: true,
           rejectUnauthorized: false,
