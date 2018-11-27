@@ -1,126 +1,164 @@
 {
-  "orig2018-06-14 15:12:5600000": {
-    "proposal": {
-      "proposalId": "2018ESS1",
-      "pi_email": "francesco.piscitelli@esss.se",
-      "pi_firstname": "Francesco",
-      "pi_lastname": "Piscitelli",
-      "email": "francesco.piscitelli@esss.se",
-      "firstname": "Francesco",
-      "lastname": "Piscitelli",
-      "title": "Multiblade",
-      "abstract": "Multiblade",
-      "attachments": [
-        "string"
-      ],
-      "ownerGroup": "ess",
-      "accessGroups": [
-        "ess",
-        "brightness"
-      ],
-      "createdBy": "2017-10-26 17:15:19",
-      "updatedBy": "2017-10-26 17:15:19",
-      "createdAt": "2017-10-26 17:15:19",
-      "updatedAt": "2017-10-26 17:15:19",
-      "MeasurementPeriodList": [
-        "string"
-      ],
-      "measurementPeriods": [
-        "string"
-      ]
+    "keysonde": {
+        "proposal": {
+            "proposalId": "2018ESS2",
+            "pi_email": "ramsey.aljebali@esss.se",
+            "pi_firstname": "Ramsey",
+            "pi_lastname": "Al Jebali",
+            "email": "ramsey.aljebali@esss.se",
+            "firstname": "Ramsey",
+            "lastname": "Al Jebali",
+            "title": "Sample data from SoNDe",
+            "abstract": "This data was collected as part of ESS sample data for SoNDe",
+            "attachments": [
+                "ess"
+            ],
+            "MeasurementPeriodList": [
+                "ess"
+            ],
+            "ownerGroup": "ess",
+            "accessGroups": [
+                "brightness",
+                "ess"
+            ],
+            "createdBy": "ingestor",
+            "updatedBy": "ingestor",
+            "updatedAt": "2018-11-27T13:06:58.003Z"
+        }
+    },
+    "keynmx": {
+        "proposal": {
+            "proposalId": "2018ESS4",
+            "pi_email": "Dorothea.Pfeiffer@esss.se",
+            "pi_firstname": "Dorothea",
+            "pi_lastname": "Pfeiffer",
+            "email": "Dorothea.Pfeiffer@esss.se",
+            "firstname": "Dorothea",
+            "lastname": "Pfeiffer",
+            "title": "Sample data from NMX",
+            "abstract": "This data was collected as part of ESS sample data for NMX",
+            "attachments": [
+                "ess"
+            ],
+            "MeasurementPeriodList": [
+                "ess"
+            ],
+            "ownerGroup": "ess",
+            "accessGroups": [
+                "brightness",
+                "ess"
+            ],
+            "createdBy": "ingestor",
+            "updatedBy": "ingestor",
+            "updatedAt": "2018-11-27T13:06:58.005Z"
+        }
+    },
+    "keymultiblade": {
+        "proposal": {
+            "proposalId": "2018ESS1",
+            "pi_email": "Francesco.Piscitelli@esss.se",
+            "pi_firstname": "Francesco",
+            "pi_lastname": "Piscitelli",
+            "email": "Francesco.Piscitelli@esss.se",
+            "firstname": "Francesco",
+            "lastname": "Piscitelli",
+            "title": "Sample data from multiblade",
+            "abstract": "This data was collected as part of ESS sample data for multiblade",
+            "attachments": [
+                "ess"
+            ],
+            "MeasurementPeriodList": [
+                "ess"
+            ],
+            "ownerGroup": "ess",
+            "accessGroups": [
+                "brightness",
+                "ess"
+            ],
+            "createdBy": "ingestor",
+            "updatedBy": "ingestor",
+            "updatedAt": "2018-11-27T13:06:58.005Z"
+        }
+    },
+    "keymultigrid": {
+        "proposal": {
+            "proposalId": "2018ESS3",
+            "pi_email": "anton.khaplanov@esss.se",
+            "pi_firstname": "Anton",
+            "pi_lastname": "Khaplanov",
+            "email": "anton.khaplanov@esss.se",
+            "firstname": "Anton",
+            "lastname": "Khaplanov",
+            "title": "Sample data from multigrid",
+            "abstract": "This data was collected as part of ESS sample data for multigrid",
+            "attachments": [
+                "ess"
+            ],
+            "MeasurementPeriodList": [
+                "ess"
+            ],
+            "ownerGroup": "ess",
+            "accessGroups": [
+                "brightness",
+                "ess"
+            ],
+            "createdBy": "ingestor",
+            "updatedBy": "ingestor",
+            "updatedAt": "2018-11-27T13:06:58.006Z"
+        }
+    },
+    "keyv20": {
+        "proposal": {
+            "proposalId": "2018ESS6",
+            "pi_email": "Jonas.Nilsson@esss.se",
+            "pi_firstname": "Jonas",
+            "pi_lastname": "Nilsson",
+            "email": "Jonas.Nilsson@esss.se",
+            "firstname": "Jonas",
+            "lastname": "Nilsson",
+            "title": "Sample data from V20",
+            "abstract": "This data was collected as part of ESS sample data for V20",
+            "attachments": [
+                "ess"
+            ],
+            "MeasurementPeriodList": [
+                "ess"
+            ],
+            "ownerGroup": "ess",
+            "accessGroups": [
+                "brightness",
+                "ess"
+            ],
+            "createdBy": "ingestor",
+            "updatedBy": "ingestor",
+            "updatedAt": "2018-11-27T13:06:58.006Z"
+        }
+    },
+    "keybeaminstrumentation": {
+        "proposal": {
+            "proposalId": "2018ESS5",
+            "pi_email": "Clement.Derrez@esss.se",
+            "pi_firstname": "Clement",
+            "pi_lastname": "Derrez",
+            "email": "Clement.Derrez@esss.se",
+            "firstname": "Clement",
+            "lastname": "Derrez",
+            "title": "Sample data from BeamInstrumentation",
+            "abstract": "This data was collected as part of ESS sample data for BeamInstrumentation",
+            "attachments": [
+                "ess"
+            ],
+            "MeasurementPeriodList": [
+                "ess"
+            ],
+            "ownerGroup": "ess",
+            "accessGroups": [
+                "brightness",
+                "ess"
+            ],
+            "createdBy": "ingestor",
+            "updatedBy": "ingestor",
+            "updatedAt": "2018-11-27T13:06:58.007Z"
+        }
     }
-  },
-  "orig2018-06-13 15:12:5600000": {
-    "proposal": {
-      "proposalId": "2018ESS2",
-      "pi_email": "Ramsey.AlJebali@esss.se",
-      "pi_firstname": "Ramsey",
-      "pi_lastname": "Al Jebali",
-      "email": "Ramsey.AlJebali@esss.se",
-      "firstname": "Ramsey",
-      "lastname": "Al Jebali",
-      "title": "SONDE",
-      "abstract": "SONDE",
-      "attachments": [
-        "string"
-      ],
-      "ownerGroup": "ess",
-      "accessGroups": [
-        "ess",
-        "brightness"
-      ],
-      "createdBy": "2017-10-26 17:15:19",
-      "updatedBy": "2017-10-26 17:15:19",
-      "createdAt": "2017-10-26 17:15:19",
-      "updatedAt": "2017-10-26 17:15:19",
-      "MeasurementPeriodList": [
-        "string"
-      ],
-      "measurementPeriods": [
-        "string"
-      ]
-    }
-  },
-  "orig2018-06-17 15:12:5600000": {
-    "proposal": {
-      "proposalId": "2018ESS3",
-      "pi_email": "Anton.Khaplanov@esss.se",
-      "pi_firstname": "Anton",
-      "pi_lastname": "Khaplanov",
-      "email": "Anton.Khaplanov@esss.se",
-      "firstname": "Anton",
-      "lastname": "Khaplanov",
-      "title": "Multigrid",
-      "abstract": "Multigrid",
-      "attachments": [
-        "string"
-      ],
-      "ownerGroup": "ess",
-      "accessGroups": [
-        "ess",
-        "brightness"
-      ],
-      "createdBy": "2017-10-26 17:15:19",
-      "updatedBy": "2017-10-26 17:15:19",
-      "createdAt": "2017-10-26 17:15:19",
-      "updatedAt": "2017-10-26 17:15:19",
-      "MeasurementPeriodList": [
-        "string"
-      ],
-      "measurementPeriods": [
-        "string"
-      ]
-    }
-  },
-  "orig2018-06-18 15:12:5600000": {
-    "proposal": {
-      "proposalId": "2018ESS4",
-      "pi_email": "Dorothea.Pfeiffer@esss.se",
-      "pi_firstname": "Dorothea",
-      "pi_lastname": "Pfeiffer",
-      "email": "Dorothea.Pfeiffer@esss.se",
-      "firstname": "Dorothea",
-      "lastname": "Pfeiffer",
-      "title": "NMX",
-      "abstract": "NMX",
-      "attachments": [
-        "string"
-      ],
-      "ownerGroup": "ess",
-      "accessGroups": [
-        "ess",
-        "brightness"
-      ],
-      "createdBy": "2017-10-26 17:15:19",
-      "updatedBy": "2017-10-26 17:15:19",
-      "createdAt": "2017-10-26 17:15:19",
-      "updatedAt": "2017-10-26 17:15:19",
-      "MeasurementPeriodList": [
-        "string"
-      ],
-      "measurementPeriods": [
-        "string"
-      ]
-    }
-  }
 }
