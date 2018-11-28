@@ -1,7 +1,7 @@
 {
     "keysonde": {
         "proposal": {
-            "proposalId": "2018ESS2",
+            "proposalId": "LM28IF",
             "pi_email": "ramsey.aljebali@esss.se",
             "pi_firstname": "Ramsey",
             "pi_lastname": "Al Jebali",
@@ -9,7 +9,7 @@
             "firstname": "Ramsey",
             "lastname": "Al Jebali",
             "title": "Sample data from SoNDe",
-            "abstract": "This data was collected as part of ESS sample data for SoNDe",
+            "abstract": "This data was collected as ESS as part of sample data for SoNDe",
             "attachments": [
                 "ess"
             ],
@@ -23,12 +23,12 @@
             ],
             "createdBy": "ingestor",
             "updatedBy": "ingestor",
-            "updatedAt": "2018-11-27T13:06:58.003Z"
+            "updatedAt": "2018-11-28T16:25:27.284Z"
         }
     },
     "keynmx": {
         "proposal": {
-            "proposalId": "2018ESS4",
+            "proposalId": "2LG2QT",
             "pi_email": "Dorothea.Pfeiffer@esss.se",
             "pi_firstname": "Dorothea",
             "pi_lastname": "Pfeiffer",
@@ -36,7 +36,7 @@
             "firstname": "Dorothea",
             "lastname": "Pfeiffer",
             "title": "Sample data from NMX",
-            "abstract": "This data was collected as part of ESS sample data for NMX",
+            "abstract": "This data was collected as ESS as part of sample data for NMX",
             "attachments": [
                 "ess"
             ],
@@ -50,12 +50,12 @@
             ],
             "createdBy": "ingestor",
             "updatedBy": "ingestor",
-            "updatedAt": "2018-11-27T13:06:58.005Z"
+            "updatedAt": "2018-11-28T16:25:27.286Z"
         }
     },
     "keymultiblade": {
         "proposal": {
-            "proposalId": "2018ESS1",
+            "proposalId": "23PTEG",
             "pi_email": "Francesco.Piscitelli@esss.se",
             "pi_firstname": "Francesco",
             "pi_lastname": "Piscitelli",
@@ -63,7 +63,7 @@
             "firstname": "Francesco",
             "lastname": "Piscitelli",
             "title": "Sample data from multiblade",
-            "abstract": "This data was collected as part of ESS sample data for multiblade",
+            "abstract": "This data was collected as ESS as part of sample data for multiblade",
             "attachments": [
                 "ess"
             ],
@@ -77,12 +77,12 @@
             ],
             "createdBy": "ingestor",
             "updatedBy": "ingestor",
-            "updatedAt": "2018-11-27T13:06:58.005Z"
+            "updatedAt": "2018-11-28T16:25:27.287Z"
         }
     },
     "keymultigrid": {
         "proposal": {
-            "proposalId": "2018ESS3",
+            "proposalId": "439YZU",
             "pi_email": "anton.khaplanov@esss.se",
             "pi_firstname": "Anton",
             "pi_lastname": "Khaplanov",
@@ -90,7 +90,7 @@
             "firstname": "Anton",
             "lastname": "Khaplanov",
             "title": "Sample data from multigrid",
-            "abstract": "This data was collected as part of ESS sample data for multigrid",
+            "abstract": "This data was collected as ESS as part of sample data for multigrid",
             "attachments": [
                 "ess"
             ],
@@ -104,12 +104,12 @@
             ],
             "createdBy": "ingestor",
             "updatedBy": "ingestor",
-            "updatedAt": "2018-11-27T13:06:58.006Z"
+            "updatedAt": "2018-11-28T16:25:27.288Z"
         }
     },
     "keyv20": {
         "proposal": {
-            "proposalId": "2018ESS6",
+            "proposalId": "67JH32",
             "pi_email": "Jonas.Nilsson@esss.se",
             "pi_firstname": "Jonas",
             "pi_lastname": "Nilsson",
@@ -117,7 +117,7 @@
             "firstname": "Jonas",
             "lastname": "Nilsson",
             "title": "Sample data from V20",
-            "abstract": "This data was collected as part of ESS sample data for V20",
+            "abstract": "This data was collected as ESS as part of sample data for V20",
             "attachments": [
                 "ess"
             ],
@@ -131,12 +131,12 @@
             ],
             "createdBy": "ingestor",
             "updatedBy": "ingestor",
-            "updatedAt": "2018-11-27T13:06:58.006Z"
+            "updatedAt": "2018-11-28T16:25:27.289Z"
         }
     },
     "keybeaminstrumentation": {
         "proposal": {
-            "proposalId": "2018ESS5",
+            "proposalId": "MRV1E2",
             "pi_email": "Clement.Derrez@esss.se",
             "pi_firstname": "Clement",
             "pi_lastname": "Derrez",
@@ -144,7 +144,7 @@
             "firstname": "Clement",
             "lastname": "Derrez",
             "title": "Sample data from BeamInstrumentation",
-            "abstract": "This data was collected as part of ESS sample data for BeamInstrumentation",
+            "abstract": "This data was collected as ESS as part of sample data for BeamInstrumentation",
             "attachments": [
                 "ess"
             ],
@@ -158,7 +158,7 @@
             ],
             "createdBy": "ingestor",
             "updatedBy": "ingestor",
-            "updatedAt": "2018-11-27T13:06:58.007Z"
+            "updatedAt": "2018-11-28T16:25:27.290Z"
         }
     }
 }
