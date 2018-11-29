@@ -39,7 +39,7 @@ class ProposalUploader extends LoggerIn {
   }
 
   async main() {
-    const x = await this.login();
+    const x = await this.login("proposal");
     const y = await this.getDatasets(x);
     console.log(y);
   }

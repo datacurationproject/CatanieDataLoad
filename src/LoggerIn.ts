@@ -4,6 +4,8 @@ import * as os from "os";
 
 const rp = require('request-promise');
 
+const fs = require('fs');
+
 class LoggerIn {
 
     url_base: string;
@@ -39,11 +41,22 @@ class LoggerIn {
         this.login_url = this.url_base + "Users/login";
     }
 
-    async login() {
+    readjson (filename:string){
+return  JSON.parse(fs.readFileSync(filename, "utf-8"))
+    }
+    async login(ingestortype) {
 
         let url = this.login_url;
-        let rawdata = data;
+        let rawdata = {} ;
+        
 
+        if (ingestortype == "proposal"){
+            rawdata = this.readjson("/tmp/proposal.json")
+            console.log(rawdata);
+        }else{
+            rawdata = this.readjson("/tmp/config.json");
+            console.log(rawdata);
+        }
         let options1 = {
             url: url,
             method: 'POST',
