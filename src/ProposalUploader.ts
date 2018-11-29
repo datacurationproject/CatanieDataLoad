@@ -4,8 +4,8 @@ import * as datasets from "./proposal.json";
 import { LoggerIn } from "./LoggerIn";
 import rp = require("request-promise");
 
-class PublishedDataUploader extends LoggerIn {
-  async get_datasets(response) {
+class ProposalUploader extends LoggerIn {
+  async getDatasets(response) {
     const access = response.id;
     console.log(access);
     assert(access.length == 64);
@@ -40,10 +40,10 @@ class PublishedDataUploader extends LoggerIn {
 
   async main() {
     const x = await this.login();
-    const y = await this.get_datasets(x);
+    const y = await this.getDatasets(x);
     console.log(y);
   }
 }
 
-let met = new PublishedDataUploader();
+let met = new ProposalUploader();
 met.main();
