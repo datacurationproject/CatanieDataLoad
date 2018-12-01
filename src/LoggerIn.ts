@@ -1,5 +1,4 @@
 "use strict";
-import * as data from "/tmp/config.json";
 import * as os from "os";
 
 const rp = require('request-promise');

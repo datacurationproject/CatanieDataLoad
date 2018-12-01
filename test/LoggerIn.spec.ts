@@ -1,4 +1,3 @@
-// Reference mocha-typescript's global definitions:
 import 'mocha';
 import {expect} from 'chai'
 import { LoggerIn } from '../src/LoggerIn';
