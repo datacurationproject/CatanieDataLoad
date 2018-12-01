@@ -4,7 +4,7 @@ import { LoggerIn } from "./LoggerIn";
 
 const rp = require("request-promise");
 
-class DeleterOrig extends LoggerIn {
+export class DeleterOrig extends LoggerIn {
     model="OrigDatablocks";
     file="orig.json";
 
@@ -78,5 +78,3 @@ class DeleterOrig extends LoggerIn {
     }
 }
 
-let met = new DeleterOrig();
-met.main();
