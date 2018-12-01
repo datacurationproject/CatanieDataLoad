@@ -5,13 +5,16 @@ import { LoggerIn } from "./LoggerIn";
 const rp = require("request-promise");
 
 class DeleterOrig extends LoggerIn {
+    model="OrigDatablocks";
+    file="orig.json";
+
     get_datasets(response) {
         const access = response.id;
         console.log(access);
         assert(access.length == 64);
         const datasets = "ddd";
 
-        let url = this.url_base + "OrigDatablocks?access_token=" + access;
+        let url = this.url_base + this.model+"?access_token=" + access;
         console.log(url);
 
         let options2 = {
@@ -29,7 +32,7 @@ class DeleterOrig extends LoggerIn {
             let deletable = body[0].id;
             let url =
                 this.url_base +
-                "OrigDatablocks/" +
+                this.model+"/" +
                 deletable +
                 "?access_token=" +
                 access;
@@ -50,7 +53,7 @@ class DeleterOrig extends LoggerIn {
                     let deletable = body[key].id;
                     let url =
                         this.url_base +
-                        "OrigDatablocks/" +
+                        this.model+"/" +
                         deletable +
                         "?access_token=" +
                         access;
