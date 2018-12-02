@@ -47,7 +47,7 @@ class Deleter extends LoggerIn {
     }
 
     async main() {
-        const x = await this.login();
+        const x = await this.login("default");
         const y = await this.get_datasets(x);
         console.log(y);
     }

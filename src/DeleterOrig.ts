@@ -8,6 +8,10 @@ export class DeleterOrig extends LoggerIn {
     model="OrigDatablocks";
     file="orig.json";
 
+    set_model(modeltype: string){
+        this.model = modeltype;
+    }
+
     get_datasets(response) {
         const access = response.id;
         console.log(access);
