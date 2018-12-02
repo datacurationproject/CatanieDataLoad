@@ -4,7 +4,7 @@ import * as datasets from "./datasets.json";
 import { LoggerIn } from "./LoggerIn";
 import rp = require("request-promise");
 
-class MetadataUploader extends LoggerIn {
+export class MetadataUploader extends LoggerIn {
   async get_datasets(response) {
     const access = response.id;
     console.log(access);

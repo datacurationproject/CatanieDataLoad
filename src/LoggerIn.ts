@@ -39,7 +39,7 @@ class LoggerIn {
     readjson (filename:string){
         return  JSON.parse(fs.readFileSync(filename, "utf-8"));
     }
-    async login(ingestortype) {
+    async login(ingestortype: string) {
 
         let url = this.login_url;
         let rawdata = {} ;

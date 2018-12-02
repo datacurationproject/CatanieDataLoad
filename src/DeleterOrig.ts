@@ -12,7 +12,8 @@ export class DeleterOrig extends LoggerIn {
         this.model = modeltype;
     }
 
-    get_datasets(response) {
+    deleteModel(response) {
+        console.log(this.model , "delete");
         const access = response.id;
         console.log(access);
         assert(access.length == 64);
@@ -52,9 +53,19 @@ export class DeleterOrig extends LoggerIn {
 
             for (let key in body) {
                 if (body.hasOwnProperty(key)) {
-                    //console.log(key + " -> " + body[key].pid);
-
-                    let deletable = body[key].id;
+                    let deletable = "string";
+                    if (this.model == "OrigDatablocks"){
+                        deletable = body[key].id;
+                        console.log("gm",this.model , deletable);
+                    } 
+                    else if (this.model == "PublishedData"){
+                        deletable = encodeURIComponent( body[key].doi);
+                        console.log("gm",this.model , deletable);
+                    }
+                    else if (this.model == "Datasets"){
+                        deletable = encodeURIComponent( body[key].pid);
+                    console.log("gm",this.model , deletable);
+                    }
                     let url =
                         this.url_base +
                         this.model+"/" +
@@ -64,7 +75,7 @@ export class DeleterOrig extends LoggerIn {
                     let options3 = {
                         url: url,
                         method: "DELETE",
-                        body: body[0].pid,
+                        body: deletable,
                         rejectUnauthorized: false,
                         requestCert: true
                     };
@@ -77,7 +88,7 @@ export class DeleterOrig extends LoggerIn {
 
     async main() {
         const x = await this.login("default");
-        const y = await this.get_datasets(x);
+        const y = await this.deleteModel(x);
         console.log(y);
     }
 }
