@@ -14,7 +14,7 @@ async function main() {
   await deletePub.set_model("PublishedData");
   const response2 = await deletePub.deleteModel(id2);
 
-  const deleteDat = new DeleterOrig();
+  const deleteDat = await new DeleterOrig();
   const id3 = await deleteDat.login("default");
   await deleteDat.set_model("Datasets");
   const response3 = await deleteDat.deleteModel(id3);

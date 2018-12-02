@@ -34,7 +34,7 @@ export class DeleterOrig extends LoggerIn {
         rp(options2).then(body => {
             console.log(JSON.stringify(body[0]));
 
-            let deletable = body[0].id;
+            let deletable = encodeURIComponent(body[0].id);
             let url =
                 this.url_base +
                 this.model+"/" +
