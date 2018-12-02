@@ -29,19 +29,15 @@ class LoggerIn {
 
 
         this.machine_name = os.hostname();
-        //this.machine_name = "http://catamel-dacat-api-server-dev"
         console.log("machine name ", this.machine_name);
-        //this.machine_name = "kubetest01";
 
         this.url = this.url_pick[this.machine_name];
         this.url_base = this.url + "/api/v2/";
-        //this.url_base = "https://kubetest02.dm.esss.dk:32223/api/v2/"
-        //this.url_base = "https://scicat03.esss.lu.se:32223/api/v2/"
         this.login_url = this.url_base + "Users/login";
     }
 
     readjson (filename:string){
-return  JSON.parse(fs.readFileSync(filename, "utf-8"))
+        return  JSON.parse(fs.readFileSync(filename, "utf-8"));
     }
     async login(ingestortype) {
 

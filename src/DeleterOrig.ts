@@ -78,3 +78,7 @@ export class DeleterOrig extends LoggerIn {
     }
 }
 
+if (require.main === module) {
+    const met = new DeleterOrig();
+    met.main()
+}
