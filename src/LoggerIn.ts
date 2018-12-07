@@ -46,10 +46,10 @@ class LoggerIn {
         
 
         if (ingestortype == "proposal"){
-            rawdata = this.readjson("/tmp/proposal.json")
+            rawdata = this.readjson("./src/proposal.local.json")
             console.log(rawdata);
         }else{
-            rawdata = this.readjson("/tmp/config.json");
+            rawdata = this.readjson("./src/config.local.json");
             console.log(rawdata);
         }
         let options1 = {
