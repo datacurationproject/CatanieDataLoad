@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 if [ "$(hostname)" == "CI0020036" ]; then
-	ssh compile04 "cd metadatacreator  &&  ./scripts/get_metadata.sh"
+	ssh compile "cd metadatacreator  &&  ./scripts/get_metadata.sh"
 	rsync -avz login:metadatacreator/publish.json src/datasets.json
 fi
 if [ "$(hostname)" == "macmurphy.local" ]; then
