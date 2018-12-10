@@ -19,8 +19,8 @@ class LoggerIn {
             "local": "http://localhost:3000",
             "macmurphy.local": "http://localhost:3000",
             // "macmurphy.local": "https://scicatapi.esss.dk",
-            "CI0020036": "http://localhost:3000",
-            //"CI0020036": "https://scicatapi.esss.dk",
+//            "CI0020036": "http://localhost:3000",
+            "CI0020036": "https://scicatapi.esss.dk",
             "kubetest01.dm.esss.dk": "https://kubetest02.dm.esss.dk:32223",
             "scicat01.esss.lu.se": "https://scicat03.esss.lu.se:32223",
             "dst": "https://scicatapi.esss.dk",
@@ -46,12 +46,22 @@ class LoggerIn {
         
 
         if (ingestortype == "proposal"){
-            rawdata = this.readjson("./src/proposal.local.json")
+            rawdata = this.readjson("./src/proposalIngestor.local.json")
+            console.log(rawdata);
+        }else if (ingestortype == "archiveManager"){
+            rawdata = this.readjson("./src/archiveManager.local.json");
+            console.log(rawdata);
+        }else if (ingestortype == "userGroupIngestor"){
+            rawdata = this.readjson("./src/userGroupIngestor.local.json");
+            console.log(rawdata);
+        }else if (ingestortype == "admin"){
+            rawdata = this.readjson("./src/admin.local.json");
             console.log(rawdata);
         }else{
-            rawdata = this.readjson("./src/config.local.json");
+            rawdata = this.readjson("./src/ingestor.local.json");
             console.log(rawdata);
         }
+
         let options1 = {
             url: url,
             method: 'POST',

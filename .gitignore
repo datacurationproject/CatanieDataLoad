@@ -115,6 +115,7 @@ yarn.lock
 config.json
 config.local.json
 proposal.local.json
+*.local.json
 src/datasets.json
 .idea/*
 package-lock.json

@@ -5,6 +5,7 @@ import { LoggerIn } from "./LoggerIn";
 const rp = require("request-promise");
 
 class Deleter extends LoggerIn {
+    
     get_datasets(response) {
         const access = response.id;
         console.log(access);
