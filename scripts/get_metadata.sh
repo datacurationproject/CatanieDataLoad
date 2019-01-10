@@ -3,7 +3,7 @@ if [ "$(hostname)" == "CI0020036" ]; then
 	ssh compile "cd metadatacreator  &&  ./scripts/get_metadata.sh"
 	rsync -avz login:metadatacreator/publish.json src/datasets.json
 fi
-if [ "$(hostname)" == "macmurphy.local" ]; then
+if [ "$(hostname)" == "macmurphy.home" ]; then
 #ssh login "cd test/PyMetadataCreator  && ./generate_metadata.sh"
 	rsync -avz login:metadatacreator/publish.json src/datasets.json
 fi
