@@ -1,0 +1,147 @@
+{
+    "keysonde": {
+        "policy": {
+            "manager": [
+                "ramsey.aljebali@esss.se",
+                "archiveManager@change.com",
+                "gareth.murphy@esss.se"
+            ],
+            "tapeRedundancy": "low",
+            "autoArchive": true,
+            "autoArchiveDelay": 7,
+            "archiveEmailNotification": false,
+            "archiveEmailsToBeNotified": [
+                "string"
+            ],
+            "retrieveEmailNotification": false,
+            "retrieveEmailsToBeNotified": [
+                "string"
+            ],
+            "ownerGroup": "ess",
+            "accessGroups": [
+                "brightness",
+                "ess"
+            ],
+            "createdBy": "ingestor",
+            "updatedBy": "ingestor",
+            "updatedAt": "2018-12-18T17:01:32.626Z",
+            "embargoPeriod": 3
+        }
+    },
+    "keynmx": {
+        "policy": {
+            "manager": [
+                "Dorothea.Pfeiffer@esss.se",
+                "archiveManager@change.com",
+                "gareth.murphy@esss.se"
+            ],
+            "tapeRedundancy": "low",
+            "autoArchive": true,
+            "autoArchiveDelay": 7,
+            "archiveEmailNotification": false,
+            "archiveEmailsToBeNotified": [
+                "string"
+            ],
+            "retrieveEmailNotification": false,
+            "retrieveEmailsToBeNotified": [
+                "string"
+            ],
+            "ownerGroup": "ess",
+            "accessGroups": [
+                "brightness",
+                "ess"
+            ],
+            "createdBy": "ingestor",
+            "updatedBy": "ingestor",
+            "updatedAt": "2018-12-18T17:01:32.627Z",
+            "embargoPeriod": 3
+        }
+    },
+    "keymultiblade": {
+        "policy": {
+            "manager": [
+                "Francesco.Piscitelli@esss.se",
+                "archiveManager@change.com",
+                "gareth.murphy@esss.se"
+            ],
+            "tapeRedundancy": "low",
+            "autoArchive": true,
+            "autoArchiveDelay": 7,
+            "archiveEmailNotification": false,
+            "archiveEmailsToBeNotified": [
+                "string"
+            ],
+            "retrieveEmailNotification": false,
+            "retrieveEmailsToBeNotified": [
+                "string"
+            ],
+            "ownerGroup": "ess",
+            "accessGroups": [
+                "brightness",
+                "ess"
+            ],
+            "createdBy": "ingestor",
+            "updatedBy": "ingestor",
+            "updatedAt": "2018-12-18T17:01:32.628Z",
+            "embargoPeriod": 3
+        }
+    },
+    "keymultigrid": {
+        "policy": {
+            "manager": [
+                "anton.khaplanov@esss.se",
+                "archiveManager@change.com",
+                "gareth.murphy@esss.se"
+            ],
+            "tapeRedundancy": "low",
+            "autoArchive": true,
+            "autoArchiveDelay": 7,
+            "archiveEmailNotification": false,
+            "archiveEmailsToBeNotified": [
+                "string"
+            ],
+            "retrieveEmailNotification": false,
+            "retrieveEmailsToBeNotified": [
+                "string"
+            ],
+            "ownerGroup": "ess",
+            "accessGroups": [
+                "brightness",
+                "ess"
+            ],
+            "createdBy": "ingestor",
+            "updatedBy": "ingestor",
+            "updatedAt": "2018-12-18T17:01:32.629Z",
+            "embargoPeriod": 3
+        }
+    },
+    "keybeaminstrumentation": {
+        "policy": {
+            "manager": [
+                "Clement.Derrez@esss.se",
+                "archiveManager@change.com",
+                "gareth.murphy@esss.se"
+            ],
+            "tapeRedundancy": "low",
+            "autoArchive": true,
+            "autoArchiveDelay": 7,
+            "archiveEmailNotification": false,
+            "archiveEmailsToBeNotified": [
+                "string"
+            ],
+            "retrieveEmailNotification": false,
+            "retrieveEmailsToBeNotified": [
+                "string"
+            ],
+            "ownerGroup": "ess",
+            "accessGroups": [
+                "brightness",
+                "ess"
+            ],
+            "createdBy": "ingestor",
+            "updatedBy": "ingestor",
+            "updatedAt": "2018-12-18T17:01:32.629Z",
+            "embargoPeriod": 3
+        }
+    }
+}

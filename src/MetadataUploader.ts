@@ -83,6 +83,7 @@ export class MetadataUploader extends LoggerIn {
           rejectUnauthorized: false,
           requestCert: true
         };
+        /*
         try {
           const response = await rp(options_lifecycle);
           Promise.resolve(response);
@@ -92,6 +93,7 @@ export class MetadataUploader extends LoggerIn {
           return Promise.reject(error);
         }
         console.log(options_lifecycle);
+        */
       }
     }
 
