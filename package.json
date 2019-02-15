@@ -34,7 +34,7 @@
     "npm": "^6.4.1",
     "nyc": "^13.1.0",
     "request": "^2.88.0",
-    "request-promise": "^4.2.2",
+    "request-promise": "^4.2.4",
     "requests": "^0.2.2",
     "ts-node": "^7.0.1",
     "uglify-js": "^3.4.9",
