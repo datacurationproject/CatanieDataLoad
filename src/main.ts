@@ -17,9 +17,14 @@ async function main() {
   await deleteDat.set_model("Datasets");
   const response3 = await deleteDat.deleteModel(id);
 
-  const upload = await new MetadataUploader()
-  await upload.get_datasets(id);
+  const deleteSample = await new DeleterOrig();
+  await deleteSample.set_model("Samples");
+  const response4 = await deleteSample.deleteModel(id);
 
+  const upload = await new MetadataUploader();
+  await upload.get_datasets(id);
 }
 
-main();
+if (require.main === module) {
+  main();
+}

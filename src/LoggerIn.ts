@@ -17,10 +17,10 @@ class LoggerIn {
     constructor() {
         this.url_pick = {
             "local": "http://localhost:3000",
-            //"macmurphy.home": "http://localhost:3000",
-             "macmurphy.home": "https://scicatapi.esss.dk",
-//            "CI0020036": "http://localhost:3000",
-            "CI0020036": "https://scicatapi.esss.dk",
+            "macmurphy.home": "http://localhost:3000",
+            // "macmurphy.home": "https://scicatapi.esss.dk",
+           "CI0020036": "http://localhost:3000",
+//           "CI0020036": "https://scicatapi.esss.dk",
             "kubetest01.dm.esss.dk": "https://kubetest02.dm.esss.dk:32223",
             "scicat01.esss.lu.se": "https://scicat03.esss.lu.se:32223",
             "dst": "https://scicatapi.esss.dk",
@@ -32,7 +32,7 @@ class LoggerIn {
         console.log("machine name ", this.machine_name);
 
         this.url = this.url_pick[this.machine_name];
-        this.url_base = this.url + "/api/v2/";
+        this.url_base = this.url + "/api/v3/";
         this.login_url = this.url_base + "Users/login";
     }
 

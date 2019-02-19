@@ -13,6 +13,7 @@ export class MetadataUploader extends LoggerIn {
     let url = this.url_base + "Datasets?access_token=" + access;
     let url_orig = this.url_base + "OrigDatablocks?access_token=" + access;
     let url_publish = this.url_base + "PublishedData?access_token=" + access;
+    let url_sample = this.url_base + "Samples?access_token=" + access;
     let url_lifecycle =
       this.url_base + "DatasetLifecycles?access_token=" + access;
     console.log(url);
@@ -75,23 +76,23 @@ export class MetadataUploader extends LoggerIn {
         }
         console.log(options5);
 
-        let options_lifecycle = {
-          url: url_lifecycle,
+        let options_sample = {
+          url: url_sample,
           method: "PUT",
-          body: datasets[key]["lifecycle"],
+          body: datasets[key]["sample"],
           json: true,
           rejectUnauthorized: false,
           requestCert: true
         };
         try {
-          const response = await rp(options_lifecycle);
+          const response = await rp(options_sample);
           Promise.resolve(response);
         } catch (error) {
           console.log(url_orig);
           console.log(error);
           return Promise.reject(error);
         }
-        console.log(options_lifecycle);
+        console.log(options_sample);
       }
     }
 

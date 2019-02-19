@@ -15,7 +15,7 @@ export class DeleterOrig extends LoggerIn {
     deleteModel(response) {
         console.log(this.model , "delete");
         const access = response.id;
-        console.log(access);
+        console.log("access",access);
         assert(access.length == 64);
         const datasets = "ddd";
 
@@ -64,6 +64,10 @@ export class DeleterOrig extends LoggerIn {
                     }
                     else if (this.model == "Datasets"){
                         deletable = encodeURIComponent( body[key].pid);
+                    console.log("gm",this.model , deletable);
+                    }
+                    else if (this.model == "Samples"){
+                        deletable = encodeURIComponent( body[key].samplelId);
                     console.log("gm",this.model , deletable);
                     }
                     let url =
