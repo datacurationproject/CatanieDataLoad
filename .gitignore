@@ -119,3 +119,4 @@ proposal.local.json
 src/datasets.json
 .idea/*
 package-lock.json
+generic_config.json

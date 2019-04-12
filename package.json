@@ -5,7 +5,6 @@
   "main": "index.ts",
   "scripts": {
     "test": "nyc mocha  test/*.ts --exit ",
-    "cover": "istanbul cover _mocha",
     "send": "yarn ts-node src/index.ts",
     "coveralls": "yarn run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
@@ -45,7 +44,7 @@
     "@types/mocha": "^5.2.5",
     "babel-cli": "^6.26.0",
     "chai": "^4.2.0",
-    "coveralls": "^3.0.2",
+    "coveralls": "^3.0.3",
     "mocha": "^6.0.0",
     "mocha-lcov-reporter": "^1.3.0",
     "mocha-typescript": "^1.1.17",
