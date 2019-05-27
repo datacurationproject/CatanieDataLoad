@@ -27,7 +27,6 @@
     "@types/node": "^11.9.0",
     "@types/request": "^2.47.1",
     "cleanup-dependencies": "0.0.6",
-    "codacy-coverage": "^3.2.0",
     "express": "^4.16.4",
     "npm": "^6.4.1",
     "nyc": "14",
