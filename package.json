@@ -1,5 +1,5 @@
 {
-  "name": "CatanieDataLoad",
+  "name": "cataniedataload",
   "version": "3.2.0",
   "description": "",
   "main": "index.ts",
