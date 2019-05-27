@@ -1,6 +1,6 @@
 # CatanieDataLoad
 
-<img src="assets/scicat.png" alt="alt text" width="100" height="100">
+<img src="https://github.com/datacurationproject/CatanieDataLoad/blob/develop/assets/metadataupload.png" alt="icon" width="200" height="200">
 
 
 
