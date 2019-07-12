@@ -36,7 +36,7 @@
     "ts-node": "^8.0.2",
     "uglify-js": "^3.4.9",
     "xmlhttprequest": "^1.8.0",
-    "yarn": "^1.10.1"
+    "yarn": "^1.17.3"
   },
   "devDependencies": {
     "@types/chai": "^4.1.6",
