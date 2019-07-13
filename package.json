@@ -25,7 +25,7 @@
   "license": "BSD-2-Clause",
   "dependencies": {
     "@types/node": "^11.9.0",
-    "@types/request": "^2.47.1",
+    "@types/request": "^2.48.2",
     "cleanup-dependencies": "0.0.6",
     "express": "^4.16.4",
     "npm": "^6.4.1",
