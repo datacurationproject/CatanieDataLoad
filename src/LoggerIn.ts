@@ -22,7 +22,7 @@ class LoggerIn {
 //           "CI0020036": "http://localhost:3000",
            "CI0020036": "https://scicatapi.esss.dk",
             "kubetest01.dm.esss.dk": "https://kubetest02.dm.esss.dk:32223",
-            "scicat01.esss.lu.se": "https://scicat03.esss.lu.se:32223",
+            "scicat01.esss.lu.se": "https://scicat01.esss.lu.se:32223",
             "dst": "https://scicatapi.esss.dk",
             "k8s": "http://catamel-dacat-api-server-dev"
         };
