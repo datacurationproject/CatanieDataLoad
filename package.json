@@ -39,7 +39,7 @@
     "yarn": "^1.10.1"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.6",
+    "@types/chai": "^4.2.8",
     "@types/mocha": "^5.2.5",
     "babel-cli": "^6.26.0",
     "chai": "^4.2.0",
