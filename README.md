@@ -1,12 +1,12 @@
 # CatanieDataLoad
 
-<img src="assets/scicat.png" alt="alt text" width="100" height="100">
+<img src="https://github.com/datacurationproject/CatanieDataLoad/blob/develop/assets/metadataupload.png" alt="icon" width="200" height="200">
 
 
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/datacurationproject/CatanieDataLoad.svg)](https://greenkeeper.io/)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e9c631a50f8c4018925d0aaedbb38d30)](https://www.codacy.com/app/garethcmurphy/CatanieDataLoad?utm_source=github.com&utm_medium=referral&utm_content=datacurationproject/CatanieDataLoad&utm_campaign=badger)
-[![Build Status](https://travis-ci.org/datacurationproject/CatanieDataLoad.svg?branch=master)](https://travis-ci.org/datacurationproject/CatanieDataLoad)
+
+
+
 [![Coverage Status](https://coveralls.io/repos/github/datacurationproject/CatanieDataLoad/badge.svg?branch=master)](https://coveralls.io/github/datacurationproject/CatanieDataLoad?branch=master)
 [![DOI](https://zenodo.org/badge/103987354.svg)](https://zenodo.org/badge/latestdoi/103987354)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdatacurationproject%2FCatanieDataLoad.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdatacurationproject%2FCatanieDataLoad?ref=badge_shield)

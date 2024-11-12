@@ -1,0 +1,29 @@
+{
+	"proposalId": "my_great_proposal2",
+	"pi_email": "string1",
+	"pi_firstname": "Alice ",
+	"pi_lastname": "Anone ",
+	"email": "string2",
+	"firstname": "Bob",
+	"lastname": "Anon",
+	"title": "neutron 1",
+	"abstract": "First investigations ",
+	"attachments": [
+		"string5"
+	],
+	"ownerGroup": "string6",
+	"accessGroups": [
+		"string"
+	],
+	"createdBy": "string7",
+	"updatedBy": "string8",
+	"createdAt": "2018-07-02T13:22:37.889Z",
+	"updatedAt": "2018-07-02T13:22:37.889Z",
+	"MeasurementPeriodList": [{
+		"id": "string9",
+		"instrument": "string10",
+		"start": "2018-07-02T13:22:37.889Z",
+		"end": "2018-07-02T13:22:37.889Z",
+		"comment": "string11"
+	}]
+}

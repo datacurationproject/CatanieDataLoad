@@ -1,0 +1,90 @@
+{
+  "orig2018-06-13 15:12:5600000": {
+    "published_data": {
+      "doi": "10.17199/BRIGHTNESS/SONDE0001",
+      "affiliation": "ESS",
+      "creator": "Ramsey Al Jebali",
+      "publisher": "ESS",
+      "publicationYear": 2017,
+      "title": "Sample Data from SONDE",
+      "url": "https://scicat.esss.se/datasets/10.17199%2FBRIGHTNESS%2FSONDE0001",
+      "abstract": "This data was collected as part of BrightnESS, funded by the European Union                         Framework Programme for Research and Innovation Horizon 2020, under grant                         agreement 676548. It consists of test data for the detector.",
+      "resourceType": "NeXus HDF5 files",
+      "sizeOfArchive": 25.1,
+      "numberOfFiles": 33,
+      "pidArray": [
+        "string"
+      ],
+      "authors": [
+        "string"
+      ],
+      "doiRegisteredSuccessfullyTime": "2018-06-07T09:46:27.560Z"
+    }
+  },
+  "orig2018-08-23 11:29:4000001": {
+    "published_data": {
+      "doi": "10.17199/BRIGHTNESS/NMX0001",
+      "affiliation": "ESS",
+      "creator": "Dorothea Pfeiffer",
+      "publisher": "ESS",
+      "publicationYear": 2017,
+      "title": "Sample Data from NMX",
+      "url": "https://scicat.esss.se/datasets/10.17199%2FBRIGHTNESS%2FNMX0001",
+      "abstract": "This data was collected as part of BrightnESS, funded by the European Union \\ \n                        Framework Programme for Research and Innovation Horizon 2020, under grant                         agreement 676548. It consists of test data for the detector.",
+      "resourceType": "NeXus HDF5 files",
+      "sizeOfArchive": 25.1,
+      "numberOfFiles": 33,
+      "pidArray": [
+        "string"
+      ],
+      "authors": [
+        "string"
+      ],
+      "doiRegisteredSuccessfullyTime": "2018-06-07T09:46:27.560Z"
+    }
+  },
+  "orig2018-08-23 11:30:2300002": {
+    "published_data": {
+      "doi": "10.17199/BRIGHTNESS/MG0001",
+      "affiliation": "ESS",
+      "creator": "Anton Khaplanov",
+      "publisher": "ESS",
+      "publicationYear": 2017,
+      "title": "Sample Data from Multigrid",
+      "url": "https://scicat.esss.se/datasets/10.17199%2FBRIGHTNESS%2FMG0001",
+      "abstract": "This data was collected as part of BrightnESS, funded by the European Union                         Framework Programme for Research and Innovation Horizon 2020, under grant                         agreement 676548. It consists of test data for the detector.",
+      "resourceType": "NeXus HDF5 files",
+      "sizeOfArchive": 25.1,
+      "numberOfFiles": 33,
+      "pidArray": [
+        "string"
+      ],
+      "authors": [
+        "string"
+      ],
+      "doiRegisteredSuccessfullyTime": "2018-06-07T09:46:27.560Z"
+    }
+  },
+  "orig2018-08-23 11:30:2300003": {
+    "published_data": {
+      "doi": "10.17199/BRIGHTNESS/MB0001",
+      "affiliation": "ESS",
+      "creator": "Francesco Piscitelli",
+      "publisher": "ESS",
+      "publicationYear": 2017,
+      "title": "Sample Data from Multiblade",
+      "url": "https://scicat.esss.se/datasets/10.17199%2FBRIGHTNESS%2FMB0001",
+      "abstract": "This data was collected as part of BrightnESS, funded by the European Union                         Framework Programme for Research and Innovation Horizon 2020, under grant                         agreement 676548. It consists of test data for the detector.",
+      "resourceType": "NeXus HDF5 files",
+      "sizeOfArchive": 25.1,
+      "numberOfFiles": 33,
+      "pidArray": [
+        "string"
+      ],
+      "authors": [
+        "string"
+      ],
+      "doiRegisteredSuccessfullyTime": "2018-06-07T09:46:27.560Z"
+    }
+  }
+}

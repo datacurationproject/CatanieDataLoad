@@ -1,8 +1,9 @@
 "use strict";
-import * as data from '/tmp/config.json';
+import * as os from "os";
 
 const rp = require('request-promise');
-import * as os from 'os';
+
+const fs = require('fs');
 
 class LoggerIn {
 
@@ -11,38 +12,55 @@ class LoggerIn {
     machine_name: string;
     url: string;
     url_pick: any;
+    username: string;
 
     constructor() {
-	   this.url_pick = {
+        this.url_pick = {
             "local": "http://localhost:3000",
-            //"macmurphy.local": "http://localhost:3000",
-            "macmurphy.local": "https://scicatapi.esss.dk",
-            //"CI0020036": "http://localhost:3000",
-            "CI0020036": "https://scicatapi.esss.dk",
+            "macmurphy.home": "http://localhost:3000",
+            // "macmurphy.home": "https://scicatapi.esss.dk",
+//           "CI0020036": "http://localhost:3000",
+           "CI0020036": "https://scicatapi.esss.dk",
             "kubetest01.dm.esss.dk": "https://kubetest02.dm.esss.dk:32223",
-            "scicat01.esss.lu.se": "https://scicat03.esss.lu.se:32223",
+            "scicat01.esss.lu.se": "https://scicat01.esss.lu.se:32223",
             "dst": "https://scicatapi.esss.dk",
             "k8s": "http://catamel-dacat-api-server-dev"
         };
 
 
         this.machine_name = os.hostname();
-        //this.machine_name = "http://catamel-dacat-api-server-dev"
         console.log("machine name ", this.machine_name);
-        //this.machine_name = "kubetest01";
 
         this.url = this.url_pick[this.machine_name];
-        this.url_base = this.url+"/api/v2/";
-        //this.url_base = "https://kubetest02.dm.esss.dk:32223/api/v2/"
-        //this.url_base = "https://scicat03.esss.lu.se:32223/api/v2/"
+        this.url_base = this.url + "/api/v3/";
         this.login_url = this.url_base + "Users/login";
     }
 
-    async login() {
+    readjson (filename:string){
+        return  JSON.parse(fs.readFileSync(filename, "utf-8"));
+    }
+    async login(ingestortype: string) {
 
         let url = this.login_url;
-        let rawdata = data;
-        console.log(data);
+        let rawdata = {} ;
+        
+
+        if (ingestortype == "proposal"){
+            rawdata = this.readjson("./src/proposalIngestor.local.json")
+            console.log(rawdata);
+        }else if (ingestortype == "archiveManager"){
+            rawdata = this.readjson("./src/archiveManager.local.json");
+            console.log(rawdata);
+        }else if (ingestortype == "userGroupIngestor"){
+            rawdata = this.readjson("./src/userGroupIngestor.local.json");
+            console.log(rawdata);
+        }else if (ingestortype == "admin"){
+            rawdata = this.readjson("./src/admin.local.json");
+            console.log(rawdata);
+        }else{
+            rawdata = this.readjson("./src/ingestor.local.json");
+            console.log(rawdata);
+        }
 
         let options1 = {
             url: url,
@@ -66,4 +84,4 @@ class LoggerIn {
 }
 
 
-export {LoggerIn}
+export { LoggerIn }

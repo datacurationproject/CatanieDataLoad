@@ -4,28 +4,20 @@ import { LoggerIn } from "./LoggerIn";
 
 const rp = require("request-promise");
 
-export class DeleterOrig extends LoggerIn {
-    model="OrigDatablocks";
-    file="orig.json";
-
-    set_model(modeltype: string){
-        this.model = modeltype;
-    }
-
-    deleteModel(response) {
-        console.log(this.model , "delete");
+class DeleterPublisher extends LoggerIn {
+    get_datasets(response) {
         const access = response.id;
-        console.log("access",access);
+        console.log(access);
         assert(access.length == 64);
         const datasets = "ddd";
 
-        let url = this.url_base + this.model+"?access_token=" + access;
+        let url = this.url_base + "PublishedData?access_token=" + access;
         console.log(url);
 
         let options2 = {
             url: url,
             method: "GET",
-            body: {test: "test"},
+            body: { test: "test" },
             json: true,
             rejectUnauthorized: false,
             requestCert: true
@@ -34,10 +26,10 @@ export class DeleterOrig extends LoggerIn {
         rp(options2).then(body => {
             console.log(JSON.stringify(body[0]));
 
-            let deletable = encodeURIComponent(body[0].id);
+            let deletable = encodeURIComponent(body[0].doi);
             let url =
                 this.url_base +
-                this.model+"/" +
+                "PublishedData/" +
                 deletable +
                 "?access_token=" +
                 access;
@@ -53,26 +45,12 @@ export class DeleterOrig extends LoggerIn {
 
             for (let key in body) {
                 if (body.hasOwnProperty(key)) {
-                    let deletable = "string";
-                    if (this.model == "OrigDatablocks"){
-                        deletable = body[key].id;
-                        console.log("gm",this.model , deletable);
-                    } 
-                    else if (this.model == "PublishedData"){
-                        deletable = encodeURIComponent( body[key].doi);
-                        console.log("gm",this.model , deletable);
-                    }
-                    else if (this.model == "Datasets"){
-                        deletable = encodeURIComponent( body[key].pid);
-                    console.log("gm",this.model , deletable);
-                    }
-                    else if (this.model == "Samples"){
-                        deletable = encodeURIComponent( body[key].samplelId);
-                    console.log("gm",this.model , deletable);
-                    }
+                    //console.log(key + " -> " + body[key].pid);
+
+                    let deletable = encodeURIComponent(body[key].doi);
                     let url =
                         this.url_base +
-                        this.model+"/" +
+                        "PublishedData/" +
                         deletable +
                         "?access_token=" +
                         access;
@@ -92,12 +70,10 @@ export class DeleterOrig extends LoggerIn {
 
     async main() {
         const x = await this.login("default");
-        const y = await this.deleteModel(x);
+        const y = await this.get_datasets(x);
         console.log(y);
     }
 }
 
-if (require.main === module) {
-    const met = new DeleterOrig();
-    met.main()
-}
+let met = new DeleterPublisher();
+met.main();
